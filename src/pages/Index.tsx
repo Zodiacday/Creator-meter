@@ -1,26 +1,20 @@
 import { useRealtimeCounter } from "@/hooks/useRealtimeCounter";
 import { Counter } from "@/components/Counter";
-import { 
-  Users, Heart, Droplet, Zap, Leaf, Apple,
-  Globe, Building2, Users2, ArrowRight
-} from "lucide-react";
+import { Users, Heart, Droplet, Zap, Leaf, Apple, Globe, Building2, Users2, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-
 const Index = () => {
   // World Population - increases by ~2.5 per second (80M per year)
   const worldPopulation = useRealtimeCounter({
     initialValue: 8252321533,
     incrementPerSecond: 2.5
   });
-
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       {/* Header */}
       <header className="border-b border-border bg-card/50 backdrop-blur-xl sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <Globe className="w-6 h-6 md:w-8 md:h-8 text-primary" />
-            <h1 className="text-lg md:text-2xl font-bold gradient-text">WorldMetrics</h1>
+            <h1 className="text-lg md:text-2xl font-bold gradient-text">Creator Meter</h1>
           </div>
           <p className="text-xs md:text-sm text-muted-foreground hidden md:block">
             Real-time global statistics
@@ -43,10 +37,7 @@ const Index = () => {
             </h2>
             
             <div className="relative inline-block">
-              <Counter 
-                value={worldPopulation}
-                className="text-4xl md:text-6xl lg:text-8xl font-bold text-foreground counter-glow"
-              />
+              <Counter value={worldPopulation} className="text-4xl md:text-6xl lg:text-8xl font-bold text-foreground counter-glow" />
               <div className="absolute -inset-4 bg-primary/20 blur-3xl -z-10 animate-pulse-glow rounded-full" />
             </div>
             
@@ -174,8 +165,6 @@ const Index = () => {
           </p>
         </div>
       </footer>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
