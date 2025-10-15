@@ -1,26 +1,73 @@
 import { useRealtimeCounter } from "@/hooks/useRealtimeCounter";
 import { Counter } from "@/components/Counter";
-import { Users, Heart, Droplet, Zap, Leaf, Apple, Globe, Building2, Users2, ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
+import { StatCard } from "@/components/StatCard";
+import { CategorySection } from "@/components/CategorySection";
+import { Navigation } from "@/components/Navigation";
+import { 
+  Users, Heart, Droplet, Zap, Leaf, Apple, Building2, Users2, 
+  Baby, Skull, TrendingUp, DollarSign, GraduationCap, Shield,
+  Car, Bike, Monitor, BookOpen, Newspaper, Tv, Smartphone,
+  Gamepad2, Wifi, Mail, FileText, Trees, Cloud, FlaskConical,
+  UtensilsCrossed, Scale, Activity, Cigarette, Wine, Ambulance, Stethoscope
+} from "lucide-react";
+
 const Index = () => {
-  // World Population - increases by ~2.5 per second (80M per year)
-  const worldPopulation = useRealtimeCounter({
-    initialValue: 8252321533,
-    incrementPerSecond: 2.5
-  });
-  return <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="border-b border-border bg-card/50 backdrop-blur-xl sticky top-0 z-50">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <Globe className="w-6 h-6 md:w-8 md:h-8 text-primary" />
-            <h1 className="text-lg md:text-2xl font-bold gradient-text">Creator Meter</h1>
-          </div>
-          <p className="text-xs md:text-sm text-muted-foreground hidden md:block">
-            Real-time global statistics
-          </p>
-        </div>
-      </header>
+  // World Population
+  const worldPopulation = useRealtimeCounter({ initialValue: 8252321533, incrementPerSecond: 2.5 });
+  
+  // Population Stats
+  const births = useRealtimeCounter({ initialValue: 385000, incrementPerSecond: 4.3 });
+  const deaths = useRealtimeCounter({ initialValue: 163000, incrementPerSecond: 1.8 });
+  const populationGrowth = useRealtimeCounter({ initialValue: 222000, incrementPerSecond: 2.5 });
+  
+  // Government & Economics
+  const healthcareSpending = useRealtimeCounter({ initialValue: 9200000000000, incrementPerSecond: 291666 });
+  const educationSpending = useRealtimeCounter({ initialValue: 5500000000000, incrementPerSecond: 174166 });
+  const militarySpending = useRealtimeCounter({ initialValue: 2200000000000, incrementPerSecond: 69722 });
+  const carsProduced = useRealtimeCounter({ initialValue: 78000000, incrementPerSecond: 2.47 });
+  const bicyclesProduced = useRealtimeCounter({ initialValue: 130000000, incrementPerSecond: 4.12 });
+  const computersProduced = useRealtimeCounter({ initialValue: 350000000, incrementPerSecond: 11.1 });
+  
+  // Society & Media
+  const booksPublished = useRealtimeCounter({ initialValue: 2200000, incrementPerSecond: 0.07 });
+  const newspapersSold = useRealtimeCounter({ initialValue: 155000000000, incrementPerSecond: 4912 });
+  const tvsSold = useRealtimeCounter({ initialValue: 210000000, incrementPerSecond: 6.66 });
+  const mobilePhonesSold = useRealtimeCounter({ initialValue: 1400000000, incrementPerSecond: 44.4 });
+  const videogamesSold = useRealtimeCounter({ initialValue: 3200000000, incrementPerSecond: 101.4 });
+  const internetUsers = useRealtimeCounter({ initialValue: 5300000000, incrementPerSecond: 10 });
+  const emailsSent = useRealtimeCounter({ initialValue: 333600000000000, incrementPerSecond: 10574603 });
+  const blogPosts = useRealtimeCounter({ initialValue: 7000000, incrementPerSecond: 0.22 });
+  
+  // Environment
+  const forestLoss = useRealtimeCounter({ initialValue: 10000000, incrementPerSecond: 0.317 });
+  const co2Emissions = useRealtimeCounter({ initialValue: 37000000000, incrementPerSecond: 1172 });
+  const toxicChemicals = useRealtimeCounter({ initialValue: 300000000, incrementPerSecond: 9.51 });
+  
+  // Food
+  const undernourished = useRealtimeCounter({ initialValue: 828000000, incrementPerSecond: 0 });
+  const overweight = useRealtimeCounter({ initialValue: 2000000000, incrementPerSecond: 0 });
+  const obese = useRealtimeCounter({ initialValue: 890000000, incrementPerSecond: 0 });
+  
+  // Water
+  const waterUsed = useRealtimeCounter({ initialValue: 4000000000000, incrementPerSecond: 126839 });
+  const waterDeaths = useRealtimeCounter({ initialValue: 1200000, incrementPerSecond: 0.038 });
+  const noSafeWater = useRealtimeCounter({ initialValue: 2000000000, incrementPerSecond: 0 });
+  
+  // Energy
+  const energyUsed = useRealtimeCounter({ initialValue: 580000000000000, incrementPerSecond: 18380952 });
+  const nonRenewable = useRealtimeCounter({ initialValue: 483000000000000, incrementPerSecond: 15309524 });
+  const renewable = useRealtimeCounter({ initialValue: 97000000000000, incrementPerSecond: 3071429 });
+  
+  // Health
+  const infectiousDeaths = useRealtimeCounter({ initialValue: 13000000, incrementPerSecond: 0.41 });
+  const cancerDeaths = useRealtimeCounter({ initialValue: 10000000, incrementPerSecond: 0.317 });
+  const smokingDeaths = useRealtimeCounter({ initialValue: 8000000, incrementPerSecond: 0.253 });
+  const alcoholDeaths = useRealtimeCounter({ initialValue: 3000000, incrementPerSecond: 0.095 });
+  const roadDeaths = useRealtimeCounter({ initialValue: 1350000, incrementPerSecond: 0.043 });
+
+  return (
+    <div className="min-h-screen bg-background">
+      <Navigation />
 
       {/* Hero Section */}
       <section className="relative py-12 md:py-20 overflow-hidden">
@@ -48,110 +95,73 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Category Navigation */}
+      {/* Statistics Sections */}
       <div className="container mx-auto px-4 pb-12 md:pb-20">
-        <div className="mb-6 md:mb-8">
-          <h2 className="text-2xl md:text-3xl font-bold mb-2">Explore Statistics</h2>
-          <p className="text-muted-foreground text-sm md:text-base">Click on any category to view detailed real-time data</p>
-        </div>
+        {/* Population */}
+        <CategorySection title="Population" icon={<Users className="w-8 h-8" />} color="hsl(var(--population))">
+          <StatCard label="Births Today" value={births} icon={Baby} color="hsl(var(--population))" increment={4.3} />
+          <StatCard label="Deaths Today" value={deaths} icon={Skull} color="hsl(var(--population))" increment={1.8} />
+          <StatCard label="Net Population Growth" value={populationGrowth} icon={TrendingUp} color="hsl(var(--population))" increment={2.5} />
+        </CategorySection>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-          <Link to="/population" className="group">
-            <div className="p-6 md:p-8 rounded-2xl border border-border bg-card hover:bg-card/80 transition-all hover:border-[hsl(var(--population))] hover:shadow-xl hover:shadow-[hsl(var(--population))]/20 hover:-translate-y-1">
-              <Users className="h-10 w-10 md:h-12 md:w-12 mb-4 text-[hsl(var(--population))]" />
-              <h3 className="text-lg md:text-xl font-semibold mb-2">Population</h3>
-              <p className="text-sm text-muted-foreground mb-4">Births, deaths, and growth statistics</p>
-              <div className="flex items-center gap-2 text-primary group-hover:gap-3 transition-all">
-                <span className="text-sm font-medium">View details</span>
-                <ArrowRight className="h-4 w-4" />
-              </div>
-            </div>
-          </Link>
+        {/* Government */}
+        <CategorySection title="Government & Economics" icon={<Building2 className="w-8 h-8" />} color="hsl(var(--government))">
+          <StatCard label="Healthcare Spending Today" value={healthcareSpending} icon={DollarSign} color="hsl(var(--government))" subtitle="USD" />
+          <StatCard label="Education Spending Today" value={educationSpending} icon={GraduationCap} color="hsl(var(--government))" subtitle="USD" />
+          <StatCard label="Military Spending Today" value={militarySpending} icon={Shield} color="hsl(var(--government))" subtitle="USD" />
+          <StatCard label="Cars Produced This Year" value={carsProduced} icon={Car} color="hsl(var(--government))" />
+          <StatCard label="Bicycles Produced This Year" value={bicyclesProduced} icon={Bike} color="hsl(var(--government))" />
+          <StatCard label="Computers Produced This Year" value={computersProduced} icon={Monitor} color="hsl(var(--government))" />
+        </CategorySection>
 
-          <Link to="/government" className="group">
-            <div className="p-6 md:p-8 rounded-2xl border border-border bg-card hover:bg-card/80 transition-all hover:border-[hsl(var(--government))] hover:shadow-xl hover:shadow-[hsl(var(--government))]/20 hover:-translate-y-1">
-              <Building2 className="h-10 w-10 md:h-12 md:w-12 mb-4 text-[hsl(var(--government))]" />
-              <h3 className="text-lg md:text-xl font-semibold mb-2">Government</h3>
-              <p className="text-sm text-muted-foreground mb-4">Economics and production data</p>
-              <div className="flex items-center gap-2 text-primary group-hover:gap-3 transition-all">
-                <span className="text-sm font-medium">View details</span>
-                <ArrowRight className="h-4 w-4" />
-              </div>
-            </div>
-          </Link>
+        {/* Society */}
+        <CategorySection title="Society & Media" icon={<Users2 className="w-8 h-8" />} color="hsl(var(--society))">
+          <StatCard label="Books Published This Year" value={booksPublished} icon={BookOpen} color="hsl(var(--society))" />
+          <StatCard label="Newspapers Sold Today" value={newspapersSold} icon={Newspaper} color="hsl(var(--society))" />
+          <StatCard label="TVs Sold This Year" value={tvsSold} icon={Tv} color="hsl(var(--society))" />
+          <StatCard label="Mobile Phones Sold" value={mobilePhonesSold} icon={Smartphone} color="hsl(var(--society))" />
+          <StatCard label="Video Games Sold" value={videogamesSold} icon={Gamepad2} color="hsl(var(--society))" />
+          <StatCard label="Internet Users" value={internetUsers} icon={Wifi} color="hsl(var(--society))" />
+          <StatCard label="Emails Sent Today" value={emailsSent} icon={Mail} color="hsl(var(--society))" />
+          <StatCard label="Blog Posts Written Today" value={blogPosts} icon={FileText} color="hsl(var(--society))" />
+        </CategorySection>
 
-          <Link to="/society" className="group">
-            <div className="p-6 md:p-8 rounded-2xl border border-border bg-card hover:bg-card/80 transition-all hover:border-[hsl(var(--society))] hover:shadow-xl hover:shadow-[hsl(var(--society))]/20 hover:-translate-y-1">
-              <Users2 className="h-10 w-10 md:h-12 md:w-12 mb-4 text-[hsl(var(--society))]" />
-              <h3 className="text-lg md:text-xl font-semibold mb-2">Society</h3>
-              <p className="text-sm text-muted-foreground mb-4">Media and technology consumption</p>
-              <div className="flex items-center gap-2 text-primary group-hover:gap-3 transition-all">
-                <span className="text-sm font-medium">View details</span>
-                <ArrowRight className="h-4 w-4" />
-              </div>
-            </div>
-          </Link>
+        {/* Environment */}
+        <CategorySection title="Environment" icon={<Leaf className="w-8 h-8" />} color="hsl(var(--environment))">
+          <StatCard label="Forest Loss This Year" value={forestLoss} icon={Trees} color="hsl(var(--environment))" subtitle="hectares" />
+          <StatCard label="CO₂ Emissions This Year" value={co2Emissions} icon={Cloud} color="hsl(var(--environment))" subtitle="tons" />
+          <StatCard label="Toxic Chemicals Released" value={toxicChemicals} icon={FlaskConical} color="hsl(var(--environment))" subtitle="tons" />
+        </CategorySection>
 
-          <Link to="/environment" className="group">
-            <div className="p-6 md:p-8 rounded-2xl border border-border bg-card hover:bg-card/80 transition-all hover:border-[hsl(var(--environment))] hover:shadow-xl hover:shadow-[hsl(var(--environment))]/20 hover:-translate-y-1">
-              <Leaf className="h-10 w-10 md:h-12 md:w-12 mb-4 text-[hsl(var(--environment))]" />
-              <h3 className="text-lg md:text-xl font-semibold mb-2">Environment</h3>
-              <p className="text-sm text-muted-foreground mb-4">Climate and ecological impact</p>
-              <div className="flex items-center gap-2 text-primary group-hover:gap-3 transition-all">
-                <span className="text-sm font-medium">View details</span>
-                <ArrowRight className="h-4 w-4" />
-              </div>
-            </div>
-          </Link>
+        {/* Food */}
+        <CategorySection title="Food" icon={<Apple className="w-8 h-8" />} color="hsl(var(--food))">
+          <StatCard label="Undernourished People" value={undernourished} icon={UtensilsCrossed} color="hsl(var(--food))" />
+          <StatCard label="Overweight People" value={overweight} icon={Scale} color="hsl(var(--food))" />
+          <StatCard label="Obese People" value={obese} icon={Activity} color="hsl(var(--food))" />
+        </CategorySection>
 
-          <Link to="/food" className="group">
-            <div className="p-6 md:p-8 rounded-2xl border border-border bg-card hover:bg-card/80 transition-all hover:border-[hsl(var(--food))] hover:shadow-xl hover:shadow-[hsl(var(--food))]/20 hover:-translate-y-1">
-              <Apple className="h-10 w-10 md:h-12 md:w-12 mb-4 text-[hsl(var(--food))]" />
-              <h3 className="text-lg md:text-xl font-semibold mb-2">Food</h3>
-              <p className="text-sm text-muted-foreground mb-4">Nutrition and food security</p>
-              <div className="flex items-center gap-2 text-primary group-hover:gap-3 transition-all">
-                <span className="text-sm font-medium">View details</span>
-                <ArrowRight className="h-4 w-4" />
-              </div>
-            </div>
-          </Link>
+        {/* Water */}
+        <CategorySection title="Water" icon={<Droplet className="w-8 h-8" />} color="hsl(var(--water))">
+          <StatCard label="Water Used Today" value={waterUsed} icon={Droplet} color="hsl(var(--water))" subtitle="liters" />
+          <StatCard label="Deaths from Water Diseases" value={waterDeaths} icon={Ambulance} color="hsl(var(--water))" />
+          <StatCard label="People Without Safe Water" value={noSafeWater} icon={Droplet} color="hsl(var(--water))" />
+        </CategorySection>
 
-          <Link to="/water" className="group">
-            <div className="p-6 md:p-8 rounded-2xl border border-border bg-card hover:bg-card/80 transition-all hover:border-[hsl(var(--water))] hover:shadow-xl hover:shadow-[hsl(var(--water))]/20 hover:-translate-y-1">
-              <Droplet className="h-10 w-10 md:h-12 md:w-12 mb-4 text-[hsl(var(--water))]" />
-              <h3 className="text-lg md:text-xl font-semibold mb-2">Water</h3>
-              <p className="text-sm text-muted-foreground mb-4">Usage and access statistics</p>
-              <div className="flex items-center gap-2 text-primary group-hover:gap-3 transition-all">
-                <span className="text-sm font-medium">View details</span>
-                <ArrowRight className="h-4 w-4" />
-              </div>
-            </div>
-          </Link>
+        {/* Energy */}
+        <CategorySection title="Energy" icon={<Zap className="w-8 h-8" />} color="hsl(var(--energy))">
+          <StatCard label="Energy Used Today" value={energyUsed} icon={Zap} color="hsl(var(--energy))" subtitle="MWh" />
+          <StatCard label="From Non-Renewable" value={nonRenewable} icon={Zap} color="hsl(var(--energy))" subtitle="MWh" />
+          <StatCard label="From Renewable" value={renewable} icon={Leaf} color="hsl(var(--energy))" subtitle="MWh" />
+        </CategorySection>
 
-          <Link to="/energy" className="group">
-            <div className="p-6 md:p-8 rounded-2xl border border-border bg-card hover:bg-card/80 transition-all hover:border-[hsl(var(--energy))] hover:shadow-xl hover:shadow-[hsl(var(--energy))]/20 hover:-translate-y-1">
-              <Zap className="h-10 w-10 md:h-12 md:w-12 mb-4 text-[hsl(var(--energy))]" />
-              <h3 className="text-lg md:text-xl font-semibold mb-2">Energy</h3>
-              <p className="text-sm text-muted-foreground mb-4">Power consumption worldwide</p>
-              <div className="flex items-center gap-2 text-primary group-hover:gap-3 transition-all">
-                <span className="text-sm font-medium">View details</span>
-                <ArrowRight className="h-4 w-4" />
-              </div>
-            </div>
-          </Link>
-
-          <Link to="/health" className="group">
-            <div className="p-6 md:p-8 rounded-2xl border border-border bg-card hover:bg-card/80 transition-all hover:border-[hsl(var(--health))] hover:shadow-xl hover:shadow-[hsl(var(--health))]/20 hover:-translate-y-1">
-              <Heart className="h-10 w-10 md:h-12 md:w-12 mb-4 text-[hsl(var(--health))]" />
-              <h3 className="text-lg md:text-xl font-semibold mb-2">Health</h3>
-              <p className="text-sm text-muted-foreground mb-4">Healthcare and mortality data</p>
-              <div className="flex items-center gap-2 text-primary group-hover:gap-3 transition-all">
-                <span className="text-sm font-medium">View details</span>
-                <ArrowRight className="h-4 w-4" />
-              </div>
-            </div>
-          </Link>
-        </div>
+        {/* Health */}
+        <CategorySection title="Health" icon={<Heart className="w-8 h-8" />} color="hsl(var(--health))">
+          <StatCard label="Deaths from Infectious Diseases" value={infectiousDeaths} icon={Stethoscope} color="hsl(var(--health))" />
+          <StatCard label="Deaths from Cancer" value={cancerDeaths} icon={Activity} color="hsl(var(--health))" />
+          <StatCard label="Deaths from Smoking" value={smokingDeaths} icon={Cigarette} color="hsl(var(--health))" />
+          <StatCard label="Deaths from Alcohol" value={alcoholDeaths} icon={Wine} color="hsl(var(--health))" />
+          <StatCard label="Deaths from Road Traffic" value={roadDeaths} icon={Car} color="hsl(var(--health))" />
+        </CategorySection>
       </div>
 
       {/* Footer */}
@@ -165,6 +175,8 @@ const Index = () => {
           </p>
         </div>
       </footer>
-    </div>;
+    </div>
+  );
 };
+
 export default Index;

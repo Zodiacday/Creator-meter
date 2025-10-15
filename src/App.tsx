@@ -13,6 +13,13 @@ import FoodPage from "./pages/FoodPage";
 import WaterPage from "./pages/WaterPage";
 import EnergyPage from "./pages/EnergyPage";
 import HealthPage from "./pages/HealthPage";
+import Co2EmissionsPage from "./pages/Co2EmissionsPage";
+import CoronavirusPage from "./pages/CoronavirusPage";
+import CountriesPage from "./pages/CountriesPage";
+import FlagsPage from "./pages/FlagsPage";
+import FoodAgriculturePage from "./pages/FoodAgriculturePage";
+import GdpPage from "./pages/GdpPage";
+import WorldMapPage from "./pages/WorldMapPage";
 
 const queryClient = new QueryClient();
 
@@ -32,6 +39,13 @@ const App = () => (
           <Route path="/water" element={<WaterPage />} />
           <Route path="/energy" element={<EnergyPage />} />
           <Route path="/health" element={<HealthPage />} />
+          <Route path="/co2-emissions" element={<Co2EmissionsPage />} />
+          <Route path="/coronavirus" element={<CoronavirusPage />} />
+          <Route path="/countries" element={<CountriesPage />} />
+          <Route path="/flags" element={<FlagsPage />} />
+          <Route path="/food-agriculture" element={<FoodAgriculturePage />} />
+          <Route path="/gdp" element={<GdpPage />} />
+          <Route path="/world-map" element={<WorldMapPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
