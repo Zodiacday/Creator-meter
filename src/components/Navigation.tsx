@@ -1,4 +1,4 @@
-import { Globe, Menu } from "lucide-react";
+import { Menu } from "lucide-react";
 import { Link } from "react-router-dom";
 import {
   NavigationMenu,
@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
+import logo from "@/assets/logo.png";
 
 export const Navigation = () => {
   const additionalPages = [
@@ -28,7 +29,7 @@ export const Navigation = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
-            <Globe className="w-6 h-6 md:w-8 md:h-8 text-primary" />
+            <img src={logo} alt="Creator Meter Logo" className="w-6 h-6 md:w-8 md:h-8" />
             <h1 className="text-lg md:text-2xl font-bold gradient-text">Creator Meter</h1>
           </Link>
 
