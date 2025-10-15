@@ -29,7 +29,7 @@ export const Navigation = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
-            <img src={logo} alt="Creator Meter Logo" className="w-6 h-6 md:w-8 md:h-8" />
+            <img src={logo} alt="Creator Meter Logo" className="w-12 h-12 md:w-16 md:h-16" />
             <h1 className="text-lg md:text-2xl font-bold gradient-text">Creator Meter</h1>
           </Link>
 
