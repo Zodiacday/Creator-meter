@@ -29,7 +29,7 @@ export const Navigation = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
             <Globe className="w-6 h-6 md:w-8 md:h-8 text-primary" />
-            <h1 className="text-lg md:text-2xl font-bold gradient-text">WorldMetrics</h1>
+            <h1 className="text-lg md:text-2xl font-bold gradient-text">Creator Meter</h1>
           </Link>
 
           {/* Desktop Navigation */}
@@ -37,20 +37,17 @@ export const Navigation = () => {
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="bg-background/50">More Statistics</NavigationMenuTrigger>
+                  <NavigationMenuTrigger>More Statistics</NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-popover">
+                    <ul className="w-[200px] p-2 bg-background border border-border">
                       {additionalPages.map((page) => (
                         <li key={page.path}>
                           <NavigationMenuLink asChild>
                             <Link
                               to={page.path}
-                              className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                              className="block px-3 py-2 text-sm rounded-md hover:bg-accent transition-colors"
                             >
-                              <div className="text-sm font-medium leading-none">{page.name}</div>
-                              <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                                {page.description}
-                              </p>
+                              {page.name}
                             </Link>
                           </NavigationMenuLink>
                         </li>
