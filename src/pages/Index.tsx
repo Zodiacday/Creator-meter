@@ -3,6 +3,7 @@ import { Counter } from "@/components/Counter";
 import { StatCard } from "@/components/StatCard";
 import { CategorySection } from "@/components/CategorySection";
 import { Navigation } from "@/components/Navigation";
+import { Footer } from "@/components/Footer";
 import { 
   Users, Heart, Droplet, Zap, Leaf, Apple, Building2, Users2, 
   Baby, Skull, TrendingUp, DollarSign, GraduationCap, Shield,
@@ -164,17 +165,7 @@ const Index = () => {
         </CategorySection>
       </div>
 
-      {/* Footer */}
-      <footer className="border-t border-border bg-card/50 backdrop-blur-xl py-6 md:py-8">
-        <div className="container mx-auto px-4 text-center">
-          <p className="text-xs md:text-sm text-muted-foreground">
-            Data sources: United Nations, World Health Organization, International Energy Agency, and more
-          </p>
-          <p className="text-xs text-muted-foreground mt-2">
-            Statistics are updated in real-time based on the latest available data
-          </p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };

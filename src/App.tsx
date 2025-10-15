@@ -20,6 +20,9 @@ import FlagsPage from "./pages/FlagsPage";
 import FoodAgriculturePage from "./pages/FoodAgriculturePage";
 import GdpPage from "./pages/GdpPage";
 import WorldMapPage from "./pages/WorldMapPage";
+import AboutPage from "./pages/AboutPage";
+import PrivacyPage from "./pages/PrivacyPage";
+import ContactPage from "./pages/ContactPage";
 
 const queryClient = new QueryClient();
 
@@ -46,6 +49,9 @@ const App = () => (
           <Route path="/food-agriculture" element={<FoodAgriculturePage />} />
           <Route path="/gdp" element={<GdpPage />} />
           <Route path="/world-map" element={<WorldMapPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/privacy" element={<PrivacyPage />} />
+          <Route path="/contact" element={<ContactPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
