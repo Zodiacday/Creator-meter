@@ -1,14 +1,10 @@
 import { useRealtimeCounter } from "@/hooks/useRealtimeCounter";
 import { Counter } from "@/components/Counter";
-import { StatCard } from "@/components/StatCard";
-import { CategorySection } from "@/components/CategorySection";
 import { 
-  Users, TrendingUp, Heart, Droplet, Zap, Leaf, 
-  Wheat, Globe, Building2, BookOpen, Smartphone, 
-  Mail, Newspaper, Gamepad2, Tv, MessageSquare,
-  Car, Bike, Monitor, GraduationCap, Shield,
-  TreePine, Wind, Factory
+  Users, Heart, Droplet, Zap, Leaf, Apple,
+  Globe, Building2, Users2, ArrowRight
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Index = () => {
   // World Population - increases by ~2.5 per second (80M per year)
@@ -17,378 +13,160 @@ const Index = () => {
     incrementPerSecond: 2.5
   });
 
-  // Births this year - ~385k per day = ~4.5 per second
-  const birthsYear = useRealtimeCounter({
-    initialValue: 104034856,
-    incrementPerSecond: 4.5
-  });
-
-  // Deaths this year - ~180k per day = ~2 per second
-  const deathsYear = useRealtimeCounter({
-    initialValue: 49021712,
-    incrementPerSecond: 2
-  });
-
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
       <header className="border-b border-border bg-card/50 backdrop-blur-xl sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <Globe className="w-8 h-8 text-primary" />
-            <h1 className="text-2xl font-bold gradient-text">WorldMetrics</h1>
+            <Globe className="w-6 h-6 md:w-8 md:h-8 text-primary" />
+            <h1 className="text-lg md:text-2xl font-bold gradient-text">WorldMetrics</h1>
           </div>
-          <p className="text-sm text-muted-foreground hidden md:block">
+          <p className="text-xs md:text-sm text-muted-foreground hidden md:block">
             Real-time global statistics
           </p>
         </div>
       </header>
 
       {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden">
+      <section className="relative py-12 md:py-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-primary/10 via-transparent to-transparent" />
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full mb-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 bg-primary/10 border border-primary/20 rounded-full mb-4 md:mb-6">
               <div className="w-2 h-2 bg-accent rounded-full animate-pulse" />
-              <span className="text-sm text-foreground">Live Statistics</span>
+              <span className="text-xs md:text-sm text-foreground">Live Statistics</span>
             </div>
             
-            <h2 className="text-5xl md:text-7xl font-bold mb-4 gradient-text">
+            <h2 className="text-3xl md:text-5xl lg:text-7xl font-bold mb-4 gradient-text">
               World Population
             </h2>
             
             <div className="relative inline-block">
               <Counter 
                 value={worldPopulation}
-                className="text-6xl md:text-8xl font-bold text-foreground counter-glow"
+                className="text-4xl md:text-6xl lg:text-8xl font-bold text-foreground counter-glow"
               />
               <div className="absolute -inset-4 bg-primary/20 blur-3xl -z-10 animate-pulse-glow rounded-full" />
             </div>
             
-            <p className="text-muted-foreground mt-6 text-lg">
+            <p className="text-muted-foreground mt-4 md:mt-6 text-sm md:text-lg">
               Updated with the 2024 United Nations Revision
             </p>
           </div>
         </div>
       </section>
 
-      {/* Main Content */}
-      <div className="container mx-auto px-4 pb-20">
-        {/* Population Stats */}
-        <CategorySection 
-          title="World Population" 
-          icon={<Users className="w-6 h-6" />}
-          color="hsl(var(--population))"
-        >
-          <StatCard
-            label="Births this year"
-            value={birthsYear}
-            icon={Heart}
-            color="hsl(var(--population))"
-            increment={4}
-          />
-          <StatCard
-            label="Deaths this year"
-            value={deathsYear}
-            icon={Heart}
-            color="hsl(var(--population))"
-            increment={2}
-          />
-          <StatCard
-            label="Net population growth"
-            value={birthsYear - deathsYear}
-            icon={TrendingUp}
-            color="hsl(var(--population))"
-            subtitle="this year"
-          />
-        </CategorySection>
+      {/* Category Navigation */}
+      <div className="container mx-auto px-4 pb-12 md:pb-20">
+        <div className="mb-6 md:mb-8">
+          <h2 className="text-2xl md:text-3xl font-bold mb-2">Explore Statistics</h2>
+          <p className="text-muted-foreground text-sm md:text-base">Click on any category to view detailed real-time data</p>
+        </div>
 
-        {/* Government & Economics */}
-        <CategorySection 
-          title="Government & Economics" 
-          icon={<Building2 className="w-6 h-6" />}
-          color="hsl(var(--government))"
-        >
-          <StatCard
-            label="Public Healthcare expenditure"
-            value={14791760477}
-            icon={Heart}
-            color="hsl(var(--government))"
-            subtitle="today"
-          />
-          <StatCard
-            label="Public Education expenditure"
-            value={9734091864}
-            icon={GraduationCap}
-            color="hsl(var(--government))"
-            subtitle="today"
-          />
-          <StatCard
-            label="Public Military expenditure"
-            value={3974900086}
-            icon={Shield}
-            color="hsl(var(--government))"
-            subtitle="today"
-          />
-          <StatCard
-            label="Cars produced"
-            value={70944491}
-            icon={Car}
-            color="hsl(var(--government))"
-            subtitle="this year"
-          />
-          <StatCard
-            label="Bicycles produced"
-            value={126205514}
-            icon={Bike}
-            color="hsl(var(--government))"
-            subtitle="this year"
-          />
-          <StatCard
-            label="Computers produced"
-            value={177507354}
-            icon={Monitor}
-            color="hsl(var(--government))"
-            subtitle="this year"
-          />
-        </CategorySection>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+          <Link to="/population" className="group">
+            <div className="p-6 md:p-8 rounded-2xl border border-border bg-card hover:bg-card/80 transition-all hover:border-[hsl(var(--population))] hover:shadow-xl hover:shadow-[hsl(var(--population))]/20 hover:-translate-y-1">
+              <Users className="h-10 w-10 md:h-12 md:w-12 mb-4 text-[hsl(var(--population))]" />
+              <h3 className="text-lg md:text-xl font-semibold mb-2">Population</h3>
+              <p className="text-sm text-muted-foreground mb-4">Births, deaths, and growth statistics</p>
+              <div className="flex items-center gap-2 text-primary group-hover:gap-3 transition-all">
+                <span className="text-sm font-medium">View details</span>
+                <ArrowRight className="h-4 w-4" />
+              </div>
+            </div>
+          </Link>
 
-        {/* Society & Media */}
-        <CategorySection 
-          title="Society & Media" 
-          icon={<Smartphone className="w-6 h-6" />}
-          color="hsl(var(--society))"
-        >
-          <StatCard
-            label="New book titles published"
-            value={2249573}
-            icon={BookOpen}
-            color="hsl(var(--society))"
-            subtitle="this year"
-          />
-          <StatCard
-            label="Newspapers circulated"
-            value={376356910}
-            icon={Newspaper}
-            color="hsl(var(--society))"
-            subtitle="today"
-          />
-          <StatCard
-            label="TV sets sold worldwide"
-            value={562729}
-            icon={Tv}
-            color="hsl(var(--society))"
-            subtitle="today"
-          />
-          <StatCard
-            label="Cellular phones sold"
-            value={6723362}
-            icon={Smartphone}
-            color="hsl(var(--society))"
-            subtitle="today"
-          />
-          <StatCard
-            label="Money spent on videogames"
-            value={282901452}
-            icon={Gamepad2}
-            color="hsl(var(--society))"
-            subtitle="today"
-          />
-          <StatCard
-            label="Internet users"
-            value={6868308227}
-            icon={Globe}
-            color="hsl(var(--society))"
-            subtitle="in the world today"
-          />
-          <StatCard
-            label="Emails sent"
-            value={267815852412}
-            icon={Mail}
-            color="hsl(var(--society))"
-            subtitle="today"
-          />
-          <StatCard
-            label="Blog posts written"
-            value={10493404}
-            icon={MessageSquare}
-            color="hsl(var(--society))"
-            subtitle="today"
-          />
-        </CategorySection>
+          <Link to="/government" className="group">
+            <div className="p-6 md:p-8 rounded-2xl border border-border bg-card hover:bg-card/80 transition-all hover:border-[hsl(var(--government))] hover:shadow-xl hover:shadow-[hsl(var(--government))]/20 hover:-translate-y-1">
+              <Building2 className="h-10 w-10 md:h-12 md:w-12 mb-4 text-[hsl(var(--government))]" />
+              <h3 className="text-lg md:text-xl font-semibold mb-2">Government</h3>
+              <p className="text-sm text-muted-foreground mb-4">Economics and production data</p>
+              <div className="flex items-center gap-2 text-primary group-hover:gap-3 transition-all">
+                <span className="text-sm font-medium">View details</span>
+                <ArrowRight className="h-4 w-4" />
+              </div>
+            </div>
+          </Link>
 
-        {/* Environment */}
-        <CategorySection 
-          title="Environment" 
-          icon={<Leaf className="w-6 h-6" />}
-          color="hsl(var(--environment))"
-        >
-          <StatCard
-            label="Forest loss"
-            value={2847950}
-            icon={TreePine}
-            color="hsl(var(--environment))"
-            subtitle="hectares this year"
-          />
-          <StatCard
-            label="CO₂ emissions"
-            value={18934567890}
-            icon={Wind}
-            color="hsl(var(--environment))"
-            subtitle="tons this year"
-          />
-          <StatCard
-            label="Toxic chemicals released"
-            value={4567234}
-            icon={Factory}
-            color="hsl(var(--environment))"
-            subtitle="tons this year"
-          />
-        </CategorySection>
+          <Link to="/society" className="group">
+            <div className="p-6 md:p-8 rounded-2xl border border-border bg-card hover:bg-card/80 transition-all hover:border-[hsl(var(--society))] hover:shadow-xl hover:shadow-[hsl(var(--society))]/20 hover:-translate-y-1">
+              <Users2 className="h-10 w-10 md:h-12 md:w-12 mb-4 text-[hsl(var(--society))]" />
+              <h3 className="text-lg md:text-xl font-semibold mb-2">Society</h3>
+              <p className="text-sm text-muted-foreground mb-4">Media and technology consumption</p>
+              <div className="flex items-center gap-2 text-primary group-hover:gap-3 transition-all">
+                <span className="text-sm font-medium">View details</span>
+                <ArrowRight className="h-4 w-4" />
+              </div>
+            </div>
+          </Link>
 
-        {/* Food */}
-        <CategorySection 
-          title="Food" 
-          icon={<Wheat className="w-6 h-6" />}
-          color="hsl(var(--food))"
-        >
-          <StatCard
-            label="Undernourished people"
-            value={828000000}
-            icon={Heart}
-            color="hsl(var(--food))"
-            subtitle="in the world"
-          />
-          <StatCard
-            label="Overweight people"
-            value={1900000000}
-            icon={Heart}
-            color="hsl(var(--food))"
-            subtitle="in the world"
-          />
-          <StatCard
-            label="Obese people"
-            value={764000000}
-            icon={Heart}
-            color="hsl(var(--food))"
-            subtitle="in the world"
-          />
-        </CategorySection>
+          <Link to="/environment" className="group">
+            <div className="p-6 md:p-8 rounded-2xl border border-border bg-card hover:bg-card/80 transition-all hover:border-[hsl(var(--environment))] hover:shadow-xl hover:shadow-[hsl(var(--environment))]/20 hover:-translate-y-1">
+              <Leaf className="h-10 w-10 md:h-12 md:w-12 mb-4 text-[hsl(var(--environment))]" />
+              <h3 className="text-lg md:text-xl font-semibold mb-2">Environment</h3>
+              <p className="text-sm text-muted-foreground mb-4">Climate and ecological impact</p>
+              <div className="flex items-center gap-2 text-primary group-hover:gap-3 transition-all">
+                <span className="text-sm font-medium">View details</span>
+                <ArrowRight className="h-4 w-4" />
+              </div>
+            </div>
+          </Link>
 
-        {/* Water */}
-        <CategorySection 
-          title="Water" 
-          icon={<Droplet className="w-6 h-6" />}
-          color="hsl(var(--water))"
-        >
-          <StatCard
-            label="Water used"
-            value={2847950234567}
-            icon={Droplet}
-            color="hsl(var(--water))"
-            subtitle="liters this year"
-          />
-          <StatCard
-            label="Deaths from water diseases"
-            value={456789}
-            icon={Heart}
-            color="hsl(var(--water))"
-            subtitle="this year"
-          />
-          <StatCard
-            label="People with no access to safe water"
-            value={771000000}
-            icon={Droplet}
-            color="hsl(var(--water))"
-            subtitle="in the world"
-          />
-        </CategorySection>
+          <Link to="/food" className="group">
+            <div className="p-6 md:p-8 rounded-2xl border border-border bg-card hover:bg-card/80 transition-all hover:border-[hsl(var(--food))] hover:shadow-xl hover:shadow-[hsl(var(--food))]/20 hover:-translate-y-1">
+              <Apple className="h-10 w-10 md:h-12 md:w-12 mb-4 text-[hsl(var(--food))]" />
+              <h3 className="text-lg md:text-xl font-semibold mb-2">Food</h3>
+              <p className="text-sm text-muted-foreground mb-4">Nutrition and food security</p>
+              <div className="flex items-center gap-2 text-primary group-hover:gap-3 transition-all">
+                <span className="text-sm font-medium">View details</span>
+                <ArrowRight className="h-4 w-4" />
+              </div>
+            </div>
+          </Link>
 
-        {/* Energy */}
-        <CategorySection 
-          title="Energy" 
-          icon={<Zap className="w-6 h-6" />}
-          color="hsl(var(--energy))"
-        >
-          <StatCard
-            label="Energy used today"
-            value={234567890123}
-            icon={Zap}
-            color="hsl(var(--energy))"
-            subtitle="MWh"
-          />
-          <StatCard
-            label="Non-renewable sources"
-            value={189234567890}
-            icon={Factory}
-            color="hsl(var(--energy))"
-            subtitle="MWh"
-          />
-          <StatCard
-            label="Renewable sources"
-            value={45333322233}
-            icon={Wind}
-            color="hsl(var(--energy))"
-            subtitle="MWh"
-          />
-        </CategorySection>
+          <Link to="/water" className="group">
+            <div className="p-6 md:p-8 rounded-2xl border border-border bg-card hover:bg-card/80 transition-all hover:border-[hsl(var(--water))] hover:shadow-xl hover:shadow-[hsl(var(--water))]/20 hover:-translate-y-1">
+              <Droplet className="h-10 w-10 md:h-12 md:w-12 mb-4 text-[hsl(var(--water))]" />
+              <h3 className="text-lg md:text-xl font-semibold mb-2">Water</h3>
+              <p className="text-sm text-muted-foreground mb-4">Usage and access statistics</p>
+              <div className="flex items-center gap-2 text-primary group-hover:gap-3 transition-all">
+                <span className="text-sm font-medium">View details</span>
+                <ArrowRight className="h-4 w-4" />
+              </div>
+            </div>
+          </Link>
 
-        {/* Health */}
-        <CategorySection 
-          title="Health" 
-          icon={<Heart className="w-6 h-6" />}
-          color="hsl(var(--health))"
-        >
-          <StatCard
-            label="Deaths from infectious diseases"
-            value={8234567}
-            icon={Heart}
-            color="hsl(var(--health))"
-            subtitle="this year"
-          />
-          <StatCard
-            label="Deaths from cancer"
-            value={5123456}
-            icon={Heart}
-            color="hsl(var(--health))"
-            subtitle="this year"
-          />
-          <StatCard
-            label="Deaths from smoking"
-            value={3234567}
-            icon={Heart}
-            color="hsl(var(--health))"
-            subtitle="this year"
-          />
-          <StatCard
-            label="Deaths from alcohol"
-            value={1634567}
-            icon={Heart}
-            color="hsl(var(--health))"
-            subtitle="this year"
-          />
-          <StatCard
-            label="Road traffic deaths"
-            value={834567}
-            icon={Car}
-            color="hsl(var(--health))"
-            subtitle="this year"
-          />
-          <StatCard
-            label="Money spent on healthcare"
-            value={5678901234567}
-            icon={Heart}
-            color="hsl(var(--health))"
-            subtitle="USD this year"
-          />
-        </CategorySection>
+          <Link to="/energy" className="group">
+            <div className="p-6 md:p-8 rounded-2xl border border-border bg-card hover:bg-card/80 transition-all hover:border-[hsl(var(--energy))] hover:shadow-xl hover:shadow-[hsl(var(--energy))]/20 hover:-translate-y-1">
+              <Zap className="h-10 w-10 md:h-12 md:w-12 mb-4 text-[hsl(var(--energy))]" />
+              <h3 className="text-lg md:text-xl font-semibold mb-2">Energy</h3>
+              <p className="text-sm text-muted-foreground mb-4">Power consumption worldwide</p>
+              <div className="flex items-center gap-2 text-primary group-hover:gap-3 transition-all">
+                <span className="text-sm font-medium">View details</span>
+                <ArrowRight className="h-4 w-4" />
+              </div>
+            </div>
+          </Link>
+
+          <Link to="/health" className="group">
+            <div className="p-6 md:p-8 rounded-2xl border border-border bg-card hover:bg-card/80 transition-all hover:border-[hsl(var(--health))] hover:shadow-xl hover:shadow-[hsl(var(--health))]/20 hover:-translate-y-1">
+              <Heart className="h-10 w-10 md:h-12 md:w-12 mb-4 text-[hsl(var(--health))]" />
+              <h3 className="text-lg md:text-xl font-semibold mb-2">Health</h3>
+              <p className="text-sm text-muted-foreground mb-4">Healthcare and mortality data</p>
+              <div className="flex items-center gap-2 text-primary group-hover:gap-3 transition-all">
+                <span className="text-sm font-medium">View details</span>
+                <ArrowRight className="h-4 w-4" />
+              </div>
+            </div>
+          </Link>
+        </div>
       </div>
 
       {/* Footer */}
-      <footer className="border-t border-border bg-card/50 backdrop-blur-xl py-8">
+      <footer className="border-t border-border bg-card/50 backdrop-blur-xl py-6 md:py-8">
         <div className="container mx-auto px-4 text-center">
-          <p className="text-sm text-muted-foreground">
+          <p className="text-xs md:text-sm text-muted-foreground">
             Data sources: United Nations, World Health Organization, International Energy Agency, and more
           </p>
           <p className="text-xs text-muted-foreground mt-2">
