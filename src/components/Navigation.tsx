@@ -1,13 +1,11 @@
-import { Menu } from "lucide-react";
+import { Menu, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
 import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu";
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo.png";
@@ -35,30 +33,26 @@ export const Navigation = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-6">
-          <NavigationMenu>
-              <NavigationMenuList>
-                <NavigationMenuItem>
-                  <NavigationMenuTrigger>More Statistics</NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <ul className="w-[240px] p-3 bg-popover border border-border rounded-lg shadow-lg z-50">
-                      {additionalPages.map((page) => (
-                        <li key={page.path}>
-                          <NavigationMenuLink asChild>
-                            <Link
-                              to={page.path}
-                              className="block px-4 py-3 text-sm rounded-md hover:bg-accent hover:text-accent-foreground transition-colors"
-                            >
-                              <div className="font-medium">{page.name}</div>
-                              <div className="text-xs text-muted-foreground mt-1">{page.description}</div>
-                            </Link>
-                          </NavigationMenuLink>
-                        </li>
-                      ))}
-                    </ul>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
-              </NavigationMenuList>
-            </NavigationMenu>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="outline" className="gap-2">
+                  More Statistics
+                  <ChevronDown className="h-4 w-4" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-[280px] bg-popover border border-border shadow-lg z-50">
+                {additionalPages.map((page) => (
+                  <DropdownMenuItem key={page.path} asChild>
+                    <Link to={page.path} className="cursor-pointer">
+                      <div className="flex flex-col gap-1">
+                        <div className="font-medium">{page.name}</div>
+                        <div className="text-xs text-muted-foreground">{page.description}</div>
+                      </div>
+                    </Link>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
             <p className="text-sm text-muted-foreground">Real-time global statistics</p>
           </div>
 
