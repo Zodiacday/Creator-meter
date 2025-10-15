@@ -22,92 +22,129 @@ serve(async (req) => {
       });
     }
 
+    // Real-time population calculation
+    const baseYear = 2025;
+    const basePopulation = 8186152839;
+    const growthPerYear = 73000000; // approximate annual growth
+    const growthPerSecond = growthPerYear / (365.25 * 24 * 60 * 60);
+    
+    const startOfYear = new Date(baseYear, 0, 1).getTime();
+    const now = Date.now();
+    const secondsSinceYearStart = (now - startOfYear) / 1000;
+    const currentPopulation = Math.floor(basePopulation + (growthPerSecond * secondsSinceYearStart));
+
     // Return global population rankings
     const data = {
-      worldPopulation: 8186152839,
+      worldPopulation: currentPopulation,
+      populationGrowthPerSecond: growthPerSecond,
       topCountries: [
         {
           rank: 1,
           country: "India",
           population: 1441719852,
-          region: "Asia",
-          area: 3287263,
-          density: 438
+          percentage: 17.6,
+          growthRate: 0.81
         },
         {
           rank: 2,
           country: "China",
           population: 1425893465,
-          region: "Asia",
-          area: 9596961,
-          density: 149
+          percentage: 17.4,
+          growthRate: -0.23
         },
         {
           rank: 3,
           country: "United States",
           population: 343092469,
-          region: "North America",
-          area: 9833517,
-          density: 35
+          percentage: 4.2,
+          growthRate: 0.50
         },
         {
           rank: 4,
           country: "Indonesia",
           population: 279476346,
-          region: "Asia",
-          area: 1904569,
-          density: 147
+          percentage: 3.4,
+          growthRate: 0.87
         },
         {
           rank: 5,
           country: "Pakistan",
           population: 235824862,
-          region: "Asia",
-          area: 881912,
-          density: 267
+          percentage: 2.9,
+          growthRate: 1.91
         },
         {
           rank: 6,
           country: "Nigeria",
           population: 223804632,
-          region: "Africa",
-          area: 923768,
-          density: 242
+          percentage: 2.7,
+          growthRate: 2.41
         },
         {
           rank: 7,
           country: "Brazil",
           population: 216422446,
-          region: "South America",
-          area: 8515767,
-          density: 25
+          percentage: 2.6,
+          growthRate: 0.68
         },
         {
           rank: 8,
           country: "Bangladesh",
           population: 172954319,
-          region: "Asia",
-          area: 147570,
-          density: 1172
+          percentage: 2.1,
+          growthRate: 0.98
         },
         {
           rank: 9,
           country: "Russia",
           population: 144444359,
-          region: "Europe/Asia",
-          area: 17098242,
-          density: 8
+          percentage: 1.8,
+          growthRate: -0.19
         },
         {
           rank: 10,
           country: "Mexico",
           population: 128455567,
-          region: "North America",
-          area: 1964375,
-          density: 65
+          percentage: 1.6,
+          growthRate: 0.75
+        },
+        {
+          rank: 11,
+          country: "Ethiopia",
+          population: 126527060,
+          percentage: 1.5,
+          growthRate: 2.55
+        },
+        {
+          rank: 12,
+          country: "Japan",
+          population: 123294513,
+          percentage: 1.5,
+          growthRate: -0.53
+        },
+        {
+          rank: 13,
+          country: "Philippines",
+          population: 117337368,
+          percentage: 1.4,
+          growthRate: 1.54
+        },
+        {
+          rank: 14,
+          country: "Egypt",
+          population: 112716598,
+          percentage: 1.4,
+          growthRate: 1.56
+        },
+        {
+          rank: 15,
+          country: "Vietnam",
+          population: 98858950,
+          percentage: 1.2,
+          growthRate: 0.68
         }
       ],
-      regionalBreakdown: {
+      regionalPopulation: {
         "Asia": 4753079726,
         "Africa": 1489891325,
         "Europe": 742272442,
@@ -115,6 +152,15 @@ serve(async (req) => {
         "South America": 439719009,
         "Oceania": 46608320
       },
+      historical: [
+        { year: 1970, population: 3700437046 },
+        { year: 1980, population: 4458003514 },
+        { year: 1990, population: 5327231061 },
+        { year: 2000, population: 6143493823 },
+        { year: 2010, population: 6956823603 },
+        { year: 2020, population: 7840952880 },
+        { year: 2025, population: currentPopulation }
+      ],
       sources: ["UN", "World Bank", "Worldometer"],
       lastUpdated: new Date().toISOString()
     };
