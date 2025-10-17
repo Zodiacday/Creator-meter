@@ -1,59 +1,256 @@
-import { Leaf, ArrowLeft } from "lucide-react";
-import { Link } from "react-router-dom";
-import { CategorySection } from "@/components/CategorySection";
+import { Navigation } from "@/components/Navigation";
+import { Leaf, Trees, Cloud, FlaskConical, TrendingUp, AlertTriangle, ThermometerSun } from "lucide-react";
+import { Counter } from "@/components/Counter";
 import { StatCard } from "@/components/StatCard";
+import { ChartCard } from "@/components/ChartCard";
 import { useRealtimeCounter } from "@/hooks/useRealtimeCounter";
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar, PieChart, Pie, Cell, AreaChart, Area } from "recharts";
 
 const EnvironmentPage = () => {
   const forestLoss = useRealtimeCounter({ initialValue: 10000000, incrementPerSecond: 0.32 });
   const co2Emissions = useRealtimeCounter({ initialValue: 38000000000, incrementPerSecond: 1205 });
   const toxicChemicals = useRealtimeCounter({ initialValue: 16000000, incrementPerSecond: 0.51 });
 
+  // Deforestation by region (million hectares)
+  const deforestationData = [
+    { region: "Latin America", loss: 4.2 },
+    { region: "Africa", loss: 3.9 },
+    { region: "Southeast Asia", loss: 1.4 },
+    { region: "Oceania", loss: 0.5 },
+  ];
+
+  // Greenhouse gases distribution
+  const ghgData = [
+    { name: "CO₂", value: 76, color: "#ef4444" },
+    { name: "Methane", value: 16, color: "#f97316" },
+    { name: "Nitrous Oxide", value: 6, color: "#eab308" },
+    { name: "Fluorinated", value: 2, color: "#06b6d4" },
+  ];
+
+  // Global temperature increase
+  const tempData = [
+    { year: 1880, temp: -0.16 },
+    { year: 1900, temp: -0.08 },
+    { year: 1920, temp: -0.27 },
+    { year: 1940, temp: 0.13 },
+    { year: 1960, temp: -0.03 },
+    { year: 1980, temp: 0.26 },
+    { year: 2000, temp: 0.61 },
+    { year: 2020, temp: 1.02 },
+    { year: 2024, temp: 1.18 },
+  ];
+
+  // Plastic pollution by type
+  const plasticData = [
+    { type: "Single-use", amount: 160 },
+    { type: "Microplastics", amount: 52 },
+    { type: "Fishing Gear", amount: 18 },
+    { type: "Industrial", amount: 42 },
+    { type: "Other", amount: 28 },
+  ];
+
+  // Biodiversity loss
+  const speciesData = [
+    { name: "Critically Endangered", value: 9126, color: "#dc2626" },
+    { name: "Endangered", value: 16306, color: "#f97316" },
+    { name: "Vulnerable", value: 12823, color: "#eab308" },
+  ];
+
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container flex h-14 items-center px-4">
-          <Link to="/" className="flex items-center gap-2 text-sm hover:text-primary transition-colors">
-            <ArrowLeft className="h-4 w-4" />
-            Back to Home
-          </Link>
-        </div>
-      </header>
+      <Navigation />
 
       <main className="container px-4 py-8 md:py-12">
-        <div className="max-w-6xl mx-auto">
-          <div className="mb-8 md:mb-12 animate-fade-in">
-            <h1 className="text-3xl md:text-5xl font-bold mb-4 gradient-text">Environment</h1>
-            <p className="text-muted-foreground text-sm md:text-base">Environmental impact and climate change indicators</p>
+        <div className="max-w-7xl mx-auto">
+          <div className="flex items-center gap-4 mb-8 animate-fade-in">
+            <div className="p-4 rounded-xl bg-[hsl(var(--environment))]/20">
+              <Leaf className="w-8 h-8 text-[hsl(var(--environment))]" />
+            </div>
+            <div>
+              <h1 className="text-4xl font-bold gradient-text">Environment</h1>
+              <p className="text-muted-foreground mt-2">Environmental impact, climate change, and biodiversity indicators</p>
+            </div>
           </div>
 
-          <CategorySection
-            title="Environment"
-            icon={<Leaf className="w-6 h-6" />}
-            color="hsl(var(--environment))"
-          >
-            <StatCard
-              icon={Leaf}
-              label="Forest loss (hectares)"
-              value={forestLoss}
-              color="hsl(var(--environment))"
-              increment={0}
+          {/* Main Counters */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            <div className="relative text-center py-10 bg-gradient-to-br from-green-500/10 to-transparent rounded-3xl border border-border animate-fade-in">
+              <Trees className="w-8 h-8 mx-auto mb-2 text-green-600" />
+              <p className="text-sm text-muted-foreground mb-2">Forest Loss This Year</p>
+              <Counter value={forestLoss} className="text-4xl md:text-5xl font-bold text-foreground counter-glow" />
+              <p className="text-xs text-muted-foreground mt-2">hectares</p>
+            </div>
+
+            <div className="relative text-center py-10 bg-gradient-to-br from-red-500/10 to-transparent rounded-3xl border border-border animate-fade-in">
+              <Cloud className="w-8 h-8 mx-auto mb-2 text-red-500" />
+              <p className="text-sm text-muted-foreground mb-2">CO₂ Emissions This Year</p>
+              <Counter value={co2Emissions} className="text-4xl md:text-5xl font-bold text-foreground counter-glow" />
+              <p className="text-xs text-muted-foreground mt-2">metric tons</p>
+            </div>
+
+            <div className="relative text-center py-10 bg-gradient-to-br from-purple-500/10 to-transparent rounded-3xl border border-border animate-fade-in">
+              <FlaskConical className="w-8 h-8 mx-auto mb-2 text-purple-500" />
+              <p className="text-sm text-muted-foreground mb-2">Toxic Chemicals Released</p>
+              <Counter value={toxicChemicals} className="text-4xl md:text-5xl font-bold text-foreground counter-glow" />
+              <p className="text-xs text-muted-foreground mt-2">tons this year</p>
+            </div>
+          </div>
+
+          {/* Key Stats */}
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
+            <StatCard 
+              label="Global Temperature Rise" 
+              value={1.18} 
+              icon={ThermometerSun} 
+              color="hsl(var(--destructive))"
+              subtitle="°C since 1880"
             />
-            <StatCard
-              icon={Leaf}
-              label="CO2 emissions (tons)"
-              value={co2Emissions}
-              color="hsl(var(--environment))"
-              increment={1205}
+            <StatCard 
+              label="Species Threatened" 
+              value={38255} 
+              icon={AlertTriangle} 
+              color="hsl(var(--chart-4))"
+              subtitle="IUCN Red List"
             />
-            <StatCard
-              icon={Leaf}
-              label="Toxic chemicals released (tons)"
-              value={toxicChemicals}
-              color="hsl(var(--environment))"
-              increment={1}
+            <StatCard 
+              label="Plastic in Oceans" 
+              value={300} 
+              icon={FlaskConical} 
+              color="hsl(var(--chart-5))"
+              subtitle="million tons"
             />
-          </CategorySection>
+            <StatCard 
+              label="Renewable Energy" 
+              value={29} 
+              icon={Leaf} 
+              color="hsl(var(--chart-3))"
+              subtitle="% of total energy"
+            />
+          </div>
+
+          {/* Charts */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-12">
+            <ChartCard title="Deforestation by Region (Million Hectares/Year)" icon={Trees} color="hsl(var(--environment))">
+              <ResponsiveContainer width="100%" height={300}>
+                <BarChart data={deforestationData}>
+                  <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
+                  <XAxis dataKey="region" stroke="hsl(var(--muted-foreground))" fontSize={11} />
+                  <YAxis stroke="hsl(var(--muted-foreground))" fontSize={12} />
+                  <Tooltip 
+                    contentStyle={{ 
+                      backgroundColor: 'hsl(var(--popover))', 
+                      border: '1px solid hsl(var(--border))',
+                      borderRadius: '8px'
+                    }}
+                  />
+                  <Bar dataKey="loss" fill="hsl(var(--environment))" radius={[8, 8, 0, 0]} />
+                </BarChart>
+              </ResponsiveContainer>
+            </ChartCard>
+
+            <ChartCard title="Greenhouse Gas Emissions (%)" icon={Cloud} color="hsl(var(--destructive))">
+              <ResponsiveContainer width="100%" height={300}>
+                <PieChart>
+                  <Pie
+                    data={ghgData}
+                    cx="50%"
+                    cy="50%"
+                    labelLine={false}
+                    label={({ name, value }) => `${name}: ${value}%`}
+                    outerRadius={100}
+                    fill="#8884d8"
+                    dataKey="value"
+                  >
+                    {ghgData.map((entry, index) => (
+                      <Cell key={`cell-${index}`} fill={entry.color} />
+                    ))}
+                  </Pie>
+                  <Tooltip 
+                    contentStyle={{ 
+                      backgroundColor: 'hsl(var(--popover))', 
+                      border: '1px solid hsl(var(--border))',
+                      borderRadius: '8px'
+                    }}
+                  />
+                </PieChart>
+              </ResponsiveContainer>
+            </ChartCard>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-12">
+            <ChartCard title="Global Temperature Anomaly (°C)" icon={ThermometerSun} color="hsl(var(--destructive))">
+              <ResponsiveContainer width="100%" height={300}>
+                <AreaChart data={tempData}>
+                  <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
+                  <XAxis dataKey="year" stroke="hsl(var(--muted-foreground))" fontSize={12} />
+                  <YAxis stroke="hsl(var(--muted-foreground))" fontSize={12} />
+                  <Tooltip 
+                    contentStyle={{ 
+                      backgroundColor: 'hsl(var(--popover))', 
+                      border: '1px solid hsl(var(--border))',
+                      borderRadius: '8px'
+                    }}
+                  />
+                  <Area 
+                    type="monotone" 
+                    dataKey="temp" 
+                    stroke="hsl(var(--destructive))" 
+                    fill="hsl(var(--destructive))"
+                    fillOpacity={0.3}
+                    strokeWidth={3}
+                  />
+                </AreaChart>
+              </ResponsiveContainer>
+            </ChartCard>
+
+            <ChartCard title="Ocean Plastic Pollution (Million Tons)" icon={FlaskConical} color="hsl(var(--chart-5))">
+              <ResponsiveContainer width="100%" height={300}>
+                <BarChart data={plasticData}>
+                  <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
+                  <XAxis dataKey="type" stroke="hsl(var(--muted-foreground))" fontSize={11} />
+                  <YAxis stroke="hsl(var(--muted-foreground))" fontSize={12} />
+                  <Tooltip 
+                    contentStyle={{ 
+                      backgroundColor: 'hsl(var(--popover))', 
+                      border: '1px solid hsl(var(--border))',
+                      borderRadius: '8px'
+                    }}
+                  />
+                  <Bar dataKey="amount" fill="hsl(var(--chart-5))" radius={[8, 8, 0, 0]} />
+                </BarChart>
+              </ResponsiveContainer>
+            </ChartCard>
+          </div>
+
+          {/* Biodiversity Loss */}
+          <ChartCard title="Threatened Species (IUCN Red List)" icon={AlertTriangle} color="hsl(var(--chart-4))">
+            <div className="space-y-6">
+              {speciesData.map((category, index) => (
+                <div key={category.name} className="animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
+                  <div className="flex justify-between items-center mb-2">
+                    <span className="font-medium">{category.name}</span>
+                    <span className="text-sm text-muted-foreground">{category.value.toLocaleString()} species</span>
+                  </div>
+                  <div className="h-3 bg-muted rounded-full overflow-hidden">
+                    <div 
+                      className="h-full transition-all duration-1000"
+                      style={{ 
+                        width: `${(category.value / 38255) * 100}%`,
+                        backgroundColor: category.color
+                      }}
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </ChartCard>
+
+          {/* Data Sources */}
+          <div className="mt-12 p-6 bg-card border border-border rounded-xl">
+            <p className="text-sm text-muted-foreground">
+              <strong>Data Sources:</strong> IPCC, NASA, NOAA, FAO Global Forest Resources Assessment, IUCN Red List, Global Carbon Project, UN Environment Programme
+            </p>
+          </div>
         </div>
       </main>
     </div>

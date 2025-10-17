@@ -1,8 +1,10 @@
-import { Users2, ArrowLeft } from "lucide-react";
-import { Link } from "react-router-dom";
-import { CategorySection } from "@/components/CategorySection";
+import { Navigation } from "@/components/Navigation";
+import { Users2, BookOpen, Newspaper, Smartphone, Wifi, Mail, Tv, Gamepad2 } from "lucide-react";
+import { Counter } from "@/components/Counter";
 import { StatCard } from "@/components/StatCard";
+import { ChartCard } from "@/components/ChartCard";
 import { useRealtimeCounter } from "@/hooks/useRealtimeCounter";
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar, PieChart, Pie, Cell, AreaChart, Area } from "recharts";
 
 const SocietyPage = () => {
   const booksPublished = useRealtimeCounter({ initialValue: 2200000, incrementPerSecond: 0.07 });
@@ -14,86 +16,258 @@ const SocietyPage = () => {
   const emailsSent = useRealtimeCounter({ initialValue: 333000000000000, incrementPerSecond: 10558659 });
   const blogPosts = useRealtimeCounter({ initialValue: 6000000000, incrementPerSecond: 190.26 });
 
+  // Internet adoption by region (%)
+  const internetData = [
+    { region: "North America", penetration: 90 },
+    { region: "Europe", penetration: 87 },
+    { region: "Latin America", penetration: 68 },
+    { region: "Middle East", penetration: 70 },
+    { region: "Asia", penetration: 62 },
+    { region: "Africa", penetration: 33 },
+  ];
+
+  // Social media users by platform (billions)
+  const socialMediaData = [
+    { name: "Facebook", value: 3.0, color: "#3b5998" },
+    { name: "YouTube", value: 2.7, color: "#FF0000" },
+    { name: "WhatsApp", value: 2.5, color: "#25D366" },
+    { name: "Instagram", value: 2.0, color: "#E4405F" },
+    { name: "TikTok", value: 1.5, color: "#000000" },
+    { name: "Twitter/X", value: 0.6, color: "#1DA1F2" },
+  ];
+
+  // Digital content consumption (hours per day)
+  const consumptionData = [
+    { activity: "Social Media", hours: 2.3 },
+    { activity: "Streaming Video", hours: 3.1 },
+    { activity: "Gaming", hours: 1.6 },
+    { activity: "News", hours: 0.8 },
+    { activity: "Music", hours: 1.4 },
+  ];
+
+  // Mobile vs desktop usage
+  const deviceData = [
+    { name: "Mobile", value: 58, color: "hsl(var(--chart-1))" },
+    { name: "Desktop", value: 39, color: "hsl(var(--chart-2))" },
+    { name: "Tablet", value: 3, color: "hsl(var(--chart-3))" },
+  ];
+
+  // Internet traffic growth (exabytes per month)
+  const trafficData = [
+    { year: 2010, traffic: 21 },
+    { year: 2012, traffic: 44 },
+    { year: 2014, traffic: 60 },
+    { year: 2016, traffic: 96 },
+    { year: 2018, traffic: 131 },
+    { year: 2020, traffic: 200 },
+    { year: 2022, traffic: 278 },
+    { year: 2024, traffic: 348 },
+  ];
+
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container flex h-14 items-center px-4">
-          <Link to="/" className="flex items-center gap-2 text-sm hover:text-primary transition-colors">
-            <ArrowLeft className="h-4 w-4" />
-            Back to Home
-          </Link>
-        </div>
-      </header>
+      <Navigation />
 
       <main className="container px-4 py-8 md:py-12">
-        <div className="max-w-6xl mx-auto">
-          <div className="mb-8 md:mb-12 animate-fade-in">
-            <h1 className="text-3xl md:text-5xl font-bold mb-4 gradient-text">Society & Media</h1>
-            <p className="text-muted-foreground text-sm md:text-base">Digital and traditional media consumption worldwide</p>
+        <div className="max-w-7xl mx-auto">
+          <div className="flex items-center gap-4 mb-8 animate-fade-in">
+            <div className="p-4 rounded-xl bg-[hsl(var(--society))]/20">
+              <Users2 className="w-8 h-8 text-[hsl(var(--society))]" />
+            </div>
+            <div>
+              <h1 className="text-4xl font-bold gradient-text">Society & Media</h1>
+              <p className="text-muted-foreground mt-2">Digital and traditional media consumption worldwide</p>
+            </div>
           </div>
 
-          <CategorySection
-            title="Society & Media"
-            icon={<Users2 className="w-6 h-6" />}
-            color="hsl(var(--society))"
-          >
-            <StatCard
-              icon={Users2}
-              label="New book titles published"
-              value={booksPublished}
+          {/* Main Counter */}
+          <div className="relative mb-12 text-center py-12 bg-gradient-to-br from-[hsl(var(--society))]/10 to-transparent rounded-3xl border border-border animate-fade-in">
+            <Wifi className="w-8 h-8 mx-auto mb-2 text-[hsl(var(--society))]" />
+            <p className="text-sm text-muted-foreground mb-2">Internet Users Worldwide</p>
+            <Counter value={internetUsers} className="text-5xl md:text-7xl font-bold text-foreground counter-glow" />
+            <p className="text-sm text-muted-foreground mt-2">67% of world population</p>
+            <div className="absolute -inset-4 bg-[hsl(var(--society))]/20 blur-3xl -z-10 animate-pulse-glow rounded-full" />
+          </div>
+
+          {/* Real-time Counters Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            <StatCard 
+              label="Books Published This Year" 
+              value={booksPublished} 
+              icon={BookOpen} 
               color="hsl(var(--society))"
-              increment={0}
             />
-            <StatCard
-              icon={Users2}
-              label="Newspapers circulated"
-              value={newspapersCirculated}
+            <StatCard 
+              label="Mobile Phones Sold" 
+              value={mobilePhonesSold} 
+              icon={Smartphone} 
+              color="hsl(var(--chart-2))"
+              subtitle="this year"
+            />
+            <StatCard 
+              label="Emails Sent Today" 
+              value={emailsSent} 
+              icon={Mail} 
+              color="hsl(var(--chart-3))"
+            />
+            <StatCard 
+              label="Video Games Sold" 
+              value={videogamesSold} 
+              icon={Gamepad2} 
+              color="hsl(var(--chart-4))"
+              subtitle="this year"
+            />
+          </div>
+
+          {/* Additional Stats */}
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
+            <StatCard 
+              label="TV Sets Sold" 
+              value={tvsSold} 
+              icon={Tv} 
               color="hsl(var(--society))"
-              increment={14462}
+              subtitle="this year"
             />
-            <StatCard
-              icon={Users2}
-              label="TV sets sold"
-              value={tvsSold}
-              color="hsl(var(--society))"
-              increment={9}
+            <StatCard 
+              label="Newspapers Circulated" 
+              value={newspapersCirculated} 
+              icon={Newspaper} 
+              color="hsl(var(--chart-5))"
+              subtitle="this year"
             />
-            <StatCard
-              icon={Users2}
-              label="Mobile phones sold"
-              value={mobilePhonesSold}
-              color="hsl(var(--society))"
-              increment={48}
+            <StatCard 
+              label="Blog Posts Today" 
+              value={blogPosts} 
+              icon={BookOpen} 
+              color="hsl(var(--chart-1))"
             />
-            <StatCard
-              icon={Users2}
-              label="Video games sold"
-              value={videogamesSold}
-              color="hsl(var(--society))"
-              increment={12}
+            <StatCard 
+              label="Global Literacy Rate" 
+              value={87} 
+              icon={BookOpen} 
+              color="hsl(var(--chart-3))"
+              subtitle="% of population"
             />
-            <StatCard
-              icon={Users2}
-              label="Internet users"
-              value={internetUsers}
-              color="hsl(var(--society))"
-              increment={168}
-            />
-            <StatCard
-              icon={Users2}
-              label="Emails sent"
-              value={emailsSent}
-              color="hsl(var(--society))"
-              increment={10558659}
-            />
-            <StatCard
-              icon={Users2}
-              label="Blog posts written"
-              value={blogPosts}
-              color="hsl(var(--society))"
-              increment={190}
-            />
-          </CategorySection>
+          </div>
+
+          {/* Charts */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-12">
+            <ChartCard title="Internet Penetration by Region (%)" icon={Wifi} color="hsl(var(--society))">
+              <ResponsiveContainer width="100%" height={300}>
+                <BarChart data={internetData}>
+                  <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
+                  <XAxis dataKey="region" stroke="hsl(var(--muted-foreground))" fontSize={11} angle={-15} textAnchor="end" height={70} />
+                  <YAxis stroke="hsl(var(--muted-foreground))" fontSize={12} />
+                  <Tooltip 
+                    contentStyle={{ 
+                      backgroundColor: 'hsl(var(--popover))', 
+                      border: '1px solid hsl(var(--border))',
+                      borderRadius: '8px'
+                    }}
+                  />
+                  <Bar dataKey="penetration" fill="hsl(var(--society))" radius={[8, 8, 0, 0]} />
+                </BarChart>
+              </ResponsiveContainer>
+            </ChartCard>
+
+            <ChartCard title="Social Media Users (Billions)" icon={Users2} color="hsl(var(--chart-2))">
+              <ResponsiveContainer width="100%" height={300}>
+                <BarChart data={socialMediaData}>
+                  <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
+                  <XAxis dataKey="name" stroke="hsl(var(--muted-foreground))" fontSize={11} />
+                  <YAxis stroke="hsl(var(--muted-foreground))" fontSize={12} />
+                  <Tooltip 
+                    contentStyle={{ 
+                      backgroundColor: 'hsl(var(--popover))', 
+                      border: '1px solid hsl(var(--border))',
+                      borderRadius: '8px'
+                    }}
+                  />
+                  <Bar dataKey="value" fill="hsl(var(--chart-2))" radius={[8, 8, 0, 0]} />
+                </BarChart>
+              </ResponsiveContainer>
+            </ChartCard>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-12">
+            <ChartCard title="Daily Digital Content Consumption (Hours)" icon={Smartphone} color="hsl(var(--chart-3))">
+              <ResponsiveContainer width="100%" height={300}>
+                <BarChart data={consumptionData} layout="horizontal">
+                  <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
+                  <XAxis dataKey="activity" stroke="hsl(var(--muted-foreground))" fontSize={11} />
+                  <YAxis stroke="hsl(var(--muted-foreground))" fontSize={12} />
+                  <Tooltip 
+                    contentStyle={{ 
+                      backgroundColor: 'hsl(var(--popover))', 
+                      border: '1px solid hsl(var(--border))',
+                      borderRadius: '8px'
+                    }}
+                  />
+                  <Bar dataKey="hours" fill="hsl(var(--chart-3))" radius={[8, 8, 0, 0]} />
+                </BarChart>
+              </ResponsiveContainer>
+            </ChartCard>
+
+            <ChartCard title="Device Usage Distribution (%)" icon={Smartphone} color="hsl(var(--chart-4))">
+              <ResponsiveContainer width="100%" height={300}>
+                <PieChart>
+                  <Pie
+                    data={deviceData}
+                    cx="50%"
+                    cy="50%"
+                    labelLine={false}
+                    label={({ name, value }) => `${name}: ${value}%`}
+                    outerRadius={100}
+                    fill="#8884d8"
+                    dataKey="value"
+                  >
+                    {deviceData.map((entry, index) => (
+                      <Cell key={`cell-${index}`} fill={entry.color} />
+                    ))}
+                  </Pie>
+                  <Tooltip 
+                    contentStyle={{ 
+                      backgroundColor: 'hsl(var(--popover))', 
+                      border: '1px solid hsl(var(--border))',
+                      borderRadius: '8px'
+                    }}
+                  />
+                </PieChart>
+              </ResponsiveContainer>
+            </ChartCard>
+          </div>
+
+          <ChartCard title="Global Internet Traffic Growth (Exabytes/Month)" icon={Wifi} color="hsl(var(--society))">
+            <ResponsiveContainer width="100%" height={300}>
+              <AreaChart data={trafficData}>
+                <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
+                <XAxis dataKey="year" stroke="hsl(var(--muted-foreground))" fontSize={12} />
+                <YAxis stroke="hsl(var(--muted-foreground))" fontSize={12} />
+                <Tooltip 
+                  contentStyle={{ 
+                    backgroundColor: 'hsl(var(--popover))', 
+                    border: '1px solid hsl(var(--border))',
+                    borderRadius: '8px'
+                  }}
+                />
+                <Area 
+                  type="monotone" 
+                  dataKey="traffic" 
+                  stroke="hsl(var(--society))" 
+                  fill="hsl(var(--society))"
+                  fillOpacity={0.3}
+                  strokeWidth={3}
+                />
+              </AreaChart>
+            </ResponsiveContainer>
+          </ChartCard>
+
+          {/* Data Sources */}
+          <div className="mt-12 p-6 bg-card border border-border rounded-xl">
+            <p className="text-sm text-muted-foreground">
+              <strong>Data Sources:</strong> International Telecommunication Union (ITU), Statista, We Are Social, DataReportal, Pew Research Center, UNESCO Institute for Statistics
+            </p>
+          </div>
         </div>
       </main>
     </div>

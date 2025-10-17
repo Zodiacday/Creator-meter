@@ -1,8 +1,10 @@
-import { Landmark, ArrowLeft } from "lucide-react";
-import { Link } from "react-router-dom";
-import { CategorySection } from "@/components/CategorySection";
+import { Navigation } from "@/components/Navigation";
+import { Landmark, DollarSign, Shield, GraduationCap, Car, Monitor, Bike, TrendingUp, Building2 } from "lucide-react";
+import { Counter } from "@/components/Counter";
 import { StatCard } from "@/components/StatCard";
+import { ChartCard } from "@/components/ChartCard";
 import { useRealtimeCounter } from "@/hooks/useRealtimeCounter";
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, LineChart, Line } from "recharts";
 
 const GovernmentPage = () => {
   const healthcareSpending = useRealtimeCounter({ initialValue: 9000000000000, incrementPerSecond: 285430 });
@@ -12,72 +14,267 @@ const GovernmentPage = () => {
   const bicyclesProduced = useRealtimeCounter({ initialValue: 130000000, incrementPerSecond: 4.12 });
   const computersProduced = useRealtimeCounter({ initialValue: 350000000, incrementPerSecond: 11.10 });
 
+  // Global government spending by sector (%)
+  const spendingData = [
+    { name: "Social Protection", value: 25, color: "hsl(var(--chart-1))" },
+    { name: "Healthcare", value: 18, color: "hsl(var(--chart-2))" },
+    { name: "Education", value: 14, color: "hsl(var(--chart-3))" },
+    { name: "Defense", value: 10, color: "hsl(var(--chart-4))" },
+    { name: "Infrastructure", value: 8, color: "hsl(var(--chart-5))" },
+    { name: "Other", value: 25, color: "hsl(var(--muted))" },
+  ];
+
+  // Manufacturing by country (millions of units)
+  const manufacturingData = [
+    { country: "China", cars: 26, computers: 180 },
+    { country: "USA", cars: 9.2, computers: 42 },
+    { country: "Japan", cars: 7.8, computers: 15 },
+    { country: "Germany", cars: 3.5, computers: 8 },
+    { country: "South Korea", cars: 3.5, computers: 12 },
+    { country: "India", cars: 4.6, computers: 10 },
+  ];
+
+  // Military spending by country (billions USD)
+  const militaryData = [
+    { country: "USA", spending: 877 },
+    { country: "China", spending: 292 },
+    { country: "Russia", spending: 109 },
+    { country: "India", spending: 81 },
+    { country: "Saudi Arabia", spending: 75 },
+    { country: "UK", spending: 68 },
+  ];
+
+  // Education spending trends (% of GDP)
+  const educationTrendData = [
+    { year: 2000, percentage: 4.2 },
+    { year: 2005, percentage: 4.5 },
+    { year: 2010, percentage: 4.8 },
+    { year: 2015, percentage: 4.7 },
+    { year: 2020, percentage: 4.4 },
+    { year: 2024, percentage: 4.6 },
+  ];
+
+  // Infrastructure investment by region (billions USD)
+  const infrastructureData = [
+    { region: "Asia", investment: 1700 },
+    { region: "Europe", investment: 520 },
+    { region: "North America", investment: 480 },
+    { region: "Middle East", investment: 280 },
+    { region: "Latin America", investment: 190 },
+    { region: "Africa", investment: 120 },
+  ];
+
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container flex h-14 items-center px-4">
-          <Link to="/" className="flex items-center gap-2 text-sm hover:text-primary transition-colors">
-            <ArrowLeft className="h-4 w-4" />
-            Back to Home
-          </Link>
-        </div>
-      </header>
+      <Navigation />
 
       <main className="container px-4 py-8 md:py-12">
-        <div className="max-w-6xl mx-auto">
-          <div className="mb-8 md:mb-12 animate-fade-in">
-            <h1 className="text-3xl md:text-5xl font-bold mb-4 gradient-text">Government & Economics</h1>
-            <p className="text-muted-foreground text-sm md:text-base">Global economic indicators and production statistics</p>
+        <div className="max-w-7xl mx-auto">
+          <div className="flex items-center gap-4 mb-8 animate-fade-in">
+            <div className="p-4 rounded-xl bg-[hsl(var(--government))]/20">
+              <Landmark className="w-8 h-8 text-[hsl(var(--government))]" />
+            </div>
+            <div>
+              <h1 className="text-4xl font-bold gradient-text">Government & Economics</h1>
+              <p className="text-muted-foreground mt-2">Global economic indicators, public spending, and production statistics</p>
+            </div>
           </div>
 
-          <CategorySection
-            title="Government & Economics"
-            icon={<Landmark className="w-6 h-6" />}
-            color="hsl(var(--government))"
-          >
-            <StatCard
-              icon={Landmark}
-              label="Public Healthcare expenditure"
-              value={healthcareSpending}
+          {/* Spending Counters */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            <div className="relative text-center py-10 bg-gradient-to-br from-blue-500/10 to-transparent rounded-3xl border border-border animate-fade-in">
+              <DollarSign className="w-8 h-8 mx-auto mb-2 text-blue-500" />
+              <p className="text-sm text-muted-foreground mb-2">Healthcare Spending Today</p>
+              <Counter value={healthcareSpending} className="text-4xl md:text-5xl font-bold text-foreground counter-glow" />
+              <p className="text-xs text-muted-foreground mt-2">USD</p>
+            </div>
+
+            <div className="relative text-center py-10 bg-gradient-to-br from-green-500/10 to-transparent rounded-3xl border border-border animate-fade-in">
+              <GraduationCap className="w-8 h-8 mx-auto mb-2 text-green-500" />
+              <p className="text-sm text-muted-foreground mb-2">Education Spending Today</p>
+              <Counter value={educationSpending} className="text-4xl md:text-5xl font-bold text-foreground counter-glow" />
+              <p className="text-xs text-muted-foreground mt-2">USD</p>
+            </div>
+
+            <div className="relative text-center py-10 bg-gradient-to-br from-red-500/10 to-transparent rounded-3xl border border-border animate-fade-in">
+              <Shield className="w-8 h-8 mx-auto mb-2 text-red-500" />
+              <p className="text-sm text-muted-foreground mb-2">Military Spending Today</p>
+              <Counter value={militarySpending} className="text-4xl md:text-5xl font-bold text-foreground counter-glow" />
+              <p className="text-xs text-muted-foreground mt-2">USD</p>
+            </div>
+          </div>
+
+          {/* Production Counters */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            <StatCard 
+              label="Cars Produced This Year" 
+              value={carsProduced} 
+              icon={Car} 
               color="hsl(var(--government))"
-              increment={285430}
             />
-            <StatCard
-              icon={Landmark}
-              label="Public Education expenditure"
-              value={educationSpending}
-              color="hsl(var(--government))"
-              increment={158494}
+            <StatCard 
+              label="Bicycles Produced This Year" 
+              value={bicyclesProduced} 
+              icon={Bike} 
+              color="hsl(var(--chart-2))"
             />
-            <StatCard
-              icon={Landmark}
-              label="Military expenditure"
-              value={militarySpending}
-              color="hsl(var(--government))"
-              increment={63398}
+            <StatCard 
+              label="Computers Produced This Year" 
+              value={computersProduced} 
+              icon={Monitor} 
+              color="hsl(var(--chart-3))"
             />
-            <StatCard
-              icon={Landmark}
-              label="Cars produced"
-              value={carsProduced}
-              color="hsl(var(--government))"
-              increment={2}
+          </div>
+
+          {/* Additional Stats */}
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
+            <StatCard 
+              label="Global Debt" 
+              value={305} 
+              icon={DollarSign} 
+              color="hsl(var(--destructive))"
+              subtitle="trillion USD"
             />
-            <StatCard
-              icon={Landmark}
-              label="Bicycles produced"
-              value={bicyclesProduced}
-              color="hsl(var(--government))"
-              increment={4}
+            <StatCard 
+              label="Tax Revenue (Global)" 
+              value={14.2} 
+              icon={Landmark} 
+              color="hsl(var(--chart-4))"
+              subtitle="trillion USD"
             />
-            <StatCard
-              icon={Landmark}
-              label="Computers produced"
-              value={computersProduced}
-              color="hsl(var(--government))"
-              increment={11}
+            <StatCard 
+              label="Public Investment" 
+              value={3.3} 
+              icon={Building2} 
+              color="hsl(var(--chart-5))"
+              subtitle="trillion USD"
             />
-          </CategorySection>
+            <StatCard 
+              label="Global Trade" 
+              value={28.5} 
+              icon={TrendingUp} 
+              color="hsl(var(--chart-1))"
+              subtitle="trillion USD"
+            />
+          </div>
+
+          {/* Charts */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-12">
+            <ChartCard title="Government Spending by Sector (%)" icon={Landmark} color="hsl(var(--government))">
+              <ResponsiveContainer width="100%" height={300}>
+                <PieChart>
+                  <Pie
+                    data={spendingData}
+                    cx="50%"
+                    cy="50%"
+                    labelLine={false}
+                    label={({ name, value }) => `${name}: ${value}%`}
+                    outerRadius={100}
+                    fill="#8884d8"
+                    dataKey="value"
+                  >
+                    {spendingData.map((entry, index) => (
+                      <Cell key={`cell-${index}`} fill={entry.color} />
+                    ))}
+                  </Pie>
+                  <Tooltip 
+                    contentStyle={{ 
+                      backgroundColor: 'hsl(var(--popover))', 
+                      border: '1px solid hsl(var(--border))',
+                      borderRadius: '8px'
+                    }}
+                  />
+                </PieChart>
+              </ResponsiveContainer>
+            </ChartCard>
+
+            <ChartCard title="Top Military Spenders (Billions USD)" icon={Shield} color="hsl(var(--destructive))">
+              <ResponsiveContainer width="100%" height={300}>
+                <BarChart data={militaryData} layout="horizontal">
+                  <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
+                  <XAxis dataKey="country" stroke="hsl(var(--muted-foreground))" fontSize={11} />
+                  <YAxis stroke="hsl(var(--muted-foreground))" fontSize={12} />
+                  <Tooltip 
+                    contentStyle={{ 
+                      backgroundColor: 'hsl(var(--popover))', 
+                      border: '1px solid hsl(var(--border))',
+                      borderRadius: '8px'
+                    }}
+                  />
+                  <Bar dataKey="spending" fill="hsl(var(--destructive))" radius={[8, 8, 0, 0]} />
+                </BarChart>
+              </ResponsiveContainer>
+            </ChartCard>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-12">
+            <ChartCard title="Education Spending Trend (% of GDP)" icon={GraduationCap} color="hsl(var(--chart-3))">
+              <ResponsiveContainer width="100%" height={300}>
+                <LineChart data={educationTrendData}>
+                  <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
+                  <XAxis dataKey="year" stroke="hsl(var(--muted-foreground))" fontSize={12} />
+                  <YAxis stroke="hsl(var(--muted-foreground))" fontSize={12} domain={[4, 5]} />
+                  <Tooltip 
+                    contentStyle={{ 
+                      backgroundColor: 'hsl(var(--popover))', 
+                      border: '1px solid hsl(var(--border))',
+                      borderRadius: '8px'
+                    }}
+                  />
+                  <Line 
+                    type="monotone" 
+                    dataKey="percentage" 
+                    stroke="hsl(var(--chart-3))" 
+                    strokeWidth={3}
+                    dot={{ fill: 'hsl(var(--chart-3))' }}
+                  />
+                </LineChart>
+              </ResponsiveContainer>
+            </ChartCard>
+
+            <ChartCard title="Infrastructure Investment (Billions USD)" icon={Building2} color="hsl(var(--chart-5))">
+              <ResponsiveContainer width="100%" height={300}>
+                <BarChart data={infrastructureData}>
+                  <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
+                  <XAxis dataKey="region" stroke="hsl(var(--muted-foreground))" fontSize={11} />
+                  <YAxis stroke="hsl(var(--muted-foreground))" fontSize={12} />
+                  <Tooltip 
+                    contentStyle={{ 
+                      backgroundColor: 'hsl(var(--popover))', 
+                      border: '1px solid hsl(var(--border))',
+                      borderRadius: '8px'
+                    }}
+                  />
+                  <Bar dataKey="investment" fill="hsl(var(--chart-5))" radius={[8, 8, 0, 0]} />
+                </BarChart>
+              </ResponsiveContainer>
+            </ChartCard>
+          </div>
+
+          <ChartCard title="Car Production by Country (Millions)" icon={Car} color="hsl(var(--government))">
+            <ResponsiveContainer width="100%" height={300}>
+              <BarChart data={manufacturingData}>
+                <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
+                <XAxis dataKey="country" stroke="hsl(var(--muted-foreground))" fontSize={11} />
+                <YAxis stroke="hsl(var(--muted-foreground))" fontSize={12} />
+                <Tooltip 
+                  contentStyle={{ 
+                    backgroundColor: 'hsl(var(--popover))', 
+                    border: '1px solid hsl(var(--border))',
+                    borderRadius: '8px'
+                  }}
+                />
+                <Bar dataKey="cars" fill="hsl(var(--government))" radius={[8, 8, 0, 0]} />
+              </BarChart>
+            </ResponsiveContainer>
+          </ChartCard>
+
+          {/* Data Sources */}
+          <div className="mt-12 p-6 bg-card border border-border rounded-xl">
+            <p className="text-sm text-muted-foreground">
+              <strong>Data Sources:</strong> OECD, World Bank, IMF, SIPRI Military Expenditure Database, UNESCO, OICA (International Organization of Motor Vehicle Manufacturers)
+            </p>
+          </div>
         </div>
       </main>
     </div>
