@@ -19,6 +19,7 @@ export const Navigation = () => {
     { name: "Food & Agriculture", path: "/food-agriculture", description: "Global food production stats" },
     { name: "GDP by Country", path: "/gdp", description: "Economic output and growth" },
     { name: "World Map", path: "/world-map", description: "Interactive statistics map" },
+    { name: "Commodities & Currencies", path: "/commodities", description: "Market prices and exchange rates" },
   ];
 
   return (

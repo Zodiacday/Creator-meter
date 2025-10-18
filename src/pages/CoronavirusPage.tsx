@@ -6,6 +6,10 @@ import { ChartCard } from "@/components/ChartCard";
 import { Counter } from "@/components/Counter";
 import { useRealtimeCounter } from "@/hooks/useRealtimeCounter";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, LineChart, Line, PieChart, Pie, Cell } from "recharts";
+import { QuickFacts } from "@/components/QuickFacts";
+import { SourceCitation } from "@/components/SourceCitation";
+import { ExpandableInfo } from "@/components/ExpandableInfo";
+import { Footer } from "@/components/Footer";
 
 interface CoronavirusData {
   totalCases: number;
@@ -69,7 +73,20 @@ const CoronavirusPage = () => {
           <div className="p-4 rounded-xl bg-[hsl(var(--health))]/20">
             <Activity className="w-8 h-8 text-[hsl(var(--health))]" />
           </div>
-          <h1 className="text-4xl font-bold gradient-text">Coronavirus (COVID-19)</h1>
+          <div>
+            <h1 className="text-4xl font-bold gradient-text">Coronavirus (COVID-19)</h1>
+            <p className="text-muted-foreground mt-2">Live tracking of COVID-19 pandemic statistics worldwide</p>
+          </div>
+        </div>
+
+        <div className="mb-8">
+          <QuickFacts facts={[
+            "COVID-19 caused by SARS-CoV-2 was first identified in December 2019",
+            "The pandemic resulted in 676 million confirmed cases and 6.8 million deaths globally",
+            "Vaccines were developed in record time, with first approvals in December 2020",
+            "Over 13 billion vaccine doses have been administered worldwide",
+            "The virus has evolved through multiple variants including Alpha, Delta, and Omicron"
+          ]} />
         </div>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 mb-8">
@@ -180,7 +197,54 @@ const CoronavirusPage = () => {
             </LineChart>
           </ResponsiveContainer>
         </ChartCard>
+
+        <div className="space-y-4 mt-8">
+          <ExpandableInfo title="Pandemic Timeline">
+            <div className="space-y-2">
+              <p><strong>December 2019:</strong> First cases identified in Wuhan, China</p>
+              <p><strong>March 2020:</strong> WHO declares global pandemic</p>
+              <p><strong>December 2020:</strong> First vaccines approved for emergency use</p>
+              <p><strong>2021:</strong> Delta variant spreads globally</p>
+              <p><strong>Late 2021:</strong> Omicron variant identified</p>
+              <p><strong>2022-2024:</strong> Transition to endemic phase in many countries</p>
+            </div>
+          </ExpandableInfo>
+
+          <ExpandableInfo title="Preventive Measures">
+            <div className="space-y-2">
+              <ul className="list-disc list-inside space-y-1 ml-2">
+                <li>Vaccination remains the most effective prevention method</li>
+                <li>Wearing masks in crowded indoor spaces</li>
+                <li>Maintaining physical distance when possible</li>
+                <li>Regular handwashing and sanitization</li>
+                <li>Staying home when symptomatic</li>
+                <li>Adequate ventilation in indoor spaces</li>
+              </ul>
+            </div>
+          </ExpandableInfo>
+        </div>
+
+        <div className="mt-8">
+          <SourceCitation sources={[
+            {
+              name: "COVID-19 Dashboard",
+              url: "https://covid19.who.int/",
+              organization: "World Health Organization (WHO)"
+            },
+            {
+              name: "Coronavirus Resource Center",
+              url: "https://coronavirus.jhu.edu/",
+              organization: "Johns Hopkins University"
+            },
+            {
+              name: "COVID-19 Data Repository",
+              url: "https://github.com/CSSEGISandData/COVID-19",
+              organization: "CSSE at Johns Hopkins University"
+            }
+          ]} />
+        </div>
       </div>
+      <Footer />
     </div>
   );
 };

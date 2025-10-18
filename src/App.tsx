@@ -20,6 +20,7 @@ import FlagsPage from "./pages/FlagsPage";
 import FoodAgriculturePage from "./pages/FoodAgriculturePage";
 import GdpPage from "./pages/GdpPage";
 import WorldMapPage from "./pages/WorldMapPage";
+import CommoditiesPage from "./pages/CommoditiesPage";
 import AboutPage from "./pages/AboutPage";
 import PrivacyPage from "./pages/PrivacyPage";
 import ContactPage from "./pages/ContactPage";
@@ -49,6 +50,7 @@ const App = () => (
           <Route path="/food-agriculture" element={<FoodAgriculturePage />} />
           <Route path="/gdp" element={<GdpPage />} />
           <Route path="/world-map" element={<WorldMapPage />} />
+          <Route path="/commodities" element={<CommoditiesPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
           <Route path="/contact" element={<ContactPage />} />

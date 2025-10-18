@@ -6,6 +6,10 @@ import { ChartCard } from "@/components/ChartCard";
 import { Counter } from "@/components/Counter";
 import { useRealtimeCounter } from "@/hooks/useRealtimeCounter";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, LineChart, Line } from "recharts";
+import { QuickFacts } from "@/components/QuickFacts";
+import { SourceCitation } from "@/components/SourceCitation";
+import { ExpandableInfo } from "@/components/ExpandableInfo";
+import { Footer } from "@/components/Footer";
 
 interface CountriesData {
   worldPopulation: number;
@@ -63,7 +67,20 @@ const CountriesPage = () => {
           <div className="p-4 rounded-xl bg-[hsl(var(--population))]/20">
             <Globe className="w-8 h-8 text-[hsl(var(--population))]" />
           </div>
-          <h1 className="text-4xl font-bold gradient-text">Countries & Population</h1>
+          <div>
+            <h1 className="text-4xl font-bold gradient-text">Countries & Population</h1>
+            <p className="text-muted-foreground mt-2">Population statistics and demographics by country and region</p>
+          </div>
+        </div>
+
+        <div className="mb-8">
+          <QuickFacts facts={[
+            "195 sovereign countries exist in the world today",
+            "China and India each have over 1.4 billion people - combined 36% of world population",
+            "Asia is home to 60% of the global population",
+            "Vatican City is the smallest country with ~800 residents",
+            "Population density ranges from 2/km² (Mongolia) to 26,000/km² (Monaco)"
+          ]} />
         </div>
 
         <div className="grid gap-6 md:grid-cols-3 mb-8">
@@ -143,7 +160,53 @@ const CountriesPage = () => {
             </LineChart>
           </ResponsiveContainer>
         </ChartCard>
+
+        <div className="space-y-4 mt-8">
+          <ExpandableInfo title="Population Distribution by Continent">
+            <div className="space-y-2">
+              <p><strong>Asia:</strong> 4.8 billion (60% of world)</p>
+              <p><strong>Africa:</strong> 1.5 billion (18%)</p>
+              <p><strong>Europe:</strong> 750 million (9%)</p>
+              <p><strong>North America:</strong> 600 million (7%)</p>
+              <p><strong>South America:</strong> 440 million (5%)</p>
+              <p><strong>Oceania:</strong> 45 million (0.5%)</p>
+            </div>
+          </ExpandableInfo>
+
+          <ExpandableInfo title="Urbanization Trends">
+            <div className="space-y-2">
+              <ul className="list-disc list-inside space-y-1 ml-2">
+                <li>56% of world population lives in urban areas (2024)</li>
+                <li>By 2050, 68% expected to be urban dwellers</li>
+                <li>Tokyo is world's largest metropolitan area with 37 million</li>
+                <li>33 megacities (10M+ population) exist globally</li>
+                <li>Urbanization is fastest in Africa and Asia</li>
+              </ul>
+            </div>
+          </ExpandableInfo>
+        </div>
+
+        <div className="mt-8">
+          <SourceCitation sources={[
+            {
+              name: "World Population Prospects 2024",
+              url: "https://population.un.org/wpp/",
+              organization: "United Nations Department of Economic and Social Affairs"
+            },
+            {
+              name: "International Data Base",
+              url: "https://www.census.gov/programs-surveys/international-programs/about/idb.html",
+              organization: "U.S. Census Bureau"
+            },
+            {
+              name: "World Population Review",
+              url: "https://worldpopulationreview.com/",
+              organization: "World Population Review"
+            }
+          ]} />
+        </div>
       </div>
+      <Footer />
     </div>
   );
 };

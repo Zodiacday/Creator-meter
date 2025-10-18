@@ -5,6 +5,10 @@ import { StatCard } from "@/components/StatCard";
 import { ChartCard } from "@/components/ChartCard";
 import { Counter } from "@/components/Counter";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, LineChart, Line } from "recharts";
+import { QuickFacts } from "@/components/QuickFacts";
+import { SourceCitation } from "@/components/SourceCitation";
+import { ExpandableInfo } from "@/components/ExpandableInfo";
+import { Footer } from "@/components/Footer";
 
 interface GdpData {
   year: number;
@@ -59,7 +63,20 @@ const GdpPage = () => {
           <div className="p-4 rounded-xl bg-[hsl(var(--government))]/20">
             <DollarSign className="w-8 h-8 text-[hsl(var(--government))]" />
           </div>
-          <h1 className="text-4xl font-bold gradient-text">GDP by Country</h1>
+          <div>
+            <h1 className="text-4xl font-bold gradient-text">GDP by Country</h1>
+            <p className="text-muted-foreground mt-2">Gross Domestic Product rankings and economic indicators worldwide</p>
+          </div>
+        </div>
+
+        <div className="mb-8">
+          <QuickFacts facts={[
+            "Global GDP exceeded $100 trillion for the first time in 2022",
+            "United States, China, and Japan constitute over 50% of global GDP",
+            "GDP per capita varies dramatically: from under $500 to over $100,000",
+            "Services sector accounts for 65% of global GDP",
+            "Emerging markets are growing 2-3x faster than developed economies"
+          ]} />
         </div>
 
         <div className="grid gap-6 md:grid-cols-3 mb-8">
@@ -141,7 +158,52 @@ const GdpPage = () => {
             </LineChart>
           </ResponsiveContainer>
         </ChartCard>
+
+        <div className="space-y-4 mt-8">
+          <ExpandableInfo title="Economic Sectors">
+            <div className="space-y-2">
+              <p><strong>Services:</strong> 65% of global GDP - includes finance, healthcare, education, retail</p>
+              <p><strong>Industry:</strong> 28% of global GDP - manufacturing, construction, utilities</p>
+              <p><strong>Agriculture:</strong> 7% of global GDP - farming, fishing, forestry</p>
+              <p className="mt-2 text-sm">Note: Percentages vary significantly by country development level</p>
+            </div>
+          </ExpandableInfo>
+
+          <ExpandableInfo title="Economic Growth Factors">
+            <div className="space-y-2">
+              <ul className="list-disc list-inside space-y-1 ml-2">
+                <li>Labor productivity and workforce education</li>
+                <li>Capital investment in infrastructure and technology</li>
+                <li>Innovation and technological advancement</li>
+                <li>Political stability and governance quality</li>
+                <li>Natural resources and geographic advantages</li>
+                <li>Trade openness and global integration</li>
+              </ul>
+            </div>
+          </ExpandableInfo>
+        </div>
+
+        <div className="mt-8">
+          <SourceCitation sources={[
+            {
+              name: "World Economic Outlook Database",
+              url: "https://www.imf.org/en/Publications/WEO",
+              organization: "International Monetary Fund (IMF)"
+            },
+            {
+              name: "World Development Indicators",
+              url: "https://databank.worldbank.org/source/world-development-indicators",
+              organization: "World Bank"
+            },
+            {
+              name: "National Accounts Main Aggregates Database",
+              url: "https://unstats.un.org/unsd/snaama/",
+              organization: "United Nations Statistics Division"
+            }
+          ]} />
+        </div>
       </div>
+      <Footer />
     </div>
   );
 };
