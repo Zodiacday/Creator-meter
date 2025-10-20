@@ -7,6 +7,8 @@ import { SourceCitation } from "@/components/SourceCitation";
 import { StatCard } from "@/components/StatCard";
 import { ChartCard } from "@/components/ChartCard";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar } from "recharts";
+import { MetaTags } from "@/components/SEO/MetaTags";
+import { SchemaMarkup } from "@/components/SEO/SchemaMarkup";
 
 const CommoditiesPage = () => {
   // Sample data for commodities
@@ -49,6 +51,30 @@ const CommoditiesPage = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <MetaTags
+        title="Commodities & Currency Prices - Live Market Data"
+        description="Real-time commodity prices and currency exchange rates. Track gold, oil, silver, currencies, and global market trends with live updates."
+        keywords="commodity prices, currency exchange, gold price, oil price, forex rates, market data, commodities trading"
+        canonical={`${window.location.origin}/commodities`}
+      />
+      <SchemaMarkup
+        type="Dataset"
+        data={{
+          name: "Global Commodities & Currency Statistics",
+          description: "Real-time commodity prices and currency exchange rates for major global markets",
+          url: `${window.location.origin}/commodities`,
+          keywords: ["commodities", "currencies", "gold", "oil", "forex", "market prices"],
+          temporalCoverage: "2024/..",
+          spatialCoverage: "Global"
+        }}
+      />
+      <SchemaMarkup
+        type="BreadcrumbList"
+        data={[
+          { name: "Home", url: window.location.origin },
+          { name: "Commodities & Currencies", url: `${window.location.origin}/commodities` }
+        ]}
+      />
       <Navigation />
       <div className="container mx-auto px-4 py-12">
         <div className="flex items-center gap-4 mb-8">

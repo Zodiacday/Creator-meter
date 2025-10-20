@@ -4,6 +4,8 @@ import { StatCard } from "@/components/StatCard";
 import { CategorySectionEnhanced } from "@/components/CategorySectionEnhanced";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { MetaTags } from "@/components/SEO/MetaTags";
+import { SchemaMarkup } from "@/components/SEO/SchemaMarkup";
 import { 
   Users, Heart, Droplet, Zap, Leaf, Apple, Building2, Users2, 
   Baby, Skull, TrendingUp, DollarSign, GraduationCap, Shield,
@@ -68,6 +70,16 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <MetaTags
+        title="World Statistics Live - Real-Time Global Data"
+        description="Track real-time world statistics including population, economy, health, environment, and more. Live counters and visualizations updated every second with accurate global data."
+        keywords="world statistics, live counter, world population live, global data, real-time statistics, population counter, covid-19 statistics, gdp by country, world economy"
+        canonical={window.location.origin}
+      />
+      <SchemaMarkup
+        type="Organization"
+        data={{}}
+      />
       <Navigation />
 
       {/* Hero Section */}

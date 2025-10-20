@@ -5,6 +5,8 @@ import { StatCard } from "@/components/StatCard";
 import { ChartCard } from "@/components/ChartCard";
 import { useRealtimeCounter } from "@/hooks/useRealtimeCounter";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar, PieChart, Pie, Cell, AreaChart, Area } from "recharts";
+import { MetaTags } from "@/components/SEO/MetaTags";
+import { SchemaMarkup } from "@/components/SEO/SchemaMarkup";
 
 const SocietyPage = () => {
   const booksPublished = useRealtimeCounter({ initialValue: 2200000, incrementPerSecond: 0.07 });
@@ -66,6 +68,30 @@ const SocietyPage = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <MetaTags
+        title="Society & Media Statistics - Digital & Traditional Media"
+        description="Real-time global media consumption and digital connectivity statistics. Track internet users, social media, emails sent, and traditional media worldwide."
+        keywords="media statistics, internet users, social media stats, digital consumption, email statistics, global connectivity"
+        canonical={`${window.location.origin}/society`}
+      />
+      <SchemaMarkup
+        type="Dataset"
+        data={{
+          name: "Global Society & Media Statistics",
+          description: "Real-time data on digital and traditional media consumption, internet usage, and social connectivity",
+          url: `${window.location.origin}/society`,
+          keywords: ["society", "media", "internet", "social media", "digital consumption"],
+          temporalCoverage: "2010/..",
+          spatialCoverage: "Global"
+        }}
+      />
+      <SchemaMarkup
+        type="BreadcrumbList"
+        data={[
+          { name: "Home", url: window.location.origin },
+          { name: "Society & Media", url: `${window.location.origin}/society` }
+        ]}
+      />
       <Navigation />
 
       <main className="container px-4 py-8 md:py-12">

@@ -6,6 +6,8 @@ import { StatCard } from "@/components/StatCard";
 import { ChartCard } from "@/components/ChartCard";
 import { useRealtimeCounter } from "@/hooks/useRealtimeCounter";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, LineChart, Line } from "recharts";
+import { MetaTags } from "@/components/SEO/MetaTags";
+import { SchemaMarkup } from "@/components/SEO/SchemaMarkup";
 
 interface Co2Data {
   year: number;
@@ -49,6 +51,30 @@ const Co2EmissionsPage = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <MetaTags
+        title="CO2 Emissions Live Tracker - Carbon Emissions by Country"
+        description="Real-time CO2 emissions tracker showing global carbon dioxide output. Track emissions by country, historical trends, and per capita data with live updates."
+        keywords="co2 emissions, carbon emissions, greenhouse gases, climate change, emissions by country, carbon footprint"
+        canonical={`${window.location.origin}/co2-emissions`}
+      />
+      <SchemaMarkup
+        type="Dataset"
+        data={{
+          name: "Global CO2 Emissions Statistics",
+          description: "Real-time carbon dioxide emissions data by country with historical trends and projections",
+          url: `${window.location.origin}/co2-emissions`,
+          keywords: ["co2", "emissions", "carbon", "greenhouse gases", "climate"],
+          temporalCoverage: "1950/..",
+          spatialCoverage: "Global"
+        }}
+      />
+      <SchemaMarkup
+        type="BreadcrumbList"
+        data={[
+          { name: "Home", url: window.location.origin },
+          { name: "CO2 Emissions", url: `${window.location.origin}/co2-emissions` }
+        ]}
+      />
       <Navigation />
       
       {/* Hero Section */}

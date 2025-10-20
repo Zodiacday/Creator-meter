@@ -6,6 +6,8 @@ import { ChartCard } from "@/components/ChartCard";
 import { Counter } from "@/components/Counter";
 import { useRealtimeCounter } from "@/hooks/useRealtimeCounter";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from "recharts";
+import { MetaTags } from "@/components/SEO/MetaTags";
+import { SchemaMarkup } from "@/components/SEO/SchemaMarkup";
 
 interface FoodData {
   year: number;
@@ -59,6 +61,30 @@ const FoodAgriculturePage = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <MetaTags
+        title="Food & Agriculture Statistics - Global Crop Production"
+        description="World food and agriculture statistics including crop production, hunger data, malnutrition rates, and agricultural trends by region with real-time updates."
+        keywords="food agriculture, crop production, world hunger, agricultural statistics, farming data, food security"
+        canonical={`${window.location.origin}/food-agriculture`}
+      />
+      <SchemaMarkup
+        type="Dataset"
+        data={{
+          name: "Global Food & Agriculture Statistics",
+          description: "Comprehensive agricultural production and food security data worldwide",
+          url: `${window.location.origin}/food-agriculture`,
+          keywords: ["agriculture", "food production", "crops", "hunger", "farming"],
+          temporalCoverage: "2024/..",
+          spatialCoverage: "Global"
+        }}
+      />
+      <SchemaMarkup
+        type="BreadcrumbList"
+        data={[
+          { name: "Home", url: window.location.origin },
+          { name: "Food & Agriculture", url: `${window.location.origin}/food-agriculture` }
+        ]}
+      />
       <Navigation />
       <div className="container mx-auto px-4 py-12">
         <div className="flex items-center gap-4 mb-8">

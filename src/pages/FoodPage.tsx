@@ -5,6 +5,8 @@ import { StatCard } from "@/components/StatCard";
 import { ChartCard } from "@/components/ChartCard";
 import { useRealtimeCounter } from "@/hooks/useRealtimeCounter";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, LineChart, Line } from "recharts";
+import { MetaTags } from "@/components/SEO/MetaTags";
+import { SchemaMarkup } from "@/components/SEO/SchemaMarkup";
 
 const FoodPage = () => {
   const undernourished = useRealtimeCounter({ initialValue: 820000000, incrementPerSecond: 0 });
@@ -51,6 +53,30 @@ const FoodPage = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <MetaTags
+        title="World Food & Nutrition Statistics"
+        description="Real-time global food security and nutrition statistics. Track hunger, malnutrition, obesity, and food waste data worldwide with live counters."
+        keywords="food statistics, world hunger, malnutrition, obesity, food security, nutrition data, food waste"
+        canonical={`${window.location.origin}/food`}
+      />
+      <SchemaMarkup
+        type="Dataset"
+        data={{
+          name: "Global Food & Nutrition Statistics",
+          description: "Real-time data on world hunger, malnutrition, food security, and dietary patterns",
+          url: `${window.location.origin}/food`,
+          keywords: ["food", "nutrition", "hunger", "malnutrition", "food security"],
+          temporalCoverage: "2010/..",
+          spatialCoverage: "Global"
+        }}
+      />
+      <SchemaMarkup
+        type="BreadcrumbList"
+        data={[
+          { name: "Home", url: window.location.origin },
+          { name: "Food & Nutrition", url: `${window.location.origin}/food` }
+        ]}
+      />
       <Navigation />
 
       <main className="container px-4 py-8 md:py-12">

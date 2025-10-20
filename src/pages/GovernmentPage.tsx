@@ -5,6 +5,8 @@ import { StatCard } from "@/components/StatCard";
 import { ChartCard } from "@/components/ChartCard";
 import { useRealtimeCounter } from "@/hooks/useRealtimeCounter";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, LineChart, Line } from "recharts";
+import { MetaTags } from "@/components/SEO/MetaTags";
+import { SchemaMarkup } from "@/components/SEO/SchemaMarkup";
 
 const GovernmentPage = () => {
   const healthcareSpending = useRealtimeCounter({ initialValue: 9000000000000, incrementPerSecond: 285430 });
@@ -66,6 +68,30 @@ const GovernmentPage = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <MetaTags
+        title="Government Spending & Economics - Global Public Finance"
+        description="Track global government spending on healthcare, education, military, and infrastructure. Real-time economic statistics and public finance data worldwide."
+        keywords="government spending, public finance, military spending, education spending, healthcare spending, economic statistics"
+        canonical={`${window.location.origin}/government`}
+      />
+      <SchemaMarkup
+        type="Dataset"
+        data={{
+          name: "Global Government & Economics Statistics",
+          description: "Real-time data on government spending, public finance, and economic indicators worldwide",
+          url: `${window.location.origin}/government`,
+          keywords: ["government", "economics", "public spending", "finance", "military budget"],
+          temporalCoverage: "2000/..",
+          spatialCoverage: "Global"
+        }}
+      />
+      <SchemaMarkup
+        type="BreadcrumbList"
+        data={[
+          { name: "Home", url: window.location.origin },
+          { name: "Government & Economics", url: `${window.location.origin}/government` }
+        ]}
+      />
       <Navigation />
 
       <main className="container px-4 py-8 md:py-12">

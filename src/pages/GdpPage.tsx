@@ -9,6 +9,8 @@ import { QuickFacts } from "@/components/QuickFacts";
 import { SourceCitation } from "@/components/SourceCitation";
 import { ExpandableInfo } from "@/components/ExpandableInfo";
 import { Footer } from "@/components/Footer";
+import { MetaTags } from "@/components/SEO/MetaTags";
+import { SchemaMarkup } from "@/components/SEO/SchemaMarkup";
 
 interface GdpData {
   year: number;
@@ -57,6 +59,30 @@ const GdpPage = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <MetaTags
+        title="GDP by Country - World Economic Statistics"
+        description="Real-time GDP rankings by country. Explore gross domestic product data, economic growth rates, per capita GDP, and global economic indicators with live updates."
+        keywords="gdp by country, world gdp, economic statistics, gross domestic product, gdp per capita, global economy, economic growth"
+        canonical={`${window.location.origin}/gdp`}
+      />
+      <SchemaMarkup
+        type="Dataset"
+        data={{
+          name: "Global GDP Statistics by Country",
+          description: "Comprehensive GDP data for all countries including rankings, per capita income, and growth rates",
+          url: `${window.location.origin}/gdp`,
+          keywords: ["gdp", "economy", "economic growth", "world statistics"],
+          temporalCoverage: "2024/..",
+          spatialCoverage: "Global"
+        }}
+      />
+      <SchemaMarkup
+        type="BreadcrumbList"
+        data={[
+          { name: "Home", url: window.location.origin },
+          { name: "GDP by Country", url: `${window.location.origin}/gdp` }
+        ]}
+      />
       <Navigation />
       <div className="container mx-auto px-4 py-12">
         <div className="flex items-center gap-4 mb-8">

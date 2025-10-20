@@ -5,6 +5,8 @@ import { StatCard } from "@/components/StatCard";
 import { ChartCard } from "@/components/ChartCard";
 import { useRealtimeCounter } from "@/hooks/useRealtimeCounter";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar, PieChart, Pie, Cell, AreaChart, Area } from "recharts";
+import { MetaTags } from "@/components/SEO/MetaTags";
+import { SchemaMarkup } from "@/components/SEO/SchemaMarkup";
 
 const EnvironmentPage = () => {
   const forestLoss = useRealtimeCounter({ initialValue: 10000000, incrementPerSecond: 0.32 });
@@ -58,6 +60,30 @@ const EnvironmentPage = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <MetaTags
+        title="Environment Statistics - Climate Change & Sustainability"
+        description="Real-time environmental statistics including CO2 emissions, deforestation, climate change data, and biodiversity indicators. Track global environmental impact live."
+        keywords="environment statistics, climate change, co2 emissions, deforestation, global warming, sustainability, environmental data"
+        canonical={`${window.location.origin}/environment`}
+      />
+      <SchemaMarkup
+        type="Dataset"
+        data={{
+          name: "Global Environmental Statistics",
+          description: "Real-time data on climate change, deforestation, emissions, and environmental indicators worldwide",
+          url: `${window.location.origin}/environment`,
+          keywords: ["environment", "climate change", "emissions", "deforestation", "sustainability"],
+          temporalCoverage: "1880/..",
+          spatialCoverage: "Global"
+        }}
+      />
+      <SchemaMarkup
+        type="BreadcrumbList"
+        data={[
+          { name: "Home", url: window.location.origin },
+          { name: "Environment Statistics", url: `${window.location.origin}/environment` }
+        ]}
+      />
       <Navigation />
 
       <main className="container px-4 py-8 md:py-12">

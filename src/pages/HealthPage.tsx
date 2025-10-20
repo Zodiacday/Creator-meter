@@ -5,6 +5,8 @@ import { StatCard } from "@/components/StatCard";
 import { ChartCard } from "@/components/ChartCard";
 import { useRealtimeCounter } from "@/hooks/useRealtimeCounter";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, LineChart, Line } from "recharts";
+import { MetaTags } from "@/components/SEO/MetaTags";
+import { SchemaMarkup } from "@/components/SEO/SchemaMarkup";
 
 const HealthPage = () => {
   const infectiousDeaths = useRealtimeCounter({ initialValue: 17000000, incrementPerSecond: 0.54 });
@@ -53,6 +55,30 @@ const HealthPage = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <MetaTags
+        title="World Health Statistics - Global Healthcare Data"
+        description="Real-time global health statistics including mortality rates, disease data, healthcare spending, and life expectancy. Track health indicators and medical statistics worldwide."
+        keywords="health statistics, global health, mortality data, healthcare spending, life expectancy, disease statistics, world health"
+        canonical={`${window.location.origin}/health`}
+      />
+      <SchemaMarkup
+        type="Dataset"
+        data={{
+          name: "Global Health Statistics",
+          description: "Comprehensive world health data including disease mortality, healthcare spending, and life expectancy",
+          url: `${window.location.origin}/health`,
+          keywords: ["health", "mortality", "healthcare", "life expectancy", "disease statistics"],
+          temporalCoverage: "2024/..",
+          spatialCoverage: "Global"
+        }}
+      />
+      <SchemaMarkup
+        type="BreadcrumbList"
+        data={[
+          { name: "Home", url: window.location.origin },
+          { name: "Health Statistics", url: `${window.location.origin}/health` }
+        ]}
+      />
       <Navigation />
 
       <main className="container px-4 py-8 md:py-12">

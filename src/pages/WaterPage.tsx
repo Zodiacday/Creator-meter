@@ -6,6 +6,8 @@ import { StatCard } from "@/components/StatCard";
 import { ChartCard } from "@/components/ChartCard";
 import { useRealtimeCounter } from "@/hooks/useRealtimeCounter";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from "recharts";
+import { MetaTags } from "@/components/SEO/MetaTags";
+import { SchemaMarkup } from "@/components/SEO/SchemaMarkup";
 
 interface WaterData {
   year: number;
@@ -82,6 +84,30 @@ const WaterPage = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <MetaTags
+        title="World Water Statistics - Global Consumption & Access"
+        description="Real-time global water consumption and access statistics. Track water usage, scarcity, sanitation access, and water-related health data worldwide."
+        keywords="water statistics, global water consumption, water scarcity, water access, sanitation, world water data"
+        canonical={`${window.location.origin}/water`}
+      />
+      <SchemaMarkup
+        type="Dataset"
+        data={{
+          name: "Global Water Statistics",
+          description: "Real-time world water consumption, access, and health impact data",
+          url: `${window.location.origin}/water`,
+          keywords: ["water", "consumption", "access", "sanitation", "world statistics"],
+          temporalCoverage: "2024/..",
+          spatialCoverage: "Global"
+        }}
+      />
+      <SchemaMarkup
+        type="BreadcrumbList"
+        data={[
+          { name: "Home", url: window.location.origin },
+          { name: "Water Statistics", url: `${window.location.origin}/water` }
+        ]}
+      />
       <Navigation />
       
       <div className="container mx-auto px-4 py-12">

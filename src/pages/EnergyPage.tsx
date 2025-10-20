@@ -6,6 +6,8 @@ import { StatCard } from "@/components/StatCard";
 import { ChartCard } from "@/components/ChartCard";
 import { useRealtimeCounter } from "@/hooks/useRealtimeCounter";
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip, BarChart, Bar, XAxis, YAxis, CartesianGrid } from "recharts";
+import { MetaTags } from "@/components/SEO/MetaTags";
+import { SchemaMarkup } from "@/components/SEO/SchemaMarkup";
 
 interface EnergyData {
   year: number;
@@ -58,6 +60,30 @@ const EnergyPage = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <MetaTags
+        title="World Energy Statistics - Global Consumption & Sources"
+        description="Real-time global energy consumption statistics. Track energy use by source including oil, coal, natural gas, nuclear, and renewables with live data."
+        keywords="energy statistics, global energy consumption, renewable energy, energy sources, oil consumption, world energy data"
+        canonical={`${window.location.origin}/energy`}
+      />
+      <SchemaMarkup
+        type="Dataset"
+        data={{
+          name: "Global Energy Consumption Statistics",
+          description: "Real-time world energy consumption data by source and country",
+          url: `${window.location.origin}/energy`,
+          keywords: ["energy", "consumption", "renewable energy", "fossil fuels", "world statistics"],
+          temporalCoverage: "2024/..",
+          spatialCoverage: "Global"
+        }}
+      />
+      <SchemaMarkup
+        type="BreadcrumbList"
+        data={[
+          { name: "Home", url: window.location.origin },
+          { name: "Energy Statistics", url: `${window.location.origin}/energy` }
+        ]}
+      />
       <Navigation />
       
       <div className="container mx-auto px-4 py-12">
