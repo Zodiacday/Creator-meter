@@ -10,6 +10,8 @@ import { QuickFacts } from "@/components/QuickFacts";
 import { SourceCitation } from "@/components/SourceCitation";
 import { ExpandableInfo } from "@/components/ExpandableInfo";
 import { Footer } from "@/components/Footer";
+import { MetaTags } from "@/components/SEO/MetaTags";
+import { SchemaMarkup } from "@/components/SEO/SchemaMarkup";
 
 interface CountriesData {
   worldPopulation: number;
@@ -61,6 +63,30 @@ const CountriesPage = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <MetaTags
+        title="Countries & Population Statistics"
+        description="Live world population statistics by country and region. Explore population data, demographics, growth rates, and historical trends for all countries worldwide."
+        keywords="world population, country statistics, population by country, demographics, population data, regional population"
+        canonical={`${window.location.origin}/countries`}
+      />
+      <SchemaMarkup
+        type="Dataset"
+        data={{
+          name: "World Population by Country",
+          description: "Real-time population statistics for all countries and regions worldwide",
+          url: `${window.location.origin}/countries`,
+          keywords: ["population", "demographics", "countries", "world statistics"],
+          temporalCoverage: "2024/..",
+          spatialCoverage: "Global"
+        }}
+      />
+      <SchemaMarkup
+        type="BreadcrumbList"
+        data={[
+          { name: "Home", url: window.location.origin },
+          { name: "Countries & Population", url: `${window.location.origin}/countries` }
+        ]}
+      />
       <Navigation />
       <div className="container mx-auto px-4 py-12">
         <div className="flex items-center gap-4 mb-8">

@@ -1,0 +1,27 @@
+{
+  "name": "World Statistics Live",
+  "short_name": "WorldStats",
+  "description": "Real-time world statistics and live counters for population, health, environment, and more",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["education", "reference", "productivity"],
+  "lang": "en-US",
+  "dir": "ltr"
+}

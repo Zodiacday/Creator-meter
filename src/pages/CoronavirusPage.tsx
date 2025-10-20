@@ -10,6 +10,8 @@ import { QuickFacts } from "@/components/QuickFacts";
 import { SourceCitation } from "@/components/SourceCitation";
 import { ExpandableInfo } from "@/components/ExpandableInfo";
 import { Footer } from "@/components/Footer";
+import { MetaTags } from "@/components/SEO/MetaTags";
+import { SchemaMarkup } from "@/components/SEO/SchemaMarkup";
 
 interface CoronavirusData {
   totalCases: number;
@@ -67,6 +69,30 @@ const CoronavirusPage = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <MetaTags
+        title="COVID-19 Live Statistics & Tracker"
+        description="Real-time coronavirus statistics including total cases, deaths, recoveries, and active cases. Track COVID-19 pandemic data by country with live updates."
+        keywords="coronavirus, covid-19, pandemic statistics, covid tracker, coronavirus cases, covid deaths, coronavirus live data"
+        canonical={`${window.location.origin}/coronavirus`}
+      />
+      <SchemaMarkup
+        type="Dataset"
+        data={{
+          name: "COVID-19 Global Statistics",
+          description: "Real-time coronavirus pandemic statistics including cases, deaths, and recoveries worldwide",
+          url: `${window.location.origin}/coronavirus`,
+          keywords: ["covid-19", "coronavirus", "pandemic", "health statistics"],
+          temporalCoverage: "2020/..",
+          spatialCoverage: "Global"
+        }}
+      />
+      <SchemaMarkup
+        type="BreadcrumbList"
+        data={[
+          { name: "Home", url: window.location.origin },
+          { name: "COVID-19 Statistics", url: `${window.location.origin}/coronavirus` }
+        ]}
+      />
       <Navigation />
       <div className="container mx-auto px-4 py-12">
         <div className="flex items-center gap-4 mb-8">

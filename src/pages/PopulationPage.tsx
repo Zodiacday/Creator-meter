@@ -5,6 +5,8 @@ import { StatCard } from "@/components/StatCard";
 import { ChartCard } from "@/components/ChartCard";
 import { useRealtimeCounter } from "@/hooks/useRealtimeCounter";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar, PieChart, Pie, Cell } from "recharts";
+import { MetaTags } from "@/components/SEO/MetaTags";
+import { SchemaMarkup } from "@/components/SEO/SchemaMarkup";
 
 const PopulationPage = () => {
   const births = useRealtimeCounter({ initialValue: 140000000, incrementPerSecond: 4.17 });
@@ -43,6 +45,30 @@ const PopulationPage = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <MetaTags
+        title="World Population Live Counter"
+        description="Real-time world population counter showing live births, deaths, and population growth. Track global population statistics, demographics, and trends with accurate data."
+        keywords="world population, live counter, population growth, birth rate, death rate, demographics, global population statistics"
+        canonical={`${window.location.origin}/population`}
+      />
+      <SchemaMarkup
+        type="Dataset"
+        data={{
+          name: "World Population Statistics",
+          description: "Real-time world population data including births, deaths, and growth rates",
+          url: `${window.location.origin}/population`,
+          keywords: ["population", "demographics", "birth rate", "death rate", "world statistics"],
+          temporalCoverage: "1950/..",
+          spatialCoverage: "Global"
+        }}
+      />
+      <SchemaMarkup
+        type="BreadcrumbList"
+        data={[
+          { name: "Home", url: window.location.origin },
+          { name: "Population Statistics", url: `${window.location.origin}/population` }
+        ]}
+      />
       <Navigation />
 
       <main className="container px-4 py-8 md:py-12">
