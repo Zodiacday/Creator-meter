@@ -12,6 +12,11 @@ import logo from "@/assets/logo.png";
 
 export const Navigation = () => {
   const additionalPages = [
+    { name: "World Population Live", path: "/world-population-live", description: "Real-time world population counter" },
+    { name: "Coronavirus Live Counter", path: "/coronavirus-live-counter", description: "Live COVID-19 global statistics" },
+    { name: "World GDP Live", path: "/world-gdp-live", description: "Real-time global economic data" },
+    { name: "US National Debt Clock", path: "/us-national-debt-clock", description: "Live US debt counter" },
+    { name: "Life Expectancy Calculator", path: "/life-expectancy-calculator", description: "Calculate your life expectancy" },
     { name: "CO₂ Emissions", path: "/co2-emissions", description: "Global carbon emissions trends" },
     { name: "Coronavirus", path: "/coronavirus", description: "COVID-19 statistics and trends" },
     { name: "Countries", path: "/countries", description: "Population rankings by country" },
