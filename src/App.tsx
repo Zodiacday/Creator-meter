@@ -24,6 +24,26 @@ import CommoditiesPage from "./pages/CommoditiesPage";
 import AboutPage from "./pages/AboutPage";
 import PrivacyPage from "./pages/PrivacyPage";
 import ContactPage from "./pages/ContactPage";
+import WorldPopulationLivePage from "./pages/WorldPopulationLivePage";
+import CoronavirusLiveCounterPage from "./pages/CoronavirusLiveCounterPage";
+import WorldGdpLivePage from "./pages/WorldGdpLivePage";
+import UsNationalDebtClockPage from "./pages/UsNationalDebtClockPage";
+import LifeExpectancyCalculatorPage from "./pages/LifeExpectancyCalculatorPage";
+import HungerDeathsPage from "./pages/HungerDeathsPage";
+import BirthsPerDayPage from "./pages/BirthsPerDayPage";
+import DeathsPerDayPage from "./pages/DeathsPerDayPage";
+import PopulationByAgePage from "./pages/PopulationByAgePage";
+import PopulationGrowthRatePage from "./pages/PopulationGrowthRatePage";
+import MostPopulatedCountriesPage from "./pages/MostPopulatedCountriesPage";
+import LeastPopulatedCountriesPage from "./pages/LeastPopulatedCountriesPage";
+import MedianAgeByCountryPage from "./pages/MedianAgeByCountryPage";
+import FertilityRateByCountryPage from "./pages/FertilityRateByCountryPage";
+import InfantMortalityRatePage from "./pages/InfantMortalityRatePage";
+import InternetUsersPage from "./pages/InternetUsersPage";
+import Co2EmissionsPerCapitaPage from "./pages/Co2EmissionsPerCapitaPage";
+import RenewableEnergyPage from "./pages/RenewableEnergyPage";
+import GovernmentSpendingPage from "./pages/GovernmentSpendingPage";
+import PovertyRatePage from "./pages/PovertyRatePage";
 
 const queryClient = new QueryClient();
 
@@ -54,6 +74,26 @@ const App = () => (
           <Route path="/about" element={<AboutPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/world-population-live" element={<WorldPopulationLivePage />} />
+          <Route path="/coronavirus-live-counter" element={<CoronavirusLiveCounterPage />} />
+          <Route path="/world-gdp-live" element={<WorldGdpLivePage />} />
+          <Route path="/us-national-debt-clock" element={<UsNationalDebtClockPage />} />
+          <Route path="/life-expectancy-calculator" element={<LifeExpectancyCalculatorPage />} />
+          <Route path="/how-many-people-die-from-hunger-per-day" element={<HungerDeathsPage />} />
+          <Route path="/births-per-day-worldwide" element={<BirthsPerDayPage />} />
+          <Route path="/deaths-per-day-worldwide" element={<DeathsPerDayPage />} />
+          <Route path="/world-population-by-age" element={<PopulationByAgePage />} />
+          <Route path="/population-growth-rate-by-country" element={<PopulationGrowthRatePage />} />
+          <Route path="/most-populated-countries-2025" element={<MostPopulatedCountriesPage />} />
+          <Route path="/least-populated-countries" element={<LeastPopulatedCountriesPage />} />
+          <Route path="/median-age-by-country" element={<MedianAgeByCountryPage />} />
+          <Route path="/fertility-rate-by-country" element={<FertilityRateByCountryPage />} />
+          <Route path="/infant-mortality-rate" element={<InfantMortalityRatePage />} />
+          <Route path="/internet-users-worldwide" element={<InternetUsersPage />} />
+          <Route path="/co2-emissions-per-capita" element={<Co2EmissionsPerCapitaPage />} />
+          <Route path="/renewable-energy-by-country" element={<RenewableEnergyPage />} />
+          <Route path="/government-spending-by-country" element={<GovernmentSpendingPage />} />
+          <Route path="/poverty-rate-by-country" element={<PovertyRatePage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
