@@ -24,11 +24,6 @@ import CommoditiesPage from "./pages/CommoditiesPage";
 import AboutPage from "./pages/AboutPage";
 import PrivacyPage from "./pages/PrivacyPage";
 import ContactPage from "./pages/ContactPage";
-import WorldPopulationLivePage from "./pages/WorldPopulationLivePage";
-import CoronavirusLiveCounterPage from "./pages/CoronavirusLiveCounterPage";
-import WorldGdpLivePage from "./pages/WorldGdpLivePage";
-import UsNationalDebtClockPage from "./pages/UsNationalDebtClockPage";
-import LifeExpectancyCalculatorPage from "./pages/LifeExpectancyCalculatorPage";
 import HungerDeathsPage from "./pages/HungerDeathsPage";
 import BirthsPerDayPage from "./pages/BirthsPerDayPage";
 import DeathsPerDayPage from "./pages/DeathsPerDayPage";
@@ -74,11 +69,6 @@ const App = () => (
           <Route path="/about" element={<AboutPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
           <Route path="/contact" element={<ContactPage />} />
-          <Route path="/world-population-live" element={<WorldPopulationLivePage />} />
-          <Route path="/coronavirus-live-counter" element={<CoronavirusLiveCounterPage />} />
-          <Route path="/world-gdp-live" element={<WorldGdpLivePage />} />
-          <Route path="/us-national-debt-clock" element={<UsNationalDebtClockPage />} />
-          <Route path="/life-expectancy-calculator" element={<LifeExpectancyCalculatorPage />} />
           <Route path="/how-many-people-die-from-hunger-per-day" element={<HungerDeathsPage />} />
           <Route path="/births-per-day-worldwide" element={<BirthsPerDayPage />} />
           <Route path="/deaths-per-day-worldwide" element={<DeathsPerDayPage />} />
