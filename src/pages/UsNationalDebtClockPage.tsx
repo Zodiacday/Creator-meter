@@ -91,10 +91,10 @@ const UsNationalDebtClockPage = () => {
   return (
     <>
       <MetaTags
-        title="US National Debt Clock - Real-Time America's Debt Counter"
-        description="Track the US national debt in real-time with our live counter. See debt per citizen, historical trends, debt-to-GDP ratio, and spending breakdown by category."
-        keywords="US national debt, debt clock, America debt counter, national debt per citizen, federal debt, debt to GDP ratio, government spending"
-        canonical="https://worldstatisticslive.com/us-national-debt-clock"
+        title="US National Debt Clock - Real-Time $34.5 Trillion America Debt 2025"
+        description="Live US national debt counter showing $34.5 trillion growing in real-time. Track debt per citizen ($103k), per taxpayer ($267k), historical trends, debt-to-GDP ratio, and spending breakdown 2025."
+        keywords="US national debt clock, debt clock, US debt counter, America debt, national debt per citizen, federal debt clock, debt to GDP ratio, US debt live, debt clock 2025"
+        canonical="https://creatormeter.com/us-national-debt-clock"
       />
       <SchemaMarkup type="BreadcrumbList" data={breadcrumbs} />
       <SchemaMarkup
@@ -102,7 +102,7 @@ const UsNationalDebtClockPage = () => {
         data={{
           name: "US National Debt Clock Statistics",
           description: "Real-time US national debt counter with per-citizen calculations and spending breakdowns",
-          url: "https://worldstatisticslive.com/us-national-debt-clock",
+          url: "https://creatormeter.com/us-national-debt-clock",
           keywords: ["US national debt", "debt clock", "federal debt", "government spending"],
           temporalCoverage: "2000/2024",
           spatialCoverage: "United States"

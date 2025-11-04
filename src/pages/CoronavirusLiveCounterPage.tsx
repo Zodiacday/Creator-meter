@@ -86,10 +86,10 @@ const CoronavirusLiveCounterPage = () => {
   return (
     <>
       <MetaTags
-        title="COVID-19 Live Counter - Real-Time Coronavirus Statistics"
-        description="Track real-time COVID-19 statistics including total cases, deaths, and recoveries worldwide. View historical trends, vaccination data, and regional breakdowns of the pandemic."
-        keywords="coronavirus live counter, COVID-19 statistics, pandemic tracker, coronavirus cases, COVID deaths, vaccination data, COVID-19 by region"
-        canonical="https://worldstatisticslive.com/coronavirus-live-counter"
+        title="COVID-19 Live Counter - Real-Time Coronavirus Statistics 2025"
+        description="Live COVID-19 counter tracking 704M+ cases, deaths, and recoveries worldwide. Real-time pandemic statistics with vaccination data, regional breakdowns, and historical trends updated 2025."
+        keywords="coronavirus live counter, COVID-19 statistics, pandemic tracker, coronavirus cases, COVID deaths, COVID-19 live, vaccination data, COVID-19 by region, COVID counter 2025"
+        canonical="https://creatormeter.com/coronavirus-live-counter"
       />
       <SchemaMarkup type="BreadcrumbList" data={breadcrumbs} />
       <SchemaMarkup
@@ -97,7 +97,7 @@ const CoronavirusLiveCounterPage = () => {
         data={{
           name: "COVID-19 Live Statistics",
           description: "Real-time coronavirus pandemic statistics with cases, deaths, recoveries, and vaccination data",
-          url: "https://worldstatisticslive.com/coronavirus-live-counter",
+          url: "https://creatormeter.com/coronavirus-live-counter",
           keywords: ["COVID-19", "coronavirus", "pandemic", "cases", "deaths", "vaccinations"],
           temporalCoverage: "2020/2024",
           spatialCoverage: "Global"

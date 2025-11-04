@@ -46,7 +46,7 @@ export const SchemaMarkup = ({ type, data }: SchemaMarkupProps) => {
           keywords: (data as DatasetSchema).keywords,
           creator: (data as DatasetSchema).creator || {
             "@type": "Organization",
-            name: "World Statistics Live",
+            name: "CreatorMeter",
             url: window.location.origin
           },
           temporalCoverage: (data as DatasetSchema).temporalCoverage,
@@ -88,10 +88,10 @@ export const SchemaMarkup = ({ type, data }: SchemaMarkupProps) => {
         schema = {
           ...schema,
           "@type": "Organization",
-          name: "World Statistics Live",
+          name: "CreatorMeter",
           url: window.location.origin,
           logo: `${window.location.origin}/logo.png`,
-          description: "Real-time world statistics and live counters for population, health, environment, and more",
+          description: "Live world statistics and real-time counters for population, GDP, CO2 emissions, energy, and global data. Accurate, verified data from UN, World Bank, and official sources.",
           sameAs: [
             // Add social media profiles when available
           ]

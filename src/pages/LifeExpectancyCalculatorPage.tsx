@@ -95,10 +95,10 @@ const LifeExpectancyCalculatorPage = () => {
   return (
     <>
       <MetaTags
-        title="Life Expectancy Calculator - Estimate Your Lifespan Based on Demographics"
-        description="Calculate your estimated life expectancy based on age, gender, country, and lifestyle factors. Compare global averages and discover what affects longevity."
-        keywords="life expectancy calculator, lifespan calculator, how long will I live, longevity calculator, life expectancy by country, factors affecting lifespan"
-        canonical="https://worldstatisticslive.com/life-expectancy-calculator"
+        title="Life Expectancy Calculator - Estimate Your Lifespan & Longevity 2025"
+        description="Free life expectancy calculator - estimate how long you'll live based on age, gender, country, and lifestyle. Compare global averages, discover longevity factors with accurate 2025 data."
+        keywords="life expectancy calculator, lifespan calculator, how long will I live, longevity calculator, life expectancy by country, factors affecting lifespan, life span estimator, longevity test"
+        canonical="https://creatormeter.com/life-expectancy-calculator"
       />
       <SchemaMarkup type="BreadcrumbList" data={breadcrumbs} />
       <SchemaMarkup
@@ -106,7 +106,7 @@ const LifeExpectancyCalculatorPage = () => {
         data={{
           name: "Life Expectancy Statistics",
           description: "Interactive life expectancy calculator with global statistics and demographic factors",
-          url: "https://worldstatisticslive.com/life-expectancy-calculator",
+          url: "https://creatormeter.com/life-expectancy-calculator",
           keywords: ["life expectancy", "longevity", "demographics", "health statistics"],
           temporalCoverage: "1960/2024",
           spatialCoverage: "Global"

@@ -82,10 +82,10 @@ const WorldGdpLivePage = () => {
   return (
     <>
       <MetaTags
-        title="World GDP Live Counter - Real-Time Global Economy Statistics"
-        description="Track the world's GDP in real-time with our live counter. View top economies, GDP by region, historical trends, and per capita data for the global economy."
-        keywords="world GDP live, global economy, GDP counter, real-time GDP, world economy statistics, GDP by country, economic growth"
-        canonical="https://worldstatisticslive.com/world-gdp-live"
+        title="World GDP Live Counter - Real-Time Global Economy $105 Trillion 2025"
+        description="Live world GDP counter showing $105 trillion global economy growing in real-time. Track top economies, GDP by region, per capita data, and economic growth trends updated 2025."
+        keywords="world GDP live, world GDP counter, global economy, GDP live counter, world economy statistics, GDP by country, real-time GDP, global GDP 2025"
+        canonical="https://creatormeter.com/world-gdp-live"
       />
       <SchemaMarkup type="BreadcrumbList" data={breadcrumbs} />
       <SchemaMarkup
@@ -93,7 +93,7 @@ const WorldGdpLivePage = () => {
         data={{
           name: "World GDP Live Statistics",
           description: "Real-time global GDP counter with economic data by country and region",
-          url: "https://worldstatisticslive.com/world-gdp-live",
+          url: "https://creatormeter.com/world-gdp-live",
           keywords: ["world GDP", "global economy", "economic growth", "GDP statistics"],
           temporalCoverage: "2000/2024",
           spatialCoverage: "Global"

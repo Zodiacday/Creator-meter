@@ -11,21 +11,24 @@ import { Users, TrendingUp, Globe, Baby } from "lucide-react";
 import { LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from "recharts";
 
 const WorldPopulationLivePage = () => {
+  // UN Data 2025: World population 8.18 billion, growing at 0.82% annually
+  // Birth rate: 18.1 per 1000 = 148 births per minute = 2.47 births/second
+  // Death rate: 7.8 per 1000 = 64 deaths per minute = 1.07 deaths/second
   const currentPopulation = useRealtimeCounter({
-    initialValue: 8100000000,
-    incrementPerSecond: 2.5,
+    initialValue: 8180000000,
+    incrementPerSecond: 1.4, // Net growth: 2.47 births - 1.07 deaths = 1.4 per second
     enabled: true
   });
 
   const birthsToday = useRealtimeCounter({
-    initialValue: 385000,
-    incrementPerSecond: 4.3,
+    initialValue: 0,
+    incrementPerSecond: 2.47, // 148 per minute
     enabled: true
   });
 
   const deathsToday = useRealtimeCounter({
-    initialValue: 163000,
-    incrementPerSecond: 1.8,
+    initialValue: 0,
+    incrementPerSecond: 1.07, // 64 per minute
     enabled: true
   });
 
@@ -88,10 +91,10 @@ const WorldPopulationLivePage = () => {
   return (
     <>
       <MetaTags
-        title="World Population Live Counter - Real-Time Global Population Statistics"
-        description="Watch the world population grow in real-time with our live counter. Track births, deaths, and population by continent with interactive charts and historical data since 1950."
-        keywords="world population live, population counter, global population statistics, real-time population, births per day, deaths per day, population by continent"
-        canonical="https://worldstatisticslive.com/world-population-live"
+        title="World Population Live Counter - Real-Time Global Population 2025"
+        description="Live world population counter showing 8.18 billion people growing in real-time. Watch births and deaths per second with accurate UN data, interactive charts, and continent breakdowns updated 2025."
+        keywords="world population live, world population counter, current world population, world population today, global population, population counter, real-time population, births per day, deaths per day, world population 2025"
+        canonical="https://creatormeter.com/world-population-live"
       />
       <SchemaMarkup type="BreadcrumbList" data={breadcrumbs} />
       <SchemaMarkup
@@ -99,7 +102,7 @@ const WorldPopulationLivePage = () => {
         data={{
           name: "World Population Live Statistics",
           description: "Real-time world population counter with births, deaths, and demographic breakdowns",
-          url: "https://worldstatisticslive.com/world-population-live",
+          url: "https://creatormeter.com/world-population-live",
           keywords: ["world population", "live counter", "demographics", "births", "deaths"],
           temporalCoverage: "1950/2024",
           spatialCoverage: "Global"

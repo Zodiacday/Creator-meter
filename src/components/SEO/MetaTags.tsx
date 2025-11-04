@@ -25,7 +25,7 @@ export const MetaTags = ({
 }: MetaTagsProps) => {
   useEffect(() => {
     // Set document title
-    document.title = `${title} | World Statistics Live`;
+    document.title = `${title} | CreatorMeter - Live World Statistics`;
 
     // Helper function to set or update meta tag
     const setMetaTag = (name: string, content: string, isProperty = false) => {
@@ -70,7 +70,7 @@ export const MetaTags = ({
     setMetaTag('og:type', ogType, true);
     setMetaTag('og:url', canonicalUrl, true);
     setMetaTag('og:image', `${window.location.origin}${ogImage}`, true);
-    setMetaTag('og:site_name', 'World Statistics Live', true);
+    setMetaTag('og:site_name', 'CreatorMeter - Live World Statistics', true);
 
     // Twitter Card tags
     setMetaTag('twitter:card', twitterCard);
