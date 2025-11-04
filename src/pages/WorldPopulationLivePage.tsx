@@ -9,26 +9,27 @@ import { ExpandableInfo } from "@/components/ExpandableInfo";
 import { useRealtimeCounter } from "@/hooks/useRealtimeCounter";
 import { Users, TrendingUp, Globe, Baby } from "lucide-react";
 import { LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from "recharts";
+import { ExportButton } from "@/components/ExportButton";
 
 const WorldPopulationLivePage = () => {
-  // UN Data 2025: World population 8.18 billion, growing at 0.82% annually
-  // Birth rate: 18.1 per 1000 = 148 births per minute = 2.47 births/second
-  // Death rate: 7.8 per 1000 = 64 deaths per minute = 1.07 deaths/second
+  // Worldometer.info data Jan 2025: 8.256 billion, growing at 0.85% annually
+  // Birth rate: 18.1 per 1000 = 4.73 births/second
+  // Death rate: 7.8 per 1000 = 2.04 deaths/second
   const currentPopulation = useRealtimeCounter({
-    initialValue: 8180000000,
-    incrementPerSecond: 1.4, // Net growth: 2.47 births - 1.07 deaths = 1.4 per second
+    initialValue: 8256179905,
+    incrementPerSecond: 2.69, // Net growth: 4.73 births - 2.04 deaths
     enabled: true
   });
 
   const birthsToday = useRealtimeCounter({
     initialValue: 0,
-    incrementPerSecond: 2.47, // 148 per minute
+    incrementPerSecond: 4.73, // 409,152 per day
     enabled: true
   });
 
   const deathsToday = useRealtimeCounter({
     initialValue: 0,
-    incrementPerSecond: 1.07, // 64 per minute
+    incrementPerSecond: 2.04, // 176,256 per day
     enabled: true
   });
 
@@ -121,6 +122,23 @@ const WorldPopulationLivePage = () => {
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               Real-time global population statistics tracking births, deaths, and demographic trends across continents
             </p>
+            <div className="mt-6 flex justify-center">
+              <ExportButton
+                data={[
+                  ...historicalData.map(item => ({
+                    year: item.year,
+                    population: item.population,
+                    unit: "Billions"
+                  })),
+                  ...continentData.map(item => ({
+                    continent: item.continent,
+                    population: item.population,
+                    unit: "Millions"
+                  }))
+                ]}
+                filename="world-population-live-data"
+              />
+            </div>
           </header>
 
           <section className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
@@ -129,21 +147,21 @@ const WorldPopulationLivePage = () => {
               value={currentPopulation}
               icon={Users}
               color="#3b82f6"
-              increment={2.5}
+              increment={2.69}
             />
             <StatCard
               label="Births Today"
               value={birthsToday}
               icon={Baby}
               color="#10b981"
-              increment={4.3}
+              increment={4.73}
             />
             <StatCard
               label="Deaths Today"
               value={deathsToday}
               icon={Users}
               color="#ef4444"
-              increment={1.8}
+              increment={2.04}
             />
           </section>
 

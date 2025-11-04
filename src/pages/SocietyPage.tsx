@@ -9,14 +9,15 @@ import { MetaTags } from "@/components/SEO/MetaTags";
 import { SchemaMarkup } from "@/components/SEO/SchemaMarkup";
 
 const SocietyPage = () => {
-  const booksPublished = useRealtimeCounter({ initialValue: 2200000, incrementPerSecond: 0.07 });
-  const newspapersCirculated = useRealtimeCounter({ initialValue: 456000000000, incrementPerSecond: 14462 });
-  const tvsSold = useRealtimeCounter({ initialValue: 270000000, incrementPerSecond: 8.56 });
-  const mobilePhonesSold = useRealtimeCounter({ initialValue: 1500000000, incrementPerSecond: 47.55 });
-  const videogamesSold = useRealtimeCounter({ initialValue: 380000000, incrementPerSecond: 12.05 });
-  const internetUsers = useRealtimeCounter({ initialValue: 5300000000, incrementPerSecond: 168.03 });
-  const emailsSent = useRealtimeCounter({ initialValue: 333000000000000, incrementPerSecond: 10558659 });
-  const blogPosts = useRealtimeCounter({ initialValue: 6000000000, incrementPerSecond: 190.26 });
+  // Updated from Worldometer.info Jan 2025
+  const booksPublished = useRealtimeCounter({ initialValue: 2410000, incrementPerSecond: 0.076 });
+  const newspapersCirculated = useRealtimeCounter({ initialValue: 409000000, incrementPerSecond: 4734 });
+  const tvsSold = useRealtimeCounter({ initialValue: 612000, incrementPerSecond: 7.08 });
+  const mobilePhonesSold = useRealtimeCounter({ initialValue: 7330000, incrementPerSecond: 84.8 });
+  const videogamesSold = useRealtimeCounter({ initialValue: 308000000, incrementPerSecond: 3565 });
+  const internetUsers = useRealtimeCounter({ initialValue: 6897000000, incrementPerSecond: 12 });
+  const emailsSent = useRealtimeCounter({ initialValue: 291800000000, incrementPerSecond: 3377315 });
+  const blogPosts = useRealtimeCounter({ initialValue: 11480000, incrementPerSecond: 133 });
 
   // Internet adoption by region (%)
   const internetData = [
@@ -111,7 +112,7 @@ const SocietyPage = () => {
             <Wifi className="w-8 h-8 mx-auto mb-2 text-[hsl(var(--society))]" />
             <p className="text-sm text-muted-foreground mb-2">Internet Users Worldwide</p>
             <Counter value={internetUsers} className="text-5xl md:text-7xl font-bold text-foreground counter-glow" />
-            <p className="text-sm text-muted-foreground mt-2">67% of world population</p>
+            <p className="text-sm text-muted-foreground mt-2">84% of world population</p>
             <div className="absolute -inset-4 bg-[hsl(var(--society))]/20 blur-3xl -z-10 animate-pulse-glow rounded-full" />
           </div>
 

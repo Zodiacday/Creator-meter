@@ -16,13 +16,13 @@ import {
 } from "lucide-react";
 
 const Index = () => {
-  // World Population
-  const worldPopulation = useRealtimeCounter({ initialValue: 8252321533, incrementPerSecond: 2.5 });
+  // World Population - Updated to match Worldometer.info Jan 2025
+  const worldPopulation = useRealtimeCounter({ initialValue: 8256179905, incrementPerSecond: 2.69 });
   
-  // Population Stats
-  const births = useRealtimeCounter({ initialValue: 385000, incrementPerSecond: 4.3 });
-  const deaths = useRealtimeCounter({ initialValue: 163000, incrementPerSecond: 1.8 });
-  const populationGrowth = useRealtimeCounter({ initialValue: 222000, incrementPerSecond: 2.5 });
+  // Population Stats - Calculated: 8.256B * 18.1/1000 / 365.25 / 86400 = 4.73 births/sec
+  const births = useRealtimeCounter({ initialValue: 327000, incrementPerSecond: 4.73 });
+  const deaths = useRealtimeCounter({ initialValue: 154000, incrementPerSecond: 2.04 });
+  const populationGrowth = useRealtimeCounter({ initialValue: 173000, incrementPerSecond: 2.69 });
   
   // Government & Economics
   const healthcareSpending = useRealtimeCounter({ initialValue: 9200000000000, incrementPerSecond: 291666 });

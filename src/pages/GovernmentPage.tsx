@@ -9,12 +9,13 @@ import { MetaTags } from "@/components/SEO/MetaTags";
 import { SchemaMarkup } from "@/components/SEO/SchemaMarkup";
 
 const GovernmentPage = () => {
-  const healthcareSpending = useRealtimeCounter({ initialValue: 9000000000000, incrementPerSecond: 285430 });
-  const educationSpending = useRealtimeCounter({ initialValue: 5000000000000, incrementPerSecond: 158494 });
-  const militarySpending = useRealtimeCounter({ initialValue: 2000000000000, incrementPerSecond: 63398 });
-  const carsProduced = useRealtimeCounter({ initialValue: 70000000, incrementPerSecond: 2.22 });
-  const bicyclesProduced = useRealtimeCounter({ initialValue: 130000000, incrementPerSecond: 4.12 });
-  const computersProduced = useRealtimeCounter({ initialValue: 350000000, incrementPerSecond: 11.10 });
+  // Updated from Worldometer.info Jan 2025
+  const healthcareSpending = useRealtimeCounter({ initialValue: 16100000000, incrementPerSecond: 186500 });
+  const educationSpending = useRealtimeCounter({ initialValue: 10600000000, incrementPerSecond: 122700 });
+  const militarySpending = useRealtimeCounter({ initialValue: 4320000000, incrementPerSecond: 50000 });
+  const carsProduced = useRealtimeCounter({ initialValue: 76000000, incrementPerSecond: 2.41 });
+  const bicyclesProduced = useRealtimeCounter({ initialValue: 135000000, incrementPerSecond: 4.28 });
+  const computersProduced = useRealtimeCounter({ initialValue: 190000000, incrementPerSecond: 6.02 });
 
   // Global government spending by sector (%)
   const spendingData = [

@@ -9,9 +9,9 @@ import { MetaTags } from "@/components/SEO/MetaTags";
 import { SchemaMarkup } from "@/components/SEO/SchemaMarkup";
 
 const FoodPage = () => {
-  const undernourished = useRealtimeCounter({ initialValue: 820000000, incrementPerSecond: 0 });
-  const overweight = useRealtimeCounter({ initialValue: 1900000000, incrementPerSecond: 0 });
-  const obese = useRealtimeCounter({ initialValue: 800000000, incrementPerSecond: 0 });
+  const undernourished = useRealtimeCounter({ initialValue: 892000000, incrementPerSecond: 0 });
+  const overweight = useRealtimeCounter({ initialValue: 1786000000, incrementPerSecond: 0 });
+  const obese = useRealtimeCounter({ initialValue: 900000000, incrementPerSecond: 0 });
 
   // Malnutrition breakdown
   const malnutritionData = [

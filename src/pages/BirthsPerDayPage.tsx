@@ -9,8 +9,8 @@ import { MetaTags } from "@/components/SEO/MetaTags";
 import { SchemaMarkup } from "@/components/SEO/SchemaMarkup";
 
 const BirthsPerDayPage = () => {
-  const birthsToday = useRealtimeCounter({ initialValue: 385000, incrementPerSecond: 4.45 });
-  const birthsThisYear = useRealtimeCounter({ initialValue: 140000000, incrementPerSecond: 4.45 });
+  const birthsToday = useRealtimeCounter({ initialValue: 327000, incrementPerSecond: 4.73 });
+  const birthsThisYear = useRealtimeCounter({ initialValue: 111300000, incrementPerSecond: 4.73 });
 
   const birthsByRegion = [
     { region: "Asia", births: 233000, color: "hsl(var(--chart-1))" },

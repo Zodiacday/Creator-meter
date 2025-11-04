@@ -9,9 +9,10 @@ import { MetaTags } from "@/components/SEO/MetaTags";
 import { SchemaMarkup } from "@/components/SEO/SchemaMarkup";
 
 const EnvironmentPage = () => {
-  const forestLoss = useRealtimeCounter({ initialValue: 10000000, incrementPerSecond: 0.32 });
-  const co2Emissions = useRealtimeCounter({ initialValue: 38000000000, incrementPerSecond: 1205 });
-  const toxicChemicals = useRealtimeCounter({ initialValue: 16000000, incrementPerSecond: 0.51 });
+  // Worldometer.info CO2 data: 33.4B tons year-to-date (15 days)
+  const forestLoss = useRealtimeCounter({ initialValue: 4370000, incrementPerSecond: 0.34 });
+  const co2Emissions = useRealtimeCounter({ initialValue: 33440000000, incrementPerSecond: 1060 });
+  const toxicChemicals = useRealtimeCounter({ initialValue: 8230000, incrementPerSecond: 0.26 });
 
   // Deforestation by region (million hectares)
   const deforestationData = [

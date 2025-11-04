@@ -9,8 +9,8 @@ import { MetaTags } from "@/components/SEO/MetaTags";
 import { SchemaMarkup } from "@/components/SEO/SchemaMarkup";
 
 const DeathsPerDayPage = () => {
-  const deathsToday = useRealtimeCounter({ initialValue: 163000, incrementPerSecond: 1.89 });
-  const deathsThisYear = useRealtimeCounter({ initialValue: 60000000, incrementPerSecond: 1.89 });
+  const deathsToday = useRealtimeCounter({ initialValue: 154000, incrementPerSecond: 2.04 });
+  const deathsThisYear = useRealtimeCounter({ initialValue: 52500000, incrementPerSecond: 2.04 });
 
   const deathsByCause = [
     { cause: "Cardiovascular", deaths: 52000, color: "hsl(var(--chart-1))" },
