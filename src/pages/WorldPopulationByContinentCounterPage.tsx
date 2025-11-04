@@ -11,6 +11,7 @@ import { Users, Globe, TrendingUp, MapPin } from "lucide-react";
 import { BarChart, Bar, PieChart, Pie, Cell, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from "recharts";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { ExportButton } from "@/components/ExportButton";
 
 const WorldPopulationByContinentCounterPage = () => {
   const worldPopulation = useRealtimeCounter({
@@ -289,7 +290,26 @@ const WorldPopulationByContinentCounterPage = () => {
 
           {/* Growth Rates */}
           <section className="mb-12">
-            <h2 className="text-3xl font-bold mb-6 text-foreground">Annual Growth Rates by Continent</h2>
+            <div className="flex items-center justify-between mb-6">
+              <h2 className="text-3xl font-bold text-foreground">Annual Growth Rates by Continent</h2>
+              <ExportButton
+                data={continentData.map(continent => ({
+                  continent: continent.continent,
+                  population: continent.population,
+                  growthRate: continent.growth,
+                  topCountry: continent.topCountries[0].name,
+                  topCountryPopulation: continent.topCountries[0].population
+                }))}
+                filename="world-population-by-continent"
+                columns={[
+                  { key: "continent", label: "Continent" },
+                  { key: "population", label: "Population" },
+                  { key: "growthRate", label: "Growth Rate (%)" },
+                  { key: "topCountry", label: "Largest Country" },
+                  { key: "topCountryPopulation", label: "Largest Country Population" }
+                ]}
+              />
+            </div>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
               {continentData.map((continent) => (
                 <div key={continent.continent} className="p-4 bg-card border border-border rounded-xl text-center">

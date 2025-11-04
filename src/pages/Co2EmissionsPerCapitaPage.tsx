@@ -10,6 +10,7 @@ import { MetaTags } from "@/components/SEO/MetaTags";
 import { SchemaMarkup } from "@/components/SEO/SchemaMarkup";
 import { useState } from "react";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { ExportButton } from "@/components/ExportButton";
 
 const Co2EmissionsPerCapitaPage = () => {
   const [viewMode, setViewMode] = useState<"highest" | "lowest" | "all">("highest");
@@ -149,8 +150,8 @@ const Co2EmissionsPerCapitaPage = () => {
             />
           </section>
 
-          {/* View Mode Selector */}
-          <div className="mb-8 flex justify-center">
+          {/* View Mode Selector & Export */}
+          <div className="mb-8 flex flex-col md:flex-row justify-center items-center gap-4">
             <Select value={viewMode} onValueChange={(value: any) => setViewMode(value)}>
               <SelectTrigger className="w-[280px]">
                 <SelectValue placeholder="Select view" />
@@ -161,6 +162,23 @@ const Co2EmissionsPerCapitaPage = () => {
                 <SelectItem value="all">All Countries</SelectItem>
               </SelectContent>
             </Select>
+            <ExportButton
+              data={displayData.map((country, index) => ({
+                rank: index + 1,
+                country: country.country,
+                region: country.region,
+                emissionsPerCapita: country.emissions,
+                population: country.population
+              }))}
+              filename="co2-emissions-per-capita"
+              columns={[
+                { key: "rank", label: "Rank" },
+                { key: "country", label: "Country" },
+                { key: "region", label: "Region" },
+                { key: "emissionsPerCapita", label: "Emissions Per Capita (tons CO2)" },
+                { key: "population", label: "Population (Millions)" }
+              ]}
+            />
           </div>
 
           {/* Enhanced Country Table */}

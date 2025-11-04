@@ -12,6 +12,7 @@ import { BarChart, Bar, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, R
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { ExportButton } from "@/components/ExportButton";
 
 const GlobalGdpByCountryPage = () => {
   const worldGdp = useRealtimeCounter({
@@ -160,7 +161,28 @@ const GlobalGdpByCountryPage = () => {
 
           {/* Interactive Filters */}
           <section className="mb-8 bg-card border border-border rounded-xl p-6">
-            <h2 className="text-2xl font-bold mb-4 text-foreground">Filter & Sort Countries</h2>
+            <div className="flex items-center justify-between mb-4">
+              <h2 className="text-2xl font-bold text-foreground">Filter & Sort Countries</h2>
+              <ExportButton
+                data={filteredData.map((country, index) => ({
+                  rank: index + 1,
+                  country: country.country,
+                  region: country.region,
+                  gdp: country.gdp,
+                  growth: country.growth,
+                  perCapita: country.perCapita
+                }))}
+                filename="global-gdp-by-country"
+                columns={[
+                  { key: "rank", label: "Rank" },
+                  { key: "country", label: "Country" },
+                  { key: "region", label: "Region" },
+                  { key: "gdp", label: "GDP (Billions USD)" },
+                  { key: "growth", label: "Growth Rate (%)" },
+                  { key: "perCapita", label: "GDP Per Capita (USD)" }
+                ]}
+              />
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div className="relative">
                 <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />

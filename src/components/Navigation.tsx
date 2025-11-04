@@ -25,6 +25,7 @@ export const Navigation = () => {
     { name: "GDP by Country", path: "/gdp", description: "Economic output and growth" },
     { name: "World Map", path: "/world-map", description: "Interactive statistics map" },
     { name: "Commodities & Currencies", path: "/commodities", description: "Market prices and exchange rates" },
+    { name: "Embeddable Widgets", path: "/widgets", description: "Add counters to your website" },
   ];
 
   return (

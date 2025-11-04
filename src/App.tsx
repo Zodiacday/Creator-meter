@@ -46,6 +46,11 @@ import GovernmentSpendingPage from "./pages/GovernmentSpendingPage";
 import PovertyRatePage from "./pages/PovertyRatePage";
 import WorldPopulationByContinentCounterPage from "./pages/WorldPopulationByContinentCounterPage";
 import GlobalGdpByCountryPage from "./pages/GlobalGdpByCountryPage";
+import WidgetsPage from "./pages/WidgetsPage";
+import WorldPopulationWidget from "./pages/widgets/WorldPopulationWidget";
+import WorldGdpWidget from "./pages/widgets/WorldGdpWidget";
+import Co2EmissionsWidget from "./pages/widgets/Co2EmissionsWidget";
+import CoronavirusWidget from "./pages/widgets/CoronavirusWidget";
 
 const queryClient = new QueryClient();
 
@@ -98,6 +103,12 @@ const App = () => (
           <Route path="/poverty-rate-by-country" element={<PovertyRatePage />} />
           <Route path="/world-population-by-continent-counter" element={<WorldPopulationByContinentCounterPage />} />
           <Route path="/global-gdp-by-country" element={<GlobalGdpByCountryPage />} />
+          <Route path="/widgets" element={<WidgetsPage />} />
+          {/* Widget Routes */}
+          <Route path="/widget/world-population" element={<WorldPopulationWidget />} />
+          <Route path="/widget/world-gdp" element={<WorldGdpWidget />} />
+          <Route path="/widget/co2-emissions" element={<Co2EmissionsWidget />} />
+          <Route path="/widget/coronavirus" element={<CoronavirusWidget />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
