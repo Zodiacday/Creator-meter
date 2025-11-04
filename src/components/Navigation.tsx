@@ -46,17 +46,19 @@ export const Navigation = () => {
                   <ChevronDown className="h-4 w-4" />
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-[280px] bg-popover border border-border shadow-lg z-50">
-                {additionalPages.map((page) => (
-                  <DropdownMenuItem key={page.path} asChild>
-                    <Link to={page.path} className="cursor-pointer">
-                      <div className="flex flex-col gap-1">
-                        <div className="font-medium">{page.name}</div>
-                        <div className="text-xs text-muted-foreground">{page.description}</div>
-                      </div>
-                    </Link>
-                  </DropdownMenuItem>
-                ))}
+              <DropdownMenuContent className="w-[600px] bg-popover border border-border shadow-lg z-50">
+                <div className="grid grid-cols-2 gap-1 p-1">
+                  {additionalPages.map((page) => (
+                    <DropdownMenuItem key={page.path} asChild>
+                      <Link to={page.path} className="cursor-pointer">
+                        <div className="flex flex-col gap-1">
+                          <div className="font-medium">{page.name}</div>
+                          <div className="text-xs text-muted-foreground">{page.description}</div>
+                        </div>
+                      </Link>
+                    </DropdownMenuItem>
+                  ))}
+                </div>
               </DropdownMenuContent>
             </DropdownMenu>
             <p className="text-sm text-muted-foreground">Real-time global statistics</p>
