@@ -8,9 +8,11 @@ interface StatCardProps {
   color: string;
   subtitle?: string;
   increment?: number;
+  prefix?: string;
+  suffix?: string;
 }
 
-export const StatCard = ({ label, value, icon: Icon, color, subtitle, increment }: StatCardProps) => {
+export const StatCard = ({ label, value, icon: Icon, color, subtitle, increment, prefix, suffix }: StatCardProps) => {
   return (
     <div className="group relative bg-card border border-border rounded-2xl p-6 hover:border-primary/50 transition-all duration-300 overflow-hidden">
       {/* Gradient overlay */}
@@ -32,10 +34,12 @@ export const StatCard = ({ label, value, icon: Icon, color, subtitle, increment 
         <div className="flex-1 min-w-0">
           <p className="text-sm text-muted-foreground mb-1">{label}</p>
           <div className="flex items-baseline gap-2">
+            {prefix && <span className="text-2xl md:text-3xl font-bold text-foreground">{prefix}</span>}
             <Counter 
               value={value} 
               className="text-2xl md:text-3xl font-bold text-foreground"
             />
+            {suffix && <span className="text-2xl md:text-3xl font-bold text-foreground">{suffix}</span>}
             {increment && (
               <span className="text-xs text-muted-foreground">
                 +{increment.toLocaleString()}/s

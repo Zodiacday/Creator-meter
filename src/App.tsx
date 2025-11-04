@@ -44,6 +44,8 @@ import Co2EmissionsPerCapitaPage from "./pages/Co2EmissionsPerCapitaPage";
 import RenewableEnergyPage from "./pages/RenewableEnergyPage";
 import GovernmentSpendingPage from "./pages/GovernmentSpendingPage";
 import PovertyRatePage from "./pages/PovertyRatePage";
+import WorldPopulationByContinentCounterPage from "./pages/WorldPopulationByContinentCounterPage";
+import GlobalGdpByCountryPage from "./pages/GlobalGdpByCountryPage";
 
 const queryClient = new QueryClient();
 
@@ -94,6 +96,8 @@ const App = () => (
           <Route path="/renewable-energy-by-country" element={<RenewableEnergyPage />} />
           <Route path="/government-spending-by-country" element={<GovernmentSpendingPage />} />
           <Route path="/poverty-rate-by-country" element={<PovertyRatePage />} />
+          <Route path="/world-population-by-continent-counter" element={<WorldPopulationByContinentCounterPage />} />
+          <Route path="/global-gdp-by-country" element={<GlobalGdpByCountryPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

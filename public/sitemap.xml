@@ -257,6 +257,21 @@
   <priority>0.6</priority>
 </url>
 
+<!-- New High-Volume Keyword Pages -->
+<url>
+  <loc>https://creatormeter.com/world-population-by-continent-counter</loc>
+  <lastmod>2025-01-15</lastmod>
+  <changefreq>hourly</changefreq>
+  <priority>1.0</priority>
+</url>
+
+<url>
+  <loc>https://creatormeter.com/global-gdp-by-country</loc>
+  <lastmod>2025-01-15</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.9</priority>
+</url>
+
 <!-- Technology & Society -->
 <url>
   <loc>https://creatormeter.com/internet-users-worldwide</loc>
