@@ -71,16 +71,15 @@ export const Navigation = () => {
                 </Button>
               </SheetTrigger>
               <SheetContent>
-                <div className="flex flex-col gap-4 mt-8">
-                  <h3 className="font-semibold text-lg mb-2">More Statistics</h3>
+                <div className="flex flex-col gap-1 mt-4">
+                  <h3 className="font-semibold text-sm mb-2 px-2">More Statistics</h3>
                   {additionalPages.map((page) => (
                     <Link
                       key={page.path}
                       to={page.path}
-                      className="block space-y-1 rounded-md p-3 hover:bg-accent transition-colors"
+                      className="block rounded-md px-2 py-1.5 hover:bg-accent transition-colors"
                     >
-                      <div className="text-sm font-medium">{page.name}</div>
-                      <p className="text-sm text-muted-foreground">{page.description}</p>
+                      <div className="text-xs font-medium">{page.name}</div>
                     </Link>
                   ))}
                 </div>

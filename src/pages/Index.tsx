@@ -109,47 +109,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Featured Pages */}
-      <section className="container mx-auto px-4 py-8 md:py-12">
-        <h3 className="text-2xl md:text-3xl font-bold mb-6 text-center gradient-text">Featured Statistics</h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          <Link to="/world-population-live" className="group p-6 bg-card border border-border rounded-xl hover:border-primary transition-all hover:scale-105 hover:shadow-lg">
-            <Users className="w-10 h-10 mb-3 text-[hsl(var(--population))] group-hover:scale-110 transition-transform" />
-            <h4 className="text-lg font-semibold mb-2">World Population Live</h4>
-            <p className="text-sm text-muted-foreground">Real-time world population counter with historical trends and regional breakdowns</p>
-          </Link>
-          
-          <Link to="/coronavirus-live-counter" className="group p-6 bg-card border border-border rounded-xl hover:border-primary transition-all hover:scale-105 hover:shadow-lg">
-            <Activity className="w-10 h-10 mb-3 text-[hsl(var(--health))] group-hover:scale-110 transition-transform" />
-            <h4 className="text-lg font-semibold mb-2">Coronavirus Live Counter</h4>
-            <p className="text-sm text-muted-foreground">Live COVID-19 statistics including cases, deaths, and recoveries worldwide</p>
-          </Link>
-          
-          <Link to="/world-gdp-live" className="group p-6 bg-card border border-border rounded-xl hover:border-primary transition-all hover:scale-105 hover:shadow-lg">
-            <DollarSign className="w-10 h-10 mb-3 text-[hsl(var(--government))] group-hover:scale-110 transition-transform" />
-            <h4 className="text-lg font-semibold mb-2">World GDP Live</h4>
-            <p className="text-sm text-muted-foreground">Real-time global economic output and GDP statistics by country</p>
-          </Link>
-          
-          <Link to="/us-national-debt-clock" className="group p-6 bg-card border border-border rounded-xl hover:border-primary transition-all hover:scale-105 hover:shadow-lg">
-            <TrendingUp className="w-10 h-10 mb-3 text-[hsl(var(--government))] group-hover:scale-110 transition-transform" />
-            <h4 className="text-lg font-semibold mb-2">US National Debt Clock</h4>
-            <p className="text-sm text-muted-foreground">Live counter tracking United States national debt in real-time</p>
-          </Link>
-          
-          <Link to="/life-expectancy-calculator" className="group p-6 bg-card border border-border rounded-xl hover:border-primary transition-all hover:scale-105 hover:shadow-lg">
-            <Heart className="w-10 h-10 mb-3 text-[hsl(var(--health))] group-hover:scale-110 transition-transform" />
-            <h4 className="text-lg font-semibold mb-2">Life Expectancy Calculator</h4>
-            <p className="text-sm text-muted-foreground">Calculate your estimated life expectancy based on demographics and lifestyle</p>
-          </Link>
-          
-          <Link to="/world-map" className="group p-6 bg-card border border-border rounded-xl hover:border-primary transition-all hover:scale-105 hover:shadow-lg">
-            <Building2 className="w-10 h-10 mb-3 text-primary group-hover:scale-110 transition-transform" />
-            <h4 className="text-lg font-semibold mb-2">Interactive World Map</h4>
-            <p className="text-sm text-muted-foreground">Explore global statistics with an interactive map visualization</p>
-          </Link>
-        </div>
-      </section>
 
       {/* Statistics Sections */}
       <div className="container mx-auto px-4 pb-12 md:pb-20">
@@ -602,6 +561,48 @@ const Index = () => {
           <StatCard label="Deaths from Alcohol" value={alcoholDeaths} icon={Wine} color="hsl(var(--health))" />
           <StatCard label="Deaths from Road Traffic" value={roadDeaths} icon={Car} color="hsl(var(--health))" />
         </CategorySectionEnhanced>
+
+        {/* Featured Pages */}
+        <section className="container mx-auto px-4 py-8 md:py-12">
+          <h3 className="text-2xl md:text-3xl font-bold mb-6 text-center gradient-text">Featured Statistics</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            <Link to="/world-population-live" className="group p-6 bg-card border border-border rounded-xl hover:border-primary transition-all hover:scale-105 hover:shadow-lg">
+              <Users className="w-10 h-10 mb-3 text-[hsl(var(--population))] group-hover:scale-110 transition-transform" />
+              <h4 className="text-lg font-semibold mb-2">World Population Live</h4>
+              <p className="text-sm text-muted-foreground">Real-time world population counter with historical trends and regional breakdowns</p>
+            </Link>
+            
+            <Link to="/coronavirus-live-counter" className="group p-6 bg-card border border-border rounded-xl hover:border-primary transition-all hover:scale-105 hover:shadow-lg">
+              <Activity className="w-10 h-10 mb-3 text-[hsl(var(--health))] group-hover:scale-110 transition-transform" />
+              <h4 className="text-lg font-semibold mb-2">Coronavirus Live Counter</h4>
+              <p className="text-sm text-muted-foreground">Live COVID-19 statistics including cases, deaths, and recoveries worldwide</p>
+            </Link>
+            
+            <Link to="/world-gdp-live" className="group p-6 bg-card border border-border rounded-xl hover:border-primary transition-all hover:scale-105 hover:shadow-lg">
+              <DollarSign className="w-10 h-10 mb-3 text-[hsl(var(--government))] group-hover:scale-110 transition-transform" />
+              <h4 className="text-lg font-semibold mb-2">World GDP Live</h4>
+              <p className="text-sm text-muted-foreground">Real-time global economic output and GDP statistics by country</p>
+            </Link>
+            
+            <Link to="/us-national-debt-clock" className="group p-6 bg-card border border-border rounded-xl hover:border-primary transition-all hover:scale-105 hover:shadow-lg">
+              <TrendingUp className="w-10 h-10 mb-3 text-[hsl(var(--government))] group-hover:scale-110 transition-transform" />
+              <h4 className="text-lg font-semibold mb-2">US National Debt Clock</h4>
+              <p className="text-sm text-muted-foreground">Live counter tracking United States national debt in real-time</p>
+            </Link>
+            
+            <Link to="/life-expectancy-calculator" className="group p-6 bg-card border border-border rounded-xl hover:border-primary transition-all hover:scale-105 hover:shadow-lg">
+              <Heart className="w-10 h-10 mb-3 text-[hsl(var(--health))] group-hover:scale-110 transition-transform" />
+              <h4 className="text-lg font-semibold mb-2">Life Expectancy Calculator</h4>
+              <p className="text-sm text-muted-foreground">Calculate your estimated life expectancy based on demographics and lifestyle</p>
+            </Link>
+            
+            <Link to="/world-map" className="group p-6 bg-card border border-border rounded-xl hover:border-primary transition-all hover:scale-105 hover:shadow-lg">
+              <Building2 className="w-10 h-10 mb-3 text-primary group-hover:scale-110 transition-transform" />
+              <h4 className="text-lg font-semibold mb-2">Interactive World Map</h4>
+              <p className="text-sm text-muted-foreground">Explore global statistics with an interactive map visualization</p>
+            </Link>
+          </div>
+        </section>
       </div>
 
       <Footer />
