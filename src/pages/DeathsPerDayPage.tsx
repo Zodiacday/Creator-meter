@@ -7,6 +7,7 @@ import { useRealtimeCounter } from "@/hooks/useRealtimeCounter";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from "recharts";
 import { MetaTags } from "@/components/SEO/MetaTags";
 import { SchemaMarkup } from "@/components/SEO/SchemaMarkup";
+import { ExportButton } from "@/components/ExportButton";
 
 const DeathsPerDayPage = () => {
   const deathsToday = useRealtimeCounter({ initialValue: 154000, incrementPerSecond: 2.04 });
@@ -76,14 +77,22 @@ const DeathsPerDayPage = () => {
 
       <main className="container px-4 py-8 md:py-12">
         <div className="max-w-7xl mx-auto">
-          <div className="flex items-center gap-4 mb-8 animate-fade-in">
-            <div className="p-4 rounded-xl bg-red-500/20">
-              <Skull className="w-8 h-8 text-red-500" />
+          <div className="flex items-center justify-between gap-4 mb-8 animate-fade-in flex-wrap">
+            <div className="flex items-center gap-4">
+              <div className="p-4 rounded-xl bg-red-500/20">
+                <Skull className="w-8 h-8 text-red-500" />
+              </div>
+              <div>
+                <h1 className="text-4xl font-bold gradient-text">Deaths Per Day Worldwide</h1>
+                <p className="text-muted-foreground mt-2">Real-time global mortality statistics and causes</p>
+              </div>
             </div>
-            <div>
-              <h1 className="text-4xl font-bold gradient-text">Deaths Per Day Worldwide</h1>
-              <p className="text-muted-foreground mt-2">Real-time global mortality statistics and causes</p>
-            </div>
+            <ExportButton 
+              data={deathsByCause} 
+              filename="deaths-per-day-by-cause"
+              variant="default"
+              size="lg"
+            />
           </div>
 
           {/* Main Counters */}

@@ -12,6 +12,7 @@ import { ExpandableInfo } from "@/components/ExpandableInfo";
 import { Footer } from "@/components/Footer";
 import { MetaTags } from "@/components/SEO/MetaTags";
 import { SchemaMarkup } from "@/components/SEO/SchemaMarkup";
+import { ExportButton } from "@/components/ExportButton";
 
 interface CoronavirusData {
   totalCases: number;
@@ -95,14 +96,24 @@ const CoronavirusPage = () => {
       />
       <Navigation />
       <div className="container mx-auto px-4 py-12">
-        <div className="flex items-center gap-4 mb-8">
-          <div className="p-4 rounded-xl bg-[hsl(var(--health))]/20">
-            <Activity className="w-8 h-8 text-[hsl(var(--health))]" />
+        <div className="flex items-center justify-between gap-4 mb-8 flex-wrap">
+          <div className="flex items-center gap-4">
+            <div className="p-4 rounded-xl bg-[hsl(var(--health))]/20">
+              <Activity className="w-8 h-8 text-[hsl(var(--health))]" />
+            </div>
+            <div>
+              <h1 className="text-4xl font-bold gradient-text">Coronavirus (COVID-19)</h1>
+              <p className="text-muted-foreground mt-2">Live tracking of COVID-19 pandemic statistics worldwide</p>
+            </div>
           </div>
-          <div>
-            <h1 className="text-4xl font-bold gradient-text">Coronavirus (COVID-19)</h1>
-            <p className="text-muted-foreground mt-2">Live tracking of COVID-19 pandemic statistics worldwide</p>
-          </div>
+          {data?.topCountries && (
+            <ExportButton 
+              data={data.topCountries} 
+              filename="coronavirus-statistics-by-country"
+              variant="default"
+              size="lg"
+            />
+          )}
         </div>
 
         <div className="mb-8">

@@ -7,6 +7,7 @@ import { useRealtimeCounter } from "@/hooks/useRealtimeCounter";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from "recharts";
 import { MetaTags } from "@/components/SEO/MetaTags";
 import { SchemaMarkup } from "@/components/SEO/SchemaMarkup";
+import { ExportButton } from "@/components/ExportButton";
 
 const BirthsPerDayPage = () => {
   const birthsToday = useRealtimeCounter({ initialValue: 327000, incrementPerSecond: 4.73 });
@@ -75,14 +76,22 @@ const BirthsPerDayPage = () => {
 
       <main className="container px-4 py-8 md:py-12">
         <div className="max-w-7xl mx-auto">
-          <div className="flex items-center gap-4 mb-8 animate-fade-in">
-            <div className="p-4 rounded-xl bg-green-500/20">
-              <Baby className="w-8 h-8 text-green-500" />
+          <div className="flex items-center justify-between gap-4 mb-8 animate-fade-in flex-wrap">
+            <div className="flex items-center gap-4">
+              <div className="p-4 rounded-xl bg-green-500/20">
+                <Baby className="w-8 h-8 text-green-500" />
+              </div>
+              <div>
+                <h1 className="text-4xl font-bold gradient-text">Births Per Day Worldwide</h1>
+                <p className="text-muted-foreground mt-2">Real-time global birth statistics and trends</p>
+              </div>
             </div>
-            <div>
-              <h1 className="text-4xl font-bold gradient-text">Births Per Day Worldwide</h1>
-              <p className="text-muted-foreground mt-2">Real-time global birth statistics and trends</p>
-            </div>
+            <ExportButton 
+              data={topCountries} 
+              filename="births-per-day-by-country"
+              variant="default"
+              size="lg"
+            />
           </div>
 
           {/* Main Counters */}

@@ -8,6 +8,7 @@ import { useRealtimeCounter } from "@/hooks/useRealtimeCounter";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, LineChart, Line } from "recharts";
 import { MetaTags } from "@/components/SEO/MetaTags";
 import { SchemaMarkup } from "@/components/SEO/SchemaMarkup";
+import { ExportButton } from "@/components/ExportButton";
 
 interface Co2Data {
   year: number;
@@ -79,14 +80,24 @@ const Co2EmissionsPage = () => {
       
       {/* Hero Section */}
       <div className="container mx-auto px-4 py-12">
-        <div className="flex items-center gap-4 mb-8 animate-fade-in">
-          <div className="p-4 rounded-xl bg-[hsl(var(--environment))]/20">
-            <Cloud className="w-8 h-8 text-[hsl(var(--environment))]" />
+        <div className="flex items-center justify-between gap-4 mb-8 animate-fade-in flex-wrap">
+          <div className="flex items-center gap-4">
+            <div className="p-4 rounded-xl bg-[hsl(var(--environment))]/20">
+              <Cloud className="w-8 h-8 text-[hsl(var(--environment))]" />
+            </div>
+            <div>
+              <h1 className="text-4xl font-bold gradient-text">CO₂ Emissions</h1>
+              <p className="text-muted-foreground mt-2">Real-time global carbon dioxide emissions tracking</p>
+            </div>
           </div>
-          <div>
-            <h1 className="text-4xl font-bold gradient-text">CO₂ Emissions</h1>
-            <p className="text-muted-foreground mt-2">Real-time global carbon dioxide emissions tracking</p>
-          </div>
+          {data?.topCountries && (
+            <ExportButton 
+              data={data.topCountries} 
+              filename="co2-emissions-data"
+              variant="default"
+              size="lg"
+            />
+          )}
         </div>
 
         {/* Main Counter */}

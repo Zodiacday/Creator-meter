@@ -51,6 +51,9 @@ import WorldPopulationWidget from "./pages/widgets/WorldPopulationWidget";
 import WorldGdpWidget from "./pages/widgets/WorldGdpWidget";
 import Co2EmissionsWidget from "./pages/widgets/Co2EmissionsWidget";
 import CoronavirusWidget from "./pages/widgets/CoronavirusWidget";
+import BirthsWidget from "./pages/widgets/BirthsWidget";
+import DeathsWidget from "./pages/widgets/DeathsWidget";
+import HealthSpendingWidget from "./pages/widgets/HealthSpendingWidget";
 
 const queryClient = new QueryClient();
 
@@ -109,6 +112,9 @@ const App = () => (
           <Route path="/widget/world-gdp" element={<WorldGdpWidget />} />
           <Route path="/widget/co2-emissions" element={<Co2EmissionsWidget />} />
           <Route path="/widget/coronavirus" element={<CoronavirusWidget />} />
+          <Route path="/widget/births" element={<BirthsWidget />} />
+          <Route path="/widget/deaths" element={<DeathsWidget />} />
+          <Route path="/widget/health-spending" element={<HealthSpendingWidget />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

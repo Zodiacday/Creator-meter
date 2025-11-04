@@ -11,6 +11,7 @@ import { ExpandableInfo } from "@/components/ExpandableInfo";
 import { Footer } from "@/components/Footer";
 import { MetaTags } from "@/components/SEO/MetaTags";
 import { SchemaMarkup } from "@/components/SEO/SchemaMarkup";
+import { ExportButton } from "@/components/ExportButton";
 
 interface GdpData {
   year: number;
@@ -85,14 +86,24 @@ const GdpPage = () => {
       />
       <Navigation />
       <div className="container mx-auto px-4 py-12">
-        <div className="flex items-center gap-4 mb-8">
-          <div className="p-4 rounded-xl bg-[hsl(var(--government))]/20">
-            <DollarSign className="w-8 h-8 text-[hsl(var(--government))]" />
+        <div className="flex items-center justify-between gap-4 mb-8 flex-wrap">
+          <div className="flex items-center gap-4">
+            <div className="p-4 rounded-xl bg-[hsl(var(--government))]/20">
+              <DollarSign className="w-8 h-8 text-[hsl(var(--government))]" />
+            </div>
+            <div>
+              <h1 className="text-4xl font-bold gradient-text">GDP by Country</h1>
+              <p className="text-muted-foreground mt-2">Gross Domestic Product rankings and economic indicators worldwide</p>
+            </div>
           </div>
-          <div>
-            <h1 className="text-4xl font-bold gradient-text">GDP by Country</h1>
-            <p className="text-muted-foreground mt-2">Gross Domestic Product rankings and economic indicators worldwide</p>
-          </div>
+          {data?.topCountries && (
+            <ExportButton 
+              data={data.topCountries} 
+              filename="gdp-by-country"
+              variant="default"
+              size="lg"
+            />
+          )}
         </div>
 
         <div className="mb-8">

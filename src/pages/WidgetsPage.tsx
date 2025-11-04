@@ -51,6 +51,33 @@ const WidgetsPage = () => {
       width: 400,
       height: 300,
       preview: `${baseUrl}/widget/coronavirus`
+    },
+    {
+      id: "births",
+      title: "Global Births Counter",
+      description: "Real-time worldwide births this year",
+      embedUrl: `${baseUrl}/widget/births`,
+      width: 400,
+      height: 250,
+      preview: `${baseUrl}/widget/births`
+    },
+    {
+      id: "deaths",
+      title: "Global Deaths Counter",
+      description: "Real-time worldwide deaths this year",
+      embedUrl: `${baseUrl}/widget/deaths`,
+      width: 400,
+      height: 250,
+      preview: `${baseUrl}/widget/deaths`
+    },
+    {
+      id: "health-spending",
+      title: "Healthcare Spending Counter",
+      description: "Live global healthcare spending tracker",
+      embedUrl: `${baseUrl}/widget/health-spending`,
+      width: 400,
+      height: 250,
+      preview: `${baseUrl}/widget/health-spending`
     }
   ];
 

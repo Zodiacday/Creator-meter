@@ -7,6 +7,7 @@ import { useRealtimeCounter } from "@/hooks/useRealtimeCounter";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar, PieChart, Pie, Cell } from "recharts";
 import { MetaTags } from "@/components/SEO/MetaTags";
 import { SchemaMarkup } from "@/components/SEO/SchemaMarkup";
+import { ExportButton } from "@/components/ExportButton";
 
 const PopulationPage = () => {
   const births = useRealtimeCounter({ initialValue: 140000000, incrementPerSecond: 4.17 });
@@ -73,14 +74,22 @@ const PopulationPage = () => {
 
       <main className="container px-4 py-8 md:py-12">
         <div className="max-w-7xl mx-auto">
-          <div className="flex items-center gap-4 mb-8 animate-fade-in">
-            <div className="p-4 rounded-xl bg-[hsl(var(--population))]/20">
-              <Users className="w-8 h-8 text-[hsl(var(--population))]" />
+          <div className="flex items-center justify-between gap-4 mb-8 animate-fade-in flex-wrap">
+            <div className="flex items-center gap-4">
+              <div className="p-4 rounded-xl bg-[hsl(var(--population))]/20">
+                <Users className="w-8 h-8 text-[hsl(var(--population))]" />
+              </div>
+              <div>
+                <h1 className="text-4xl font-bold gradient-text">Population Statistics</h1>
+                <p className="text-muted-foreground mt-2">Real-time global population data and demographic trends</p>
+              </div>
             </div>
-            <div>
-              <h1 className="text-4xl font-bold gradient-text">Population Statistics</h1>
-              <p className="text-muted-foreground mt-2">Real-time global population data and demographic trends</p>
-            </div>
+            <ExportButton 
+              data={regionalData} 
+              filename="population-statistics"
+              variant="default"
+              size="lg"
+            />
           </div>
 
           {/* Main Counters Grid */}
