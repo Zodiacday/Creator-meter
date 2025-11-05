@@ -9,6 +9,7 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContaine
 import { MetaTags } from "@/components/SEO/MetaTags";
 import { SchemaMarkup } from "@/components/SEO/SchemaMarkup";
 import { ExportButton } from "@/components/ExportButton";
+import { SocialShare } from "@/components/SocialShare";
 
 interface Co2Data {
   year: number;

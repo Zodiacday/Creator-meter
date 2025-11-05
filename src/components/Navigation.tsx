@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import logo from "@/assets/logo.png";
 
 export const Navigation = () => {
@@ -38,7 +39,16 @@ export const Navigation = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-6">
+          <div className="hidden md:flex items-center gap-4">
+            <Link to="/data-methodology" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              Data Sources
+            </Link>
+            <Link to="/compare" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              Compare
+            </Link>
+            <Link to="/blog" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              Blog
+            </Link>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="outline" className="gap-2">
@@ -61,7 +71,7 @@ export const Navigation = () => {
                 </div>
               </DropdownMenuContent>
             </DropdownMenu>
-            <p className="text-sm text-muted-foreground">Real-time global statistics</p>
+            <ThemeToggle />
           </div>
 
           {/* Mobile Navigation */}

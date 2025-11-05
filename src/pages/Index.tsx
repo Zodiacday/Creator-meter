@@ -88,6 +88,13 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-primary/10 via-transparent to-transparent" />
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-2xl md:text-3xl font-semibold text-foreground mb-2">
+              CreatorMeter — Live Global Data for a Changing World
+            </h1>
+            <p className="text-sm md:text-base text-muted-foreground mb-6 md:mb-8">
+              We turn verified global data into live, interactive insights
+            </p>
+            
             <div className="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 bg-primary/10 border border-primary/20 rounded-full mb-4 md:mb-6">
               <div className="w-2 h-2 bg-accent rounded-full animate-pulse" />
               <span className="text-xs md:text-sm text-foreground">Live Statistics</span>
