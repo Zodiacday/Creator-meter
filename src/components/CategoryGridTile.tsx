@@ -139,17 +139,6 @@ export const CategoryGridTile = ({
             {expandedContent?.sources && (
               <SourceCitation sources={expandedContent.sources} />
             )}
-
-            {/* Learn More Link */}
-            {detailPageLink && (
-              <a 
-                href={detailPageLink} 
-                className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline"
-                onClick={(e) => e.stopPropagation()}
-              >
-                Learn More →
-              </a>
-            )}
           </div>
         </CollapsibleContent>
       </div>

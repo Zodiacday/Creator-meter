@@ -3,12 +3,9 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { MetaTags } from "@/components/SEO/MetaTags";
 import { SchemaMarkup } from "@/components/SEO/SchemaMarkup";
-import { FloatingPopulationCounter } from "@/components/FloatingPopulationCounter";
 import { CategoryGrid } from "@/components/CategoryGrid";
 import { InsightsSection } from "@/components/InsightsSection";
 import { NewsletterCTA } from "@/components/NewsletterCTA";
-import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
 
 const Index = () => {
   // Population
@@ -34,45 +31,45 @@ const Index = () => {
 
   // Government & Economics
   const healthSpending = useRealtimeCounter({
-    initialValue: 9.2,
-    incrementPerSecond: 0.000001
+    initialValue: 9200000000000,
+    incrementPerSecond: 292000
   });
 
   const educationSpending = useRealtimeCounter({
-    initialValue: 5.5,
-    incrementPerSecond: 0.0000005
+    initialValue: 5500000000000,
+    incrementPerSecond: 174000
   });
 
   const militarySpending = useRealtimeCounter({
-    initialValue: 2.2,
-    incrementPerSecond: 0.0000003
+    initialValue: 2200000000000,
+    incrementPerSecond: 70000
   });
 
   // Society & Media
   const internetUsers = useRealtimeCounter({
-    initialValue: 5.3,
-    incrementPerSecond: 0.00001
+    initialValue: 5300000000,
+    incrementPerSecond: 12
   });
 
   const booksPublished = useRealtimeCounter({
-    initialValue: 2.2,
-    incrementPerSecond: 0.000001
+    initialValue: 2200000,
+    incrementPerSecond: 0.07
   });
 
   const newspapersSold = useRealtimeCounter({
-    initialValue: 155,
-    incrementPerSecond: 0.000005
+    initialValue: 155000000,
+    incrementPerSecond: 1.8
   });
 
   // Environment
   const co2Emissions = useRealtimeCounter({
-    initialValue: 37,
-    incrementPerSecond: 0.000001
+    initialValue: 37000000000,
+    incrementPerSecond: 1173
   });
 
   const forestLoss = useRealtimeCounter({
-    initialValue: 10,
-    incrementPerSecond: 0.0000001
+    initialValue: 10000000,
+    incrementPerSecond: 0.32
   });
 
   // Food
@@ -82,7 +79,7 @@ const Index = () => {
   });
 
   const overweight = useRealtimeCounter({
-    initialValue: 2.0,
+    initialValue: 2000000000,
     incrementPerSecond: 0
   });
 
@@ -93,7 +90,7 @@ const Index = () => {
 
   // Water
   const peopleWithoutSafeWater = useRealtimeCounter({
-    initialValue: 2.0,
+    initialValue: 2000000000,
     incrementPerSecond: 0
   });
 
@@ -115,13 +112,13 @@ const Index = () => {
 
   // Health
   const infectiousDeaths = useRealtimeCounter({
-    initialValue: 13,
-    incrementPerSecond: 0.0000001
+    initialValue: 13000000,
+    incrementPerSecond: 0.41
   });
 
   const cancerDeaths = useRealtimeCounter({
-    initialValue: 10,
-    incrementPerSecond: 0.0000001
+    initialValue: 10000000,
+    incrementPerSecond: 0.32
   });
 
   return (
@@ -134,37 +131,17 @@ const Index = () => {
       <SchemaMarkup type="Organization" data={{}} />
       
       <Navigation />
-      
-      <FloatingPopulationCounter 
-        population={worldPopulation}
-        birthsPerSecond={4.73}
-        deathsPerSecond={2.04}
-      />
 
       <main className="min-h-screen bg-background">
-        <section className="relative py-16 md:py-20 px-4 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent" />
-          <div className="container mx-auto relative z-10">
-            <div className="text-center max-w-4xl mx-auto">
-              <h1 className="text-3xl md:text-5xl font-bold mb-3 gradient-text">
+        <section className="py-8 px-4">
+          <div className="container mx-auto">
+            <div className="text-center max-w-4xl mx-auto mb-8">
+              <h1 className="text-2xl md:text-3xl font-bold gradient-text">
                 CreatorMeter — Live Global Data for a Changing World
               </h1>
-              <p className="text-base md:text-lg text-muted-foreground mb-8">
+              <p className="text-sm md:text-base text-muted-foreground mt-2">
                 We turn verified global data into live, interactive insights.
               </p>
-              
-              <div className="flex flex-wrap justify-center gap-4 mb-8">
-                <Link to="/compare">
-                  <Button size="lg" className="gap-2">
-                    🧭 Compare Data
-                  </Button>
-                </Link>
-                <Link to="/data-methodology">
-                  <Button size="lg" variant="outline" className="gap-2">
-                    🔍 Data Sources
-                  </Button>
-                </Link>
-              </div>
             </div>
           </div>
         </section>
