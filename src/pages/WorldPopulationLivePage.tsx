@@ -21,14 +21,21 @@ const WorldPopulationLivePage = () => {
     enabled: true
   });
 
+  // Calculate births and deaths since midnight
+  const now = new Date();
+  const midnight = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0, 0, 0);
+  const secondsSinceMidnight = (now.getTime() - midnight.getTime()) / 1000;
+  const birthsSinceMidnight = Math.floor(secondsSinceMidnight * 4.73);
+  const deathsSinceMidnight = Math.floor(secondsSinceMidnight * 2.04);
+
   const birthsToday = useRealtimeCounter({
-    initialValue: 0,
+    initialValue: birthsSinceMidnight,
     incrementPerSecond: 4.73, // 409,152 per day
     enabled: true
   });
 
   const deathsToday = useRealtimeCounter({
-    initialValue: 0,
+    initialValue: deathsSinceMidnight,
     incrementPerSecond: 2.04, // 176,256 per day
     enabled: true
   });
