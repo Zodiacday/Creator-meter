@@ -46,9 +46,6 @@ export const Navigation = () => {
             <Link to="/compare" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
               Compare
             </Link>
-            <Link to="/blog" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-              Blog
-            </Link>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="outline" className="gap-2">

@@ -23,6 +23,11 @@ export const Footer = () => {
                 </Link>
               </li>
               <li>
+                <Link to="/blog" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
+                  Blog
+                </Link>
+              </li>
+              <li>
                 <Link to="/widgets" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
                   Embeddable Widgets
                 </Link>
