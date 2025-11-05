@@ -1,28 +1,43 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { MetaTags } from "@/components/SEO/MetaTags";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { ArrowRight, TrendingUp, TrendingDown } from "lucide-react";
+import { Skeleton } from "@/components/ui/skeleton";
+import { useBackendData } from "@/hooks/useBackendData";
+import { ArrowRight, TrendingUp, TrendingDown, AlertCircle } from "lucide-react";
 
 const ComparePage = () => {
   const [country1, setCountry1] = useState("United States");
   const [country2, setCountry2] = useState("China");
   const [metric, setMetric] = useState("population");
 
+  // Fetch real data from edge functions
+  const { data: countriesData, isLoading: loadingCountries } = useBackendData<any>('countries');
+  const { data: gdpData, isLoading: loadingGdp } = useBackendData<any>('gdp');
+  const { data: co2Data, isLoading: loadingCo2 } = useBackendData<any>('co2-emissions');
+  const { data: energyData, isLoading: loadingEnergy } = useBackendData<any>('energy');
+
+  const isLoading = loadingCountries || loadingGdp || loadingCo2 || loadingEnergy;
+
   const countries = [
     "United States",
     "China",
     "India",
+    "Japan",
     "Germany",
     "United Kingdom",
     "France",
-    "Japan",
     "Brazil",
     "Canada",
-    "Australia",
+    "Russia",
+    "Indonesia",
+    "Italy",
+    "Mexico",
+    "Nigeria",
+    "Pakistan"
   ];
 
   const metrics = [
@@ -30,27 +45,72 @@ const ComparePage = () => {
     { value: "gdp", label: "GDP" },
     { value: "co2", label: "CO₂ Emissions" },
     { value: "energy", label: "Energy Consumption" },
-    { value: "life-expectancy", label: "Life Expectancy" },
   ];
 
-  // Mock data - replace with real API data
-  const comparisonData = {
-    population: {
-      "United States": { value: 331900000, change: 0.4 },
-      China: { value: 1412000000, change: 0.3 },
-      India: { value: 1408000000, change: 1.0 },
-    },
-    gdp: {
-      "United States": { value: 25500000000000, change: 2.1 },
-      China: { value: 17960000000000, change: 3.0 },
-      India: { value: 3730000000000, change: 6.5 },
-    },
-    co2: {
-      "United States": { value: 5000000000, change: -2.0 },
-      China: { value: 11000000000, change: 1.5 },
-      India: { value: 2700000000, change: 5.0 },
-    },
-  };
+  // Transform backend data into unified comparison format
+  const comparisonData = useMemo(() => {
+    if (!countriesData || !gdpData || !co2Data || !energyData) return {};
+
+    const data: any = {};
+
+    // Helper to normalize country names
+    const normalizeCountry = (name: string) => {
+      const mapping: Record<string, string> = {
+        "USA": "United States",
+        "UK": "United Kingdom",
+      };
+      return mapping[name] || name;
+    };
+
+    // Population data
+    countriesData.topCountries?.forEach((country: any) => {
+      const name = normalizeCountry(country.country);
+      if (!data[name]) data[name] = {};
+      data[name].population = {
+        value: country.population,
+        change: country.growthRate || 0
+      };
+    });
+
+    // GDP data
+    gdpData.topCountries?.forEach((country: any) => {
+      const name = normalizeCountry(country.country);
+      if (!data[name]) data[name] = {};
+      data[name].gdp = {
+        value: country.gdp,
+        change: country.growthRate || 0
+      };
+    });
+
+    // CO₂ data
+    co2Data.topCountries?.forEach((country: any) => {
+      const name = normalizeCountry(country.country);
+      if (!data[name]) data[name] = {};
+      // Calculate growth rate from historical data if available
+      let growthRate = 0;
+      if (co2Data.historical && co2Data.historical.length >= 2) {
+        const recent = co2Data.historical[co2Data.historical.length - 1];
+        const previous = co2Data.historical[co2Data.historical.length - 2];
+        growthRate = ((recent.emissions - previous.emissions) / previous.emissions) * 100;
+      }
+      data[name].co2 = {
+        value: country.emissions,
+        change: growthRate
+      };
+    });
+
+    // Energy data
+    energyData.topConsumers?.forEach((country: any) => {
+      const name = normalizeCountry(country.country);
+      if (!data[name]) data[name] = {};
+      data[name].energy = {
+        value: country.consumption,
+        change: 0 // Not provided in current API
+      };
+    });
+
+    return data;
+  }, [countriesData, gdpData, co2Data, energyData]);
 
   const formatValue = (value: number, metric: string) => {
     if (metric === "population") {
@@ -62,11 +122,14 @@ const ComparePage = () => {
     if (metric === "co2") {
       return (value / 1000000000).toFixed(2) + "B tonnes";
     }
+    if (metric === "energy") {
+      return (value / 1000000000000).toFixed(2) + " TWh";
+    }
     return value.toLocaleString();
   };
 
-  const data1 = comparisonData[metric as keyof typeof comparisonData]?.[country1];
-  const data2 = comparisonData[metric as keyof typeof comparisonData]?.[country2];
+  const data1 = comparisonData[country1]?.[metric];
+  const data2 = comparisonData[country2]?.[metric];
   const difference = data1 && data2 ? ((data1.value - data2.value) / data2.value) * 100 : 0;
 
   return (
@@ -97,9 +160,9 @@ const ComparePage = () => {
               <div className="grid md:grid-cols-5 gap-4 items-end">
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-foreground">Country 1</label>
-                  <Select value={country1} onValueChange={setCountry1}>
+                  <Select value={country1} onValueChange={setCountry1} disabled={isLoading}>
                     <SelectTrigger>
-                      <SelectValue />
+                      <SelectValue placeholder={isLoading ? "Loading..." : "Select country"} />
                     </SelectTrigger>
                     <SelectContent>
                       {countries.map((country) => (
@@ -117,9 +180,9 @@ const ComparePage = () => {
 
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-foreground">Country 2</label>
-                  <Select value={country2} onValueChange={setCountry2}>
+                  <Select value={country2} onValueChange={setCountry2} disabled={isLoading}>
                     <SelectTrigger>
-                      <SelectValue />
+                      <SelectValue placeholder={isLoading ? "Loading..." : "Select country"} />
                     </SelectTrigger>
                     <SelectContent>
                       {countries.map((country) => (
@@ -133,9 +196,9 @@ const ComparePage = () => {
 
                 <div className="space-y-2 md:col-span-2">
                   <label className="text-sm font-medium text-foreground">Metric</label>
-                  <Select value={metric} onValueChange={setMetric}>
+                  <Select value={metric} onValueChange={setMetric} disabled={isLoading}>
                     <SelectTrigger>
-                      <SelectValue />
+                      <SelectValue placeholder={isLoading ? "Loading..." : "Select metric"} />
                     </SelectTrigger>
                     <SelectContent>
                       {metrics.map((m) => (
@@ -151,57 +214,90 @@ const ComparePage = () => {
           </Card>
 
           {/* Comparison Results */}
-          <div className="grid md:grid-cols-2 gap-6 mb-8">
-            <Card>
-              <CardHeader>
-                <CardTitle>{country1}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                {data1 ? (
-                  <>
-                    <div className="text-3xl font-bold text-primary mb-2">
-                      {formatValue(data1.value, metric)}
-                    </div>
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                      {data1.change > 0 ? (
-                        <TrendingUp className="h-4 w-4 text-green-500" />
-                      ) : (
-                        <TrendingDown className="h-4 w-4 text-red-500" />
+          {isLoading ? (
+            <div className="grid md:grid-cols-2 gap-6 mb-8">
+              <Card>
+                <CardHeader>
+                  <Skeleton className="h-7 w-32" />
+                </CardHeader>
+                <CardContent>
+                  <Skeleton className="h-10 w-40 mb-2" />
+                  <Skeleton className="h-4 w-32" />
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <Skeleton className="h-7 w-32" />
+                </CardHeader>
+                <CardContent>
+                  <Skeleton className="h-10 w-40 mb-2" />
+                  <Skeleton className="h-4 w-32" />
+                </CardContent>
+              </Card>
+            </div>
+          ) : (
+            <div className="grid md:grid-cols-2 gap-6 mb-8">
+              <Card>
+                <CardHeader>
+                  <CardTitle>{country1}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  {data1 ? (
+                    <>
+                      <div className="text-3xl font-bold text-primary mb-2">
+                        {formatValue(data1.value, metric)}
+                      </div>
+                      {data1.change !== 0 && (
+                        <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                          {data1.change > 0 ? (
+                            <TrendingUp className="h-4 w-4 text-green-500" />
+                          ) : (
+                            <TrendingDown className="h-4 w-4 text-red-500" />
+                          )}
+                          <span>{Math.abs(data1.change).toFixed(2)}% annual change</span>
+                        </div>
                       )}
-                      <span>{Math.abs(data1.change)}% annual change</span>
+                    </>
+                  ) : (
+                    <div className="flex items-center gap-2 text-muted-foreground">
+                      <AlertCircle className="h-4 w-4" />
+                      <p>Data not available</p>
                     </div>
-                  </>
-                ) : (
-                  <p className="text-muted-foreground">Data not available</p>
-                )}
-              </CardContent>
-            </Card>
+                  )}
+                </CardContent>
+              </Card>
 
-            <Card>
-              <CardHeader>
-                <CardTitle>{country2}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                {data2 ? (
-                  <>
-                    <div className="text-3xl font-bold text-primary mb-2">
-                      {formatValue(data2.value, metric)}
-                    </div>
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                      {data2.change > 0 ? (
-                        <TrendingUp className="h-4 w-4 text-green-500" />
-                      ) : (
-                        <TrendingDown className="h-4 w-4 text-red-500" />
+              <Card>
+                <CardHeader>
+                  <CardTitle>{country2}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  {data2 ? (
+                    <>
+                      <div className="text-3xl font-bold text-primary mb-2">
+                        {formatValue(data2.value, metric)}
+                      </div>
+                      {data2.change !== 0 && (
+                        <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                          {data2.change > 0 ? (
+                            <TrendingUp className="h-4 w-4 text-green-500" />
+                          ) : (
+                            <TrendingDown className="h-4 w-4 text-red-500" />
+                          )}
+                          <span>{Math.abs(data2.change).toFixed(2)}% annual change</span>
+                        </div>
                       )}
-                      <span>{Math.abs(data2.change)}% annual change</span>
+                    </>
+                  ) : (
+                    <div className="flex items-center gap-2 text-muted-foreground">
+                      <AlertCircle className="h-4 w-4" />
+                      <p>Data not available</p>
                     </div>
-                  </>
-                ) : (
-                  <p className="text-muted-foreground">Data not available</p>
-                )}
-              </CardContent>
-            </Card>
-          </div>
+                  )}
+                </CardContent>
+              </Card>
+            </div>
+          )}
 
           {/* Difference Analysis */}
           {data1 && data2 && (
