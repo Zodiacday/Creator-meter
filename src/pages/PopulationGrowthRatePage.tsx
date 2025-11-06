@@ -5,6 +5,8 @@ import { ChartCard } from "@/components/ChartCard";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, LineChart, Line } from "recharts";
 import { MetaTags } from "@/components/SEO/MetaTags";
 import { SchemaMarkup } from "@/components/SEO/SchemaMarkup";
+import { RelatedPages } from "@/components/RelatedPages";
+import { Footer } from "@/components/Footer";
 
 const PopulationGrowthRatePage = () => {
   const topGrowthCountries = [
@@ -236,8 +238,19 @@ const PopulationGrowthRatePage = () => {
               <strong>Data Sources:</strong> United Nations World Population Prospects 2024, World Bank Population Estimates, CIA World Factbook
             </p>
           </div>
+          <RelatedPages
+            pages={[
+              { title: "Most Populated Countries", path: "/most-populated-countries-2025", description: "Countries with largest populations" },
+              { title: "Fertility Rate by Country", path: "/fertility-rate-by-country", description: "Birth rates across nations" },
+              { title: "Births Per Day", path: "/births-per-day-worldwide", description: "Daily birth statistics worldwide" },
+              { title: "Deaths Per Day", path: "/deaths-per-day-worldwide", description: "Daily death statistics worldwide" },
+              { title: "World Population Live", path: "/world-population-live", description: "Real-time world population counter" },
+              { title: "Compare Countries", path: "/compare", description: "Compare statistics between countries" },
+            ]}
+          />
         </div>
       </main>
+      <Footer />
     </div>
   );
 };

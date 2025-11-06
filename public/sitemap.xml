@@ -48,6 +48,28 @@
   <priority>0.9</priority>
 </url>
 
+<!-- Tools & Features - High Priority -->
+<url>
+  <loc>https://creatormeter.com/compare</loc>
+  <lastmod>2025-01-15</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.9</priority>
+</url>
+
+<url>
+  <loc>https://creatormeter.com/data-methodology</loc>
+  <lastmod>2025-01-15</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://creatormeter.com/blog</loc>
+  <lastmod>2025-01-15</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.8</priority>
+</url>
+
 <!-- Category Pages - High Priority -->
 <url>
   <loc>https://creatormeter.com/population</loc>
@@ -215,6 +237,13 @@
 </url>
 
 <url>
+  <loc>https://creatormeter.com/global-gdp-by-country</loc>
+  <lastmod>2025-01-15</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.9</priority>
+</url>
+
+<url>
   <loc>https://creatormeter.com/government-spending-by-country</loc>
   <lastmod>2025-01-15</lastmod>
   <changefreq>monthly</changefreq>
@@ -257,19 +286,11 @@
   <priority>0.6</priority>
 </url>
 
-<!-- New High-Volume Keyword Pages -->
 <url>
   <loc>https://creatormeter.com/world-population-by-continent-counter</loc>
   <lastmod>2025-01-15</lastmod>
   <changefreq>hourly</changefreq>
   <priority>1.0</priority>
-</url>
-
-<url>
-  <loc>https://creatormeter.com/global-gdp-by-country</loc>
-  <lastmod>2025-01-15</lastmod>
-  <changefreq>daily</changefreq>
-  <priority>0.9</priority>
 </url>
 
 <!-- Embeddable Widgets -->
@@ -278,6 +299,55 @@
   <lastmod>2025-01-15</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.7</priority>
+</url>
+
+<url>
+  <loc>https://creatormeter.com/widget/world-population</loc>
+  <lastmod>2025-01-15</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.5</priority>
+</url>
+
+<url>
+  <loc>https://creatormeter.com/widget/world-gdp</loc>
+  <lastmod>2025-01-15</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.5</priority>
+</url>
+
+<url>
+  <loc>https://creatormeter.com/widget/co2-emissions</loc>
+  <lastmod>2025-01-15</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.5</priority>
+</url>
+
+<url>
+  <loc>https://creatormeter.com/widget/coronavirus</loc>
+  <lastmod>2025-01-15</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.5</priority>
+</url>
+
+<url>
+  <loc>https://creatormeter.com/widget/births</loc>
+  <lastmod>2025-01-15</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.5</priority>
+</url>
+
+<url>
+  <loc>https://creatormeter.com/widget/deaths</loc>
+  <lastmod>2025-01-15</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.5</priority>
+</url>
+
+<url>
+  <loc>https://creatormeter.com/widget/health-spending</loc>
+  <lastmod>2025-01-15</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.5</priority>
 </url>
 
 <!-- Technology & Society -->

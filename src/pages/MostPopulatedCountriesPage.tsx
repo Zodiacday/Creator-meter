@@ -5,6 +5,8 @@ import { ChartCard } from "@/components/ChartCard";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
 import { MetaTags } from "@/components/SEO/MetaTags";
 import { SchemaMarkup } from "@/components/SEO/SchemaMarkup";
+import { RelatedPages } from "@/components/RelatedPages";
+import { Footer } from "@/components/Footer";
 
 const MostPopulatedCountriesPage = () => {
   const topCountries = [
@@ -48,8 +50,19 @@ const MostPopulatedCountriesPage = () => {
               </BarChart>
             </ResponsiveContainer>
           </ChartCard>
+          <RelatedPages
+            pages={[
+              { title: "Least Populated Countries", path: "/least-populated-countries", description: "Countries with the smallest populations" },
+              { title: "Population Growth Rate", path: "/population-growth-rate-by-country", description: "Which countries are growing fastest" },
+              { title: "World Population Live", path: "/world-population-live", description: "Real-time world population counter" },
+              { title: "Median Age by Country", path: "/median-age-by-country", description: "Age demographics by nation" },
+              { title: "Population by Continent", path: "/world-population-by-continent-counter", description: "Population distribution across continents" },
+              { title: "Compare Countries", path: "/compare", description: "Compare statistics between countries" },
+            ]}
+          />
         </div>
       </main>
+      <Footer />
     </div>
   );
 };

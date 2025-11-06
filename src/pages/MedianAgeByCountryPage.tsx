@@ -5,6 +5,8 @@ import { ChartCard } from "@/components/ChartCard";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
 import { MetaTags } from "@/components/SEO/MetaTags";
 import { SchemaMarkup } from "@/components/SEO/SchemaMarkup";
+import { RelatedPages } from "@/components/RelatedPages";
+import { Footer } from "@/components/Footer";
 
 const MedianAgeByCountryPage = () => {
   const oldestCountries = [
@@ -102,8 +104,19 @@ const MedianAgeByCountryPage = () => {
               ))}
             </div>
           </div>
+          <RelatedPages
+            pages={[
+              { title: "Population by Age", path: "/world-population-by-age", description: "Global age distribution and demographics" },
+              { title: "Fertility Rate by Country", path: "/fertility-rate-by-country", description: "Birth rates across nations" },
+              { title: "Life Expectancy Calculator", path: "/life-expectancy-calculator", description: "Estimate your life expectancy" },
+              { title: "Most Populated Countries", path: "/most-populated-countries-2025", description: "Countries with largest populations" },
+              { title: "Infant Mortality Rate", path: "/infant-mortality-rate", description: "Child survival statistics by country" },
+              { title: "Compare Countries", path: "/compare", description: "Compare statistics between countries" },
+            ]}
+          />
         </div>
       </main>
+      <Footer />
     </div>
   );
 };
