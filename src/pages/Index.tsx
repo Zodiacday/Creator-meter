@@ -124,11 +124,30 @@ const Index = () => {
   return (
     <>
       <MetaTags 
-        title="CreatorMeter - Live Global Data for a Changing World"
-        description="Real-time global statistics across population, economics, society, environment, food, water, energy, and health. Verified data, transparent methodology."
-        keywords="world statistics, global data, population counter, live data, world metrics"
+        title="Live World Statistics 2025 - Real-Time Global Data Counter"
+        description="Watch the world change in real-time. Live counters for population (8.25B+), CO₂ emissions, GDP, births/deaths, and 50+ global metrics. Verified data from UN, WHO, World Bank."
+        keywords="world statistics, global data, population counter, live data, world population clock, real-time statistics, global metrics, world data"
+        canonical={`${window.location.origin}/`}
       />
-      <SchemaMarkup type="Organization" data={{}} />
+      <SchemaMarkup 
+        type="Organization" 
+        data={{}} 
+      />
+      <SchemaMarkup 
+        type="WebSite" 
+        data={{
+          name: "CreatorMeter",
+          url: window.location.origin,
+          potentialAction: {
+            "@type": "SearchAction",
+            target: {
+              "@type": "EntryPoint",
+              urlTemplate: `${window.location.origin}/search?q={search_term_string}`
+            },
+            "query-input": "required name=search_term_string"
+          }
+        }} 
+      />
       
       <Navigation />
 

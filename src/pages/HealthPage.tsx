@@ -8,6 +8,10 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContaine
 import { MetaTags } from "@/components/SEO/MetaTags";
 import { SchemaMarkup } from "@/components/SEO/SchemaMarkup";
 import { ExportButton } from "@/components/ExportButton";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ShareButtons } from "@/components/ShareButtons";
+import { RelatedPages } from "@/components/RelatedPages";
+import { Footer } from "@/components/Footer";
 
 const HealthPage = () => {
   const infectiousDeaths = useRealtimeCounter({ initialValue: 17000000, incrementPerSecond: 0.54 });

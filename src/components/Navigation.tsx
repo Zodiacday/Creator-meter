@@ -40,11 +40,14 @@ export const Navigation = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-4">
-            <Link to="/data-methodology" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+            <Link to="/data-sources" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
               Data Sources
             </Link>
             <Link to="/compare" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
               Compare
+            </Link>
+            <Link to="/blog" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              Blog
             </Link>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>

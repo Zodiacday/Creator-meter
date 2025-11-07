@@ -8,6 +8,10 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContai
 import { MetaTags } from "@/components/SEO/MetaTags";
 import { SchemaMarkup } from "@/components/SEO/SchemaMarkup";
 import { ExportButton } from "@/components/ExportButton";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ShareButtons } from "@/components/ShareButtons";
+import { RelatedPages } from "@/components/RelatedPages";
+import { Footer } from "@/components/Footer";
 
 const PopulationPage = () => {
   const births = useRealtimeCounter({ initialValue: 140000000, incrementPerSecond: 4.17 });
@@ -220,8 +224,20 @@ const PopulationPage = () => {
               <strong>Data Sources:</strong> United Nations Department of Economic and Social Affairs (UN DESA), World Bank, Population Reference Bureau, CIA World Factbook
             </p>
           </div>
+
+          <RelatedPages
+            pages={[
+              { title: "Births Per Day Worldwide", path: "/births-per-day-worldwide", description: "Daily global birth statistics" },
+              { title: "Deaths Per Day Worldwide", path: "/deaths-per-day-worldwide", description: "Daily global death statistics" },
+              { title: "Population Growth Rate", path: "/population-growth-rate-by-country", description: "Country growth rankings" },
+              { title: "Most Populated Countries", path: "/most-populated-countries-2025", description: "Top countries by population" },
+              { title: "Population by Age", path: "/world-population-by-age", description: "Age distribution analysis" },
+              { title: "World Population Live", path: "/world-population-live", description: "Real-time population counter" },
+            ]}
+          />
         </div>
       </main>
+      <Footer />
     </div>
   );
 };

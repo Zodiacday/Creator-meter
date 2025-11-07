@@ -28,6 +28,7 @@ import AboutPage from "./pages/AboutPage";
 import PrivacyPage from "./pages/PrivacyPage";
 import ContactPage from "./pages/ContactPage";
 import DataMethodologyPage from "./pages/DataMethodologyPage";
+import DataSourcesPage from "./pages/DataSourcesPage";
 import ComparePage from "./pages/ComparePage";
 import BlogPage from "./pages/BlogPage";
 import WorldPopulationLivePage from "./pages/WorldPopulationLivePage";
@@ -94,6 +95,7 @@ const App = () => (
             <Route path="/privacy" element={<PrivacyPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/data-methodology" element={<DataMethodologyPage />} />
+            <Route path="/data-sources" element={<DataSourcesPage />} />
             <Route path="/compare" element={<ComparePage />} />
             <Route path="/blog" element={<BlogPage />} />
             <Route path="/world-population-live" element={<WorldPopulationLivePage />} />

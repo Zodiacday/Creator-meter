@@ -25,7 +25,7 @@ interface BreadcrumbItem {
 }
 
 interface SchemaMarkupProps {
-  type: 'Dataset' | 'FAQPage' | 'BreadcrumbList' | 'Organization' | 'WebPage';
+  type: 'Dataset' | 'FAQPage' | 'BreadcrumbList' | 'Organization' | 'WebPage' | 'WebSite';
   data: DatasetSchema | FAQItem[] | BreadcrumbItem[] | any;
 }
 
@@ -102,6 +102,14 @@ export const SchemaMarkup = ({ type, data }: SchemaMarkupProps) => {
         schema = {
           ...schema,
           "@type": "WebPage",
+          ...data
+        };
+        break;
+
+      case 'WebSite':
+        schema = {
+          ...schema,
+          "@type": "WebSite",
           ...data
         };
         break;

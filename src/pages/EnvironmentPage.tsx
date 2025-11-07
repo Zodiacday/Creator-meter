@@ -7,6 +7,10 @@ import { useRealtimeCounter } from "@/hooks/useRealtimeCounter";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar, PieChart, Pie, Cell, AreaChart, Area } from "recharts";
 import { MetaTags } from "@/components/SEO/MetaTags";
 import { SchemaMarkup } from "@/components/SEO/SchemaMarkup";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ShareButtons } from "@/components/ShareButtons";
+import { RelatedPages } from "@/components/RelatedPages";
+import { Footer } from "@/components/Footer";
 
 const EnvironmentPage = () => {
   // Worldometer.info CO2 data: 33.4B tons year-to-date (15 days)
