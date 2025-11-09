@@ -3,6 +3,10 @@ import { Flag, Globe, Users, TrendingUp, Award } from "lucide-react";
 import { StatCard } from "@/components/StatCard";
 import { ChartCard } from "@/components/ChartCard";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
+import { MetaTags } from "@/components/SEO/MetaTags";
+import { SchemaMarkup } from "@/components/SEO/SchemaMarkup";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { Footer } from "@/components/Footer";
 
 const FlagsPage = () => {
   // Countries by population (millions)
@@ -54,9 +58,41 @@ const FlagsPage = () => {
     { continent: "Oceania", countries: 14, population: 45 },
   ];
 
+  const breadcrumbs = [
+    { label: "Home", href: "/" },
+    { label: "Countries & Flags", href: "/flags" }
+  ];
+
   return (
-    <div className="min-h-screen bg-background">
-      <Navigation />
+    <>
+      <MetaTags
+        title="Countries & Flags - World Nations Demographics & Statistics"
+        description="Explore world nations, flags, demographics, and key statistics. View countries by population, area, GDP, and continental distribution with detailed data."
+        keywords="world flags, countries, demographics, population by country, world statistics, nations"
+        canonical="https://www.creatormeter.com/flags"
+      />
+      <SchemaMarkup
+        type="Dataset"
+        data={{
+          name: "World Countries & Flags Statistics",
+          description: "Comprehensive data on world nations including demographics, geography, and economic indicators",
+          url: "https://www.creatormeter.com/flags",
+          keywords: ["countries", "flags", "demographics", "world nations", "population"],
+          temporalCoverage: "2024/..",
+          spatialCoverage: "Global"
+        }}
+      />
+      <SchemaMarkup
+        type="BreadcrumbList"
+        data={breadcrumbs.map((crumb) => ({
+          name: crumb.label,
+          url: `https://www.creatormeter.com${crumb.href}`
+        }))}
+      />
+      
+      <div className="min-h-screen bg-background">
+        <Navigation />
+        <Breadcrumbs items={breadcrumbs} />
       
       <div className="container mx-auto px-4 py-12">
         <div className="flex items-center gap-4 mb-8 animate-fade-in">
@@ -190,7 +226,9 @@ const FlagsPage = () => {
           </p>
         </div>
       </div>
+      <Footer />
     </div>
+    </>
   );
 };
 

@@ -8,6 +8,8 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContaine
 import { MetaTags } from "@/components/SEO/MetaTags";
 import { SchemaMarkup } from "@/components/SEO/SchemaMarkup";
 import { ExportButton } from "@/components/ExportButton";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { Footer } from "@/components/Footer";
 
 const DeathsPerDayPage = () => {
   const deathsToday = useRealtimeCounter({ initialValue: 154000, incrementPerSecond: 2.04 });
@@ -46,20 +48,25 @@ const DeathsPerDayPage = () => {
     }
   ];
 
+  const breadcrumbs = [
+    { label: "Home", href: "/" },
+    { label: "Deaths Per Day Worldwide", href: "/deaths-per-day-worldwide" }
+  ];
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <MetaTags
         title="Deaths Per Day Worldwide - Live Global Mortality Statistics"
         description="163,000 people die every day worldwide. Track real-time global deaths, causes of death, and mortality rates by region. Updated live with WHO data."
         keywords="deaths per day, daily deaths worldwide, global mortality rate, death statistics, causes of death, world death rate"
-        canonical={`${window.location.origin}/deaths-per-day-worldwide`}
+        canonical="https://www.creatormeter.com/deaths-per-day-worldwide"
       />
       <SchemaMarkup
         type="Dataset"
         data={{
           name: "Global Daily Death Statistics",
           description: "Real-time data on deaths per day worldwide",
-          url: `${window.location.origin}/deaths-per-day-worldwide`,
+          url: "https://www.creatormeter.com/deaths-per-day-worldwide",
           keywords: ["deaths", "mortality", "death rate", "global health"],
           temporalCoverage: "2024/..",
           spatialCoverage: "Global"
@@ -68,12 +75,13 @@ const DeathsPerDayPage = () => {
       <SchemaMarkup type="FAQPage" data={faqData} />
       <SchemaMarkup
         type="BreadcrumbList"
-        data={[
-          { name: "Home", url: window.location.origin },
-          { name: "Deaths Per Day", url: `${window.location.origin}/deaths-per-day-worldwide` }
-        ]}
+        data={breadcrumbs.map((crumb) => ({
+          name: crumb.label,
+          url: `https://www.creatormeter.com${crumb.href}`
+        }))}
       />
       <Navigation />
+      <Breadcrumbs items={breadcrumbs} />
 
       <main className="container px-4 py-8 md:py-12">
         <div className="max-w-7xl mx-auto">
@@ -207,6 +215,7 @@ const DeathsPerDayPage = () => {
           </div>
         </div>
       </main>
+      <Footer />
     </div>
   );
 };

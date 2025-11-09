@@ -8,6 +8,8 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContaine
 import { MetaTags } from "@/components/SEO/MetaTags";
 import { SchemaMarkup } from "@/components/SEO/SchemaMarkup";
 import { ExportButton } from "@/components/ExportButton";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { Footer } from "@/components/Footer";
 
 const BirthsPerDayPage = () => {
   const birthsToday = useRealtimeCounter({ initialValue: 327000, incrementPerSecond: 4.73 });
@@ -45,20 +47,25 @@ const BirthsPerDayPage = () => {
     }
   ];
 
+  const breadcrumbs = [
+    { label: "Home", href: "/" },
+    { label: "Births Per Day Worldwide", href: "/births-per-day-worldwide" }
+  ];
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <MetaTags
         title="Births Per Day Worldwide - Live Global Birth Statistics"
         description="385,000 babies born every day. Track real-time worldwide births, regional breakdowns, and birth rates by country. Updated live with UN population data."
         keywords="births per day, babies born today, world birth rate, daily births worldwide, global birth statistics, births per second"
-        canonical={`${window.location.origin}/births-per-day-worldwide`}
+        canonical="https://www.creatormeter.com/births-per-day-worldwide"
       />
       <SchemaMarkup
         type="Dataset"
         data={{
           name: "Global Daily Birth Statistics",
           description: "Real-time data on births per day worldwide",
-          url: `${window.location.origin}/births-per-day-worldwide`,
+          url: "https://www.creatormeter.com/births-per-day-worldwide",
           keywords: ["births", "birth rate", "natality", "population growth"],
           temporalCoverage: "2024/..",
           spatialCoverage: "Global"
@@ -67,12 +74,13 @@ const BirthsPerDayPage = () => {
       <SchemaMarkup type="FAQPage" data={faqData} />
       <SchemaMarkup
         type="BreadcrumbList"
-        data={[
-          { name: "Home", url: window.location.origin },
-          { name: "Births Per Day", url: `${window.location.origin}/births-per-day-worldwide` }
-        ]}
+        data={breadcrumbs.map((crumb) => ({
+          name: crumb.label,
+          url: `https://www.creatormeter.com${crumb.href}`
+        }))}
       />
       <Navigation />
+      <Breadcrumbs items={breadcrumbs} />
 
       <main className="container px-4 py-8 md:py-12">
         <div className="max-w-7xl mx-auto">
@@ -206,6 +214,7 @@ const BirthsPerDayPage = () => {
           </div>
         </div>
       </main>
+      <Footer />
     </div>
   );
 };

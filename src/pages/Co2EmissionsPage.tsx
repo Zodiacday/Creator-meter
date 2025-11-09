@@ -9,7 +9,8 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContaine
 import { MetaTags } from "@/components/SEO/MetaTags";
 import { SchemaMarkup } from "@/components/SEO/SchemaMarkup";
 import { ExportButton } from "@/components/ExportButton";
-import { SocialShare } from "@/components/SocialShare";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { Footer } from "@/components/Footer";
 
 interface Co2Data {
   year: number;
@@ -51,20 +52,25 @@ const Co2EmissionsPage = () => {
     );
   }
 
+  const breadcrumbs = [
+    { label: "Home", href: "/" },
+    { label: "CO₂ Emissions", href: "/co2-emissions" }
+  ];
+
   return (
     <div className="min-h-screen bg-background">
       <MetaTags
         title="CO2 Emissions Live Tracker - Carbon Emissions by Country"
         description="Real-time CO2 emissions tracker showing global carbon dioxide output. Track emissions by country, historical trends, and per capita data with live updates."
         keywords="co2 emissions, carbon emissions, greenhouse gases, climate change, emissions by country, carbon footprint"
-        canonical={`${window.location.origin}/co2-emissions`}
+        canonical="https://www.creatormeter.com/co2-emissions"
       />
       <SchemaMarkup
         type="Dataset"
         data={{
           name: "Global CO2 Emissions Statistics",
           description: "Real-time carbon dioxide emissions data by country with historical trends and projections",
-          url: `${window.location.origin}/co2-emissions`,
+          url: "https://www.creatormeter.com/co2-emissions",
           keywords: ["co2", "emissions", "carbon", "greenhouse gases", "climate"],
           temporalCoverage: "1950/..",
           spatialCoverage: "Global"
@@ -72,12 +78,13 @@ const Co2EmissionsPage = () => {
       />
       <SchemaMarkup
         type="BreadcrumbList"
-        data={[
-          { name: "Home", url: window.location.origin },
-          { name: "CO2 Emissions", url: `${window.location.origin}/co2-emissions` }
-        ]}
+        data={breadcrumbs.map((crumb) => ({
+          name: crumb.label,
+          url: `https://www.creatormeter.com${crumb.href}`
+        }))}
       />
       <Navigation />
+      <Breadcrumbs items={breadcrumbs} />
       
       {/* Hero Section */}
       <div className="container mx-auto px-4 py-12">
@@ -210,6 +217,7 @@ const Co2EmissionsPage = () => {
           </p>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
