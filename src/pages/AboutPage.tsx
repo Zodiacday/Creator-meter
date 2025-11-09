@@ -1,11 +1,35 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { MetaTags } from "@/components/SEO/MetaTags";
+import { SchemaMarkup } from "@/components/SEO/SchemaMarkup";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Info } from "lucide-react";
 
 const AboutPage = () => {
+  const breadcrumbs = [
+    { label: "Home", href: "/" },
+    { label: "About", href: "/about" }
+  ];
+
   return (
-    <div className="min-h-screen bg-background flex flex-col">
-      <Navigation />
+    <>
+      <MetaTags
+        title="About CreatorMeter - Real-Time Global Statistics Platform"
+        description="CreatorMeter is a real-time global data visualization platform presenting continuously updating statistics about world population, environment, health, energy, and more."
+        keywords="about creatormeter, global statistics platform, real-time data, world statistics, data visualization"
+        canonical="https://www.creatormeter.com/about"
+      />
+      <SchemaMarkup
+        type="BreadcrumbList"
+        data={breadcrumbs.map((crumb, index) => ({
+          name: crumb.label,
+          url: `https://www.creatormeter.com${crumb.href}`
+        }))}
+      />
+      
+      <div className="min-h-screen bg-background flex flex-col">
+        <Navigation />
+        <Breadcrumbs items={breadcrumbs} />
       
       <main className="flex-1 container mx-auto px-4 py-12">
         <div className="max-w-3xl mx-auto">
@@ -65,7 +89,8 @@ const AboutPage = () => {
       </main>
 
       <Footer />
-    </div>
+      </div>
+    </>
   );
 };
 

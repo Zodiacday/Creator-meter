@@ -2,6 +2,8 @@ import { useState, useMemo } from "react";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { MetaTags } from "@/components/SEO/MetaTags";
+import { SchemaMarkup } from "@/components/SEO/SchemaMarkup";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -132,17 +134,30 @@ const ComparePage = () => {
   const data2 = comparisonData[country2]?.[metric];
   const difference = data1 && data2 ? ((data1.value - data2.value) / data2.value) * 100 : 0;
 
+  const breadcrumbs = [
+    { label: "Home", href: "/" },
+    { label: "Compare Countries", href: "/compare" }
+  ];
+
   return (
     <>
       <MetaTags
-        title="Compare Countries | CreatorMeter"
-        description="Compare global statistics between countries. Analyze population, GDP, CO₂ emissions, and more side-by-side."
-        keywords="country comparison, global statistics, compare countries, data visualization"
-        canonical="https://creatormeter.com/compare"
+        title="Compare Countries | CreatorMeter - Side-by-Side Global Statistics"
+        description="Compare global statistics between countries. Analyze population, GDP, CO₂ emissions, energy consumption, and more side-by-side with real data."
+        keywords="country comparison, global statistics, compare countries, data visualization, GDP comparison, population comparison"
+        canonical="https://www.creatormeter.com/compare"
+      />
+      <SchemaMarkup
+        type="BreadcrumbList"
+        data={breadcrumbs.map((crumb, index) => ({
+          name: crumb.label,
+          url: `https://www.creatormeter.com${crumb.href}`
+        }))}
       />
       
       <div className="min-h-screen bg-background">
         <Navigation />
+        <Breadcrumbs items={breadcrumbs} />
         
         <main className="container mx-auto px-4 py-12 max-w-6xl">
           <div className="text-center mb-12">

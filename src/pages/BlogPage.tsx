@@ -1,6 +1,8 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { MetaTags } from "@/components/SEO/MetaTags";
+import { SchemaMarkup } from "@/components/SEO/SchemaMarkup";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, Clock, ArrowRight } from "lucide-react";
@@ -48,17 +50,30 @@ const BlogPage = () => {
 
   const categories = ["All", "Methodology", "Economics", "Environment", "Population", "Health"];
 
+  const breadcrumbs = [
+    { label: "Home", href: "/" },
+    { label: "Blog", href: "/blog" }
+  ];
+
   return (
     <>
       <MetaTags
-        title="Blog | CreatorMeter Insights"
-        description="Explore articles about global statistics, data methodology, and insights into world trends. Learn how we process and present live data."
-        keywords="data blog, global statistics, world trends, data analysis, methodology"
-        canonical="https://creatormeter.com/blog"
+        title="Blog | CreatorMeter Insights - Global Statistics & Data Analysis"
+        description="Explore articles about global statistics, data methodology, and insights into world trends. Learn how we process and present live data from verified sources."
+        keywords="data blog, global statistics, world trends, data analysis, methodology, population insights, environmental data"
+        canonical="https://www.creatormeter.com/blog"
+      />
+      <SchemaMarkup
+        type="BreadcrumbList"
+        data={breadcrumbs.map((crumb, index) => ({
+          name: crumb.label,
+          url: `https://www.creatormeter.com${crumb.href}`
+        }))}
       />
       
       <div className="min-h-screen bg-background">
         <Navigation />
+        <Breadcrumbs items={breadcrumbs} />
         
         <main className="container mx-auto px-4 py-12 max-w-6xl">
           <div className="text-center mb-12">

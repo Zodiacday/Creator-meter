@@ -1,12 +1,36 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { MetaTags } from "@/components/SEO/MetaTags";
+import { SchemaMarkup } from "@/components/SEO/SchemaMarkup";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Mail, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const ContactPage = () => {
+  const breadcrumbs = [
+    { label: "Home", href: "/" },
+    { label: "Contact", href: "/contact" }
+  ];
+
   return (
-    <div className="min-h-screen bg-background flex flex-col">
-      <Navigation />
+    <>
+      <MetaTags
+        title="Contact CreatorMeter - Get in Touch"
+        description="Contact CreatorMeter for general inquiries, media requests, partnerships, or data-related questions. We'd love to hear from you."
+        keywords="contact creatormeter, support, media inquiries, data partnerships"
+        canonical="https://www.creatormeter.com/contact"
+      />
+      <SchemaMarkup
+        type="BreadcrumbList"
+        data={breadcrumbs.map((crumb, index) => ({
+          name: crumb.label,
+          url: `https://www.creatormeter.com${crumb.href}`
+        }))}
+      />
+      
+      <div className="min-h-screen bg-background flex flex-col">
+        <Navigation />
+        <Breadcrumbs items={breadcrumbs} />
       
       <main className="flex-1 container mx-auto px-4 py-12">
         <div className="max-w-3xl mx-auto">
@@ -73,7 +97,8 @@ const ContactPage = () => {
       </main>
 
       <Footer />
-    </div>
+      </div>
+    </>
   );
 };
 
