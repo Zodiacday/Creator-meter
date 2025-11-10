@@ -9,6 +9,7 @@ import {
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { SiteSearch } from "@/components/SiteSearch";
 import logo from "@/assets/logo.png";
 
 export const Navigation = () => {
@@ -40,6 +41,7 @@ export const Navigation = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-4">
+            <SiteSearch />
             <Link to="/data-sources" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
               Data Sources
             </Link>
@@ -75,7 +77,8 @@ export const Navigation = () => {
           </div>
 
           {/* Mobile Navigation */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center gap-2">
+            <ThemeToggle />
             <Sheet>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon">
@@ -83,8 +86,10 @@ export const Navigation = () => {
                 </Button>
               </SheetTrigger>
               <SheetContent>
-                <div className="flex flex-col gap-1 mt-4">
-                  <h3 className="font-semibold text-sm mb-2 px-2">More Statistics</h3>
+                <div className="flex flex-col gap-4 mt-4">
+                  <SiteSearch />
+                  <div className="flex flex-col gap-1">
+                    <h3 className="font-semibold text-sm mb-2 px-2">More Statistics</h3>
                   {additionalPages.map((page) => (
                     <Link
                       key={page.path}
@@ -94,6 +99,7 @@ export const Navigation = () => {
                       <div className="text-xs font-medium">{page.name}</div>
                     </Link>
                   ))}
+                  </div>
                 </div>
               </SheetContent>
             </Sheet>

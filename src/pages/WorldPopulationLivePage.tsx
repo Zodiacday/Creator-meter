@@ -1,4 +1,5 @@
 import { Navigation } from "@/components/Navigation";
+import { Footer } from "@/components/Footer";
 import { MetaTags } from "@/components/SEO/MetaTags";
 import { SchemaMarkup } from "@/components/SEO/SchemaMarkup";
 import { StatCard } from "@/components/StatCard";
@@ -6,6 +7,8 @@ import { ChartCard } from "@/components/ChartCard";
 import { QuickFacts } from "@/components/QuickFacts";
 import { SourceCitation } from "@/components/SourceCitation";
 import { ExpandableInfo } from "@/components/ExpandableInfo";
+import { ShareButtons } from "@/components/ShareButtons";
+import { ExploreMoreStats } from "@/components/ExploreMoreStats";
 import { useRealtimeCounter } from "@/hooks/useRealtimeCounter";
 import { Users, TrendingUp, Globe, Baby } from "lucide-react";
 import { LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from "recharts";
@@ -250,6 +253,14 @@ const WorldPopulationLivePage = () => {
             </div>
           </section>
 
+          <div className="my-8">
+            <ShareButtons 
+              title="World Population Live Counter"
+              description="Real-time global population statistics"
+              url="https://creatormeter.com/world-population-live"
+            />
+          </div>
+
           <SourceCitation
             sources={[
               { name: "World Population Prospects 2024", url: "https://population.un.org/wpp/", organization: "United Nations Population Division" },
@@ -258,7 +269,11 @@ const WorldPopulationLivePage = () => {
               { name: "World Population Dashboard", url: "https://www.un.org/en/desa", organization: "UN DESA" }
             ]}
           />
+
+          <ExploreMoreStats currentPath="/world-population-live" />
         </main>
+
+        <Footer />
       </div>
     </>
   );
