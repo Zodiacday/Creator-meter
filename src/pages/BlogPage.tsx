@@ -11,44 +11,35 @@ import { Link } from "react-router-dom";
 const BlogPage = () => {
   const blogPosts = [
     {
-      slug: "births-per-minute",
-      title: "How Many People Are Born Each Minute? The Math Behind Live Counters",
-      excerpt: "Discover how we convert annual birth statistics into real-time counters and explore the fascinating mathematics of global population growth.",
-      category: "Methodology",
-      date: "2024-01-15",
-      readTime: "5 min read",
-      image: "/placeholder.svg",
-    },
-    {
-      slug: "understanding-gdp",
-      title: "Understanding Global GDP: What the Numbers Really Mean",
-      excerpt: "GDP is often mentioned in news headlines, but what does it actually measure? Learn how to interpret global economic data.",
-      category: "Economics",
-      date: "2024-01-10",
-      readTime: "7 min read",
-      image: "/placeholder.svg",
-    },
-    {
-      slug: "co2-emissions-explained",
-      title: "CO₂ Emissions Explained: Breaking Down the Data",
-      excerpt: "Climate change dominates discussions worldwide. Understand how CO₂ emissions are measured and what the numbers mean for our planet.",
-      category: "Environment",
-      date: "2024-01-05",
-      readTime: "6 min read",
-      image: "/placeholder.svg",
-    },
-    {
-      slug: "population-milestones",
-      title: "World Population Milestones: When Will We Reach 9 Billion?",
-      excerpt: "Explore historical population growth and discover when experts predict we'll reach the next billion-person milestone.",
+      slug: "population-trends-2025",
+      title: "2025 Population Trends: What the Numbers Tell Us",
+      excerpt: "Deep dive into global population trends in 2025, including aging demographics, urbanization, and regional shifts that will shape our future.",
       category: "Population",
-      date: "2023-12-28",
+      date: "2025-01-15",
       readTime: "8 min read",
-      image: "/placeholder.svg",
+      image: "/logo.png",
+    },
+    {
+      slug: "climate-data-explained",
+      title: "Climate Data Explained: Understanding Environmental Statistics",
+      excerpt: "Comprehensive guide to climate data, CO₂ emissions tracking, and environmental indicators. Learn how global climate statistics are measured and verified.",
+      category: "Environment",
+      date: "2025-01-12",
+      readTime: "10 min read",
+      image: "/logo.png",
+    },
+    {
+      slug: "understanding-gdp-growth",
+      title: "Understanding GDP Growth: A Complete Guide to Economic Indicators",
+      excerpt: "Master the fundamentals of GDP, economic growth metrics, and how to interpret global economic data from World Bank and IMF sources.",
+      category: "Economics",
+      date: "2025-01-10",
+      readTime: "9 min read",
+      image: "/logo.png",
     },
   ];
 
-  const categories = ["All", "Methodology", "Economics", "Environment", "Population", "Health"];
+  const categories = ["All", "Population", "Environment", "Economics"];
 
   const breadcrumbs = [
     { label: "Home", href: "/" },
@@ -134,7 +125,7 @@ const BlogPage = () => {
           {/* Recent Posts */}
           <div>
             <h2 className="text-2xl font-bold text-foreground mb-6">Recent Articles</h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-2 gap-6">
               {blogPosts.slice(1).map((post) => (
                 <Card key={post.slug} className="overflow-hidden hover:shadow-lg transition-shadow">
                   <div className="aspect-video bg-muted" />
