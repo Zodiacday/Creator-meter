@@ -124,6 +124,16 @@ const WorldPopulationLivePage = () => {
       <div className="min-h-screen bg-background">
         <Navigation />
         
+        <noscript>
+          <div className="container mx-auto px-4 py-8">
+            <h1 className="text-3xl font-bold mb-4">World Population Live Counter</h1>
+            <p className="text-muted-foreground">
+              The current world population is over 8.2 billion people and growing. This live counter tracks real-time population changes 
+              based on birth and death rates from the United Nations and World Bank data. Enable JavaScript to see the live counter.
+            </p>
+          </div>
+        </noscript>
+        
         <main className="container mx-auto px-4 py-8">
           <header className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">

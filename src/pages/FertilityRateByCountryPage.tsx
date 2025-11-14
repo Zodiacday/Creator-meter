@@ -59,6 +59,16 @@ const FertilityRateByCountryPage = () => {
       />
       <SchemaMarkup type="FAQPage" data={faqData} />
       <Navigation />
+      <noscript>
+        <div className="container mx-auto px-4 py-8">
+          <h1 className="text-3xl font-bold mb-4">Fertility Rate by Country 2025</h1>
+          <p className="text-muted-foreground">
+            Niger leads with 6.73 children per woman. Compare fertility rates globally. South Korea has lowest at 0.72. 
+            Current total fertility rate (TFR) data and demographic trends from UN Population Division. 
+            Enable JavaScript for interactive charts.
+          </p>
+        </div>
+      </noscript>
       <main className="container px-4 py-8 md:py-12">
         <div className="max-w-7xl mx-auto">
           <h1 className="text-4xl font-bold gradient-text mb-8">Fertility Rate by Country 2025</h1>

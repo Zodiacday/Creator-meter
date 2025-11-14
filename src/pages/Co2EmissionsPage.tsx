@@ -84,6 +84,16 @@ const Co2EmissionsPage = () => {
         }))}
       />
       <Navigation />
+      <noscript>
+        <div className="container mx-auto px-4 py-8">
+          <h1 className="text-3xl font-bold mb-4">Global CO2 Emissions Live Counter</h1>
+          <p className="text-muted-foreground">
+            Track real-time global carbon dioxide emissions from fossil fuels, industry, and transportation. 
+            Over 37 billion metric tons of CO2 are emitted annually worldwide. Data from International Energy Agency 
+            and Global Carbon Project. Enable JavaScript to see the live counter.
+          </p>
+        </div>
+      </noscript>
       <Breadcrumbs items={breadcrumbs} />
       
       {/* Hero Section */}
