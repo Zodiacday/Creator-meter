@@ -95,6 +95,16 @@ const CoronavirusPage = () => {
         ]}
       />
       <Navigation />
+      <noscript>
+        <div className="container mx-auto px-4 py-8">
+          <h1 className="text-3xl font-bold mb-4">Coronavirus Statistics - COVID-19 Data</h1>
+          <p className="text-muted-foreground">
+            Comprehensive COVID-19 pandemic data including total cases, deaths, recoveries, and vaccination rates worldwide. 
+            Data sourced from World Health Organization (WHO) and Johns Hopkins University. 
+            Enable JavaScript for real-time updates and interactive visualizations.
+          </p>
+        </div>
+      </noscript>
       <div className="container mx-auto px-4 py-12">
         <div className="flex items-center justify-between gap-4 mb-8 flex-wrap">
           <div className="flex items-center gap-4">

@@ -151,6 +151,17 @@ const Index = () => {
       
       <Navigation />
 
+      <noscript>
+        <div className="container mx-auto px-4 py-8 text-center">
+          <h1 className="text-3xl font-bold mb-4">Real-Time Global Statistics - CreatorMeter</h1>
+          <p className="text-muted-foreground">
+            Track live world population, births, deaths, CO2 emissions, coronavirus cases, GDP, and more. 
+            Real-time data visualization platform presenting continuously updating statistics about the world.
+            Enable JavaScript to see live counters.
+          </p>
+        </div>
+      </noscript>
+
       <main className="min-h-screen bg-background">
         <section className="py-8 px-4">
           <div className="container mx-auto">

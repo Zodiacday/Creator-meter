@@ -59,6 +59,16 @@ const RenewableEnergyPage = () => {
       />
       <SchemaMarkup type="FAQPage" data={faqData} />
       <Navigation />
+      <noscript>
+        <div className="container mx-auto px-4 py-8">
+          <h1 className="text-3xl font-bold mb-4">Renewable Energy by Country 2025</h1>
+          <p className="text-muted-foreground">
+            Iceland and Paraguay run on 100% renewable energy. Compare renewable energy usage and capacity by country. 
+            Current data on solar, wind, hydro, and geothermal power from International Energy Agency. 
+            Enable JavaScript for interactive visualizations.
+          </p>
+        </div>
+      </noscript>
       <main className="container px-4 py-8 md:py-12">
         <div className="max-w-7xl mx-auto">
           <h1 className="text-4xl font-bold gradient-text mb-8">Renewable Energy by Country 2025</h1>
