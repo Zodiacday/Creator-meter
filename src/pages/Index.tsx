@@ -3,9 +3,16 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { MetaTags } from "@/components/SEO/MetaTags";
 import { SchemaMarkup } from "@/components/SEO/SchemaMarkup";
-import { CategoryGrid } from "@/components/CategoryGrid";
+import { MetricCard } from "@/components/MetricCard";
 import { InsightsSection } from "@/components/InsightsSection";
 import { NewsletterCTA } from "@/components/NewsletterCTA";
+import { 
+  Users, DollarSign, Cloud, Wifi, Heart, TrendingDown, 
+  Zap, Building, Baby, Skull, TrendingUp, UserPlus,
+  PieChart, Calendar, Globe2, MapPin, Flag, BarChart3,
+  Wheat, Package, Map, Search, LayoutGrid, Droplet,
+  Apple, FileText, Database, Activity, ShieldAlert
+} from "lucide-react";
 
 const Index = () => {
   // Population
@@ -121,6 +128,18 @@ const Index = () => {
     incrementPerSecond: 0.32
   });
 
+  // GDP
+  const worldGdp = useRealtimeCounter({
+    initialValue: 100000000000000,
+    incrementPerSecond: 3170000
+  });
+
+  // US National Debt
+  const usNationalDebt = useRealtimeCounter({
+    initialValue: 36000000000000,
+    incrementPerSecond: 1140000
+  });
+
   return (
     <>
       <MetaTags 
@@ -176,46 +195,351 @@ const Index = () => {
           </div>
         </section>
 
-        <div className="container mx-auto px-4 py-8">
-          <CategoryGrid 
-            populationData={{
-              worldPopulation,
-              birthsToday,
-              deathsToday,
-              netGrowthToday
-            }}
-            governmentData={{
-              healthSpending,
-              educationSpending,
-              militarySpending
-            }}
-            societyData={{
-              internetUsers,
-              booksPublished,
-              newspapersSold
-            }}
-            environmentData={{
-              co2Emissions,
-              forestLoss
-            }}
-            foodData={{
-              undernourished,
-              overweight,
-              obese
-            }}
-            waterData={{
-              peopleWithoutSafeWater,
-              waterUsed
-            }}
-            energyData={{
-              energyUsed,
-              renewable
-            }}
-            healthData={{
-              infectiousDeaths,
-              cancerDeaths
-            }}
-          />
+        <div className="container mx-auto px-4 py-12">
+          {/* Four-Column Grid Layout */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+            {/* Row 1 */}
+            <MetricCard
+              title="World Population Live"
+              value={worldPopulation}
+              subtitle="Current global population"
+              icon={Users}
+              link="/world-population-live"
+              gradientFrom="from-blue-500"
+              gradientTo="to-blue-400"
+            />
+            <MetricCard
+              title="World GDP Live"
+              value={worldGdp}
+              subtitle="Global economic output"
+              icon={DollarSign}
+              link="/world-gdp-live"
+              gradientFrom="from-green-500"
+              gradientTo="to-green-400"
+            />
+            <MetricCard
+              title="CO₂ Emissions"
+              value={co2Emissions}
+              subtitle="Annual carbon emissions"
+              icon={Cloud}
+              link="/co2-emissions"
+              gradientFrom="from-orange-500"
+              gradientTo="to-orange-400"
+            />
+            <MetricCard
+              title="Internet Users"
+              value={internetUsers}
+              subtitle="Global online population"
+              icon={Wifi}
+              link="/internet-users"
+              gradientFrom="from-purple-500"
+              gradientTo="to-purple-400"
+            />
+
+            {/* Row 2 */}
+            <MetricCard
+              title="Life Expectancy"
+              staticValue="73.2 years"
+              subtitle="Global average lifespan"
+              icon={Heart}
+              link="/life-expectancy-calculator"
+              gradientFrom="from-pink-500"
+              gradientTo="to-pink-400"
+            />
+            <MetricCard
+              title="Poverty Rate"
+              staticValue="9.3%"
+              subtitle="Living under $2.15/day"
+              icon={TrendingDown}
+              link="/poverty-rate"
+              gradientFrom="from-red-500"
+              gradientTo="to-red-400"
+            />
+            <MetricCard
+              title="Renewable Energy"
+              value={renewable}
+              subtitle="% of total energy use"
+              icon={Zap}
+              link="/renewable-energy"
+              gradientFrom="from-green-500"
+              gradientTo="to-green-400"
+            />
+            <MetricCard
+              title="US National Debt"
+              value={usNationalDebt}
+              subtitle="Total outstanding debt"
+              icon={Building}
+              link="/us-national-debt-clock"
+              gradientFrom="from-yellow-500"
+              gradientTo="to-yellow-400"
+            />
+
+            {/* Row 3 */}
+            <MetricCard
+              title="Births Per Day"
+              value={birthsToday}
+              subtitle="Daily births worldwide"
+              icon={Baby}
+              link="/births-per-day"
+              gradientFrom="from-cyan-500"
+              gradientTo="to-cyan-400"
+            />
+            <MetricCard
+              title="Deaths Per Day"
+              value={deathsToday}
+              subtitle="Daily deaths worldwide"
+              icon={Skull}
+              link="/deaths-per-day"
+              gradientFrom="from-gray-500"
+              gradientTo="to-gray-400"
+            />
+            <MetricCard
+              title="Population Growth Rate"
+              value={netGrowthToday}
+              subtitle="Net daily population change"
+              icon={TrendingUp}
+              link="/population-growth-rate"
+              gradientFrom="from-blue-500"
+              gradientTo="to-blue-400"
+            />
+            <MetricCard
+              title="Fertility Rate"
+              staticValue="2.3"
+              subtitle="Births per woman"
+              icon={UserPlus}
+              link="/fertility-rate-by-country"
+              gradientFrom="from-indigo-500"
+              gradientTo="to-indigo-400"
+            />
+
+            {/* Row 4 */}
+            <MetricCard
+              title="Population by Age"
+              staticValue="View Breakdown"
+              subtitle="Age group distribution"
+              icon={PieChart}
+              link="/population-by-age"
+              gradientFrom="from-violet-500"
+              gradientTo="to-violet-400"
+            />
+            <MetricCard
+              title="Median Age"
+              staticValue="30.4 years"
+              subtitle="Global median age"
+              icon={Calendar}
+              link="/median-age-by-country"
+              gradientFrom="from-pink-500"
+              gradientTo="to-pink-400"
+            />
+            <MetricCard
+              title="Population by Continent"
+              staticValue="View Distribution"
+              subtitle="Continental breakdown"
+              icon={Globe2}
+              link="/world-population-by-continent-counter"
+              gradientFrom="from-teal-500"
+              gradientTo="to-teal-400"
+            />
+            <MetricCard
+              title="Most Populated Countries"
+              staticValue="Top Rankings"
+              subtitle="Largest populations"
+              icon={MapPin}
+              link="/most-populated-countries"
+              gradientFrom="from-blue-500"
+              gradientTo="to-blue-400"
+            />
+
+            {/* Row 5 */}
+            <MetricCard
+              title="Least Populated Countries"
+              staticValue="Bottom Rankings"
+              subtitle="Smallest populations"
+              icon={MapPin}
+              link="/least-populated-countries"
+              gradientFrom="from-gray-500"
+              gradientTo="to-gray-400"
+            />
+            <MetricCard
+              title="CO₂ Per Capita"
+              staticValue="4.7 tons"
+              subtitle="Emissions per person"
+              icon={Cloud}
+              link="/co2-emissions-per-capita"
+              gradientFrom="from-orange-500"
+              gradientTo="to-orange-400"
+            />
+            <MetricCard
+              title="Government Spending"
+              value={healthSpending}
+              subtitle="Global health expenditure"
+              icon={Building}
+              link="/government-spending"
+              gradientFrom="from-blue-500"
+              gradientTo="to-blue-400"
+            />
+            <MetricCard
+              title="Food & Agriculture"
+              staticValue="View Data"
+              subtitle="Global food statistics"
+              icon={Wheat}
+              link="/food-agriculture"
+              gradientFrom="from-green-500"
+              gradientTo="to-green-400"
+            />
+
+            {/* Row 6 */}
+            <MetricCard
+              title="Commodities"
+              staticValue="View Prices"
+              subtitle="Global commodity data"
+              icon={Package}
+              link="/commodities"
+              gradientFrom="from-yellow-500"
+              gradientTo="to-yellow-400"
+            />
+            <MetricCard
+              title="World Map"
+              staticValue="Explore Map"
+              subtitle="Interactive visualization"
+              icon={Map}
+              link="/world-map"
+              gradientFrom="from-teal-500"
+              gradientTo="to-teal-400"
+            />
+            <MetricCard
+              title="Countries"
+              staticValue="View All"
+              subtitle="Country statistics"
+              icon={Globe2}
+              link="/countries"
+              gradientFrom="from-indigo-500"
+              gradientTo="to-indigo-400"
+            />
+            <MetricCard
+              title="Flags"
+              staticValue="Browse Flags"
+              subtitle="National flags gallery"
+              icon={Flag}
+              link="/flags"
+              gradientFrom="from-red-500"
+              gradientTo="to-red-400"
+            />
+
+            {/* Row 7 */}
+            <MetricCard
+              title="Population"
+              staticValue="Explore Data"
+              subtitle="Demographic insights"
+              icon={Users}
+              link="/population"
+              gradientFrom="from-blue-500"
+              gradientTo="to-blue-400"
+            />
+            <MetricCard
+              title="Government"
+              value={militarySpending}
+              subtitle="Military expenditure"
+              icon={Building}
+              link="/government"
+              gradientFrom="from-red-500"
+              gradientTo="to-red-400"
+            />
+            <MetricCard
+              title="Society"
+              value={booksPublished}
+              subtitle="Books published this year"
+              icon={BarChart3}
+              link="/society"
+              gradientFrom="from-purple-500"
+              gradientTo="to-purple-400"
+            />
+            <MetricCard
+              title="Environment"
+              value={forestLoss}
+              subtitle="Forest loss (hectares)"
+              icon={Cloud}
+              link="/environment"
+              gradientFrom="from-green-500"
+              gradientTo="to-green-400"
+            />
+
+            {/* Row 8 */}
+            <MetricCard
+              title="Compare"
+              staticValue="Compare Metrics"
+              subtitle="Side-by-side analysis"
+              icon={Search}
+              link="/compare"
+              gradientFrom="from-cyan-500"
+              gradientTo="to-cyan-400"
+            />
+            <MetricCard
+              title="Widgets"
+              staticValue="Embed Data"
+              subtitle="Embeddable widgets"
+              icon={LayoutGrid}
+              link="/widgets"
+              gradientFrom="from-violet-500"
+              gradientTo="to-violet-400"
+            />
+            <MetricCard
+              title="Water"
+              value={waterUsed}
+              subtitle="Water consumption (km³)"
+              icon={Droplet}
+              link="/water"
+              gradientFrom="from-blue-500"
+              gradientTo="to-blue-400"
+            />
+            <MetricCard
+              title="Food & Health"
+              value={undernourished}
+              subtitle="Undernourished (millions)"
+              icon={Apple}
+              link="/food"
+              gradientFrom="from-orange-500"
+              gradientTo="to-orange-400"
+            />
+
+            {/* Row 9 */}
+            <MetricCard
+              title="Data Methodology"
+              staticValue="Learn More"
+              subtitle="How we calculate data"
+              icon={FileText}
+              link="/data-methodology"
+              gradientFrom="from-gray-500"
+              gradientTo="to-gray-400"
+            />
+            <MetricCard
+              title="Data Sources"
+              staticValue="View Sources"
+              subtitle="Our trusted references"
+              icon={Database}
+              link="/data-sources"
+              gradientFrom="from-indigo-500"
+              gradientTo="to-indigo-400"
+            />
+            <MetricCard
+              title="Coronavirus Live"
+              staticValue="Live Counter"
+              subtitle="Real-time COVID-19 data"
+              icon={ShieldAlert}
+              link="/coronavirus-live-counter"
+              gradientFrom="from-red-500"
+              gradientTo="to-red-400"
+            />
+            <MetricCard
+              title="Coronavirus (Historic)"
+              staticValue="View History"
+              subtitle="Historical pandemic data"
+              icon={Activity}
+              link="/coronavirus"
+              gradientFrom="from-pink-500"
+              gradientTo="to-pink-400"
+            />
+          </div>
 
           <InsightsSection />
           <NewsletterCTA />
