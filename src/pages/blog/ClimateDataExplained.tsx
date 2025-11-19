@@ -16,7 +16,7 @@ const ClimateDataExplained = () => {
     "@type": "BlogPosting",
     headline: "Climate Data Explained: Understanding CO₂, Temperature, and Tipping Points",
     description: "A comprehensive guide to understanding climate data, from CO₂ measurements to global temperature anomalies and the critical tipping points we're approaching.",
-    image: "/logo.png",
+    image: "/logo.svg",
     datePublished: publishDate,
     dateModified: publishDate,
     author: {

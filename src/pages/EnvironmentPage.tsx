@@ -119,8 +119,8 @@ const EnvironmentPage = () => {
               <p className="text-xs text-muted-foreground mt-2">metric tons</p>
             </div>
 
-            <div className="relative text-center py-10 bg-gradient-to-br from-purple-500/10 to-transparent rounded-3xl border border-border animate-fade-in">
-              <FlaskConical className="w-8 h-8 mx-auto mb-2 text-purple-500" />
+            <div className="relative text-center py-10 bg-card rounded-3xl border border-border animate-fade-in">
+              <FlaskConical className="w-8 h-8 mx-auto mb-2 text-foreground" />
               <p className="text-sm text-muted-foreground mb-2">Toxic Chemicals Released</p>
               <Counter value={toxicChemicals} className="text-4xl md:text-5xl font-bold text-foreground counter-glow" />
               <p className="text-xs text-muted-foreground mt-2">tons this year</p>

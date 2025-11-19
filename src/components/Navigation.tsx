@@ -1,5 +1,6 @@
-import { Menu, ChevronDown } from "lucide-react";
+import { Menu, ChevronDown, ChevronLeft } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -10,7 +11,6 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { SiteSearch } from "@/components/SiteSearch";
-import logo from "@/assets/logo.png";
 
 export const Navigation = () => {
   const additionalPages = [
@@ -30,25 +30,34 @@ export const Navigation = () => {
   ];
 
   return (
-    <header className="border-b border-border bg-card/50 backdrop-blur-xl sticky top-0 z-50">
+    <header className="border-b border-border bg-card/50 backdrop-blur-xl">
       <div className="container mx-auto px-4 py-2">
         <div className="flex items-center justify-between">
-          {/* Logo */}
-          <Link to="/" className="flex items-center gap-2">
-            <img src={logo} alt="Creator Meter Logo" className="w-10 h-10 md:w-14 md:h-14" />
-            <h1 className="text-base md:text-xl font-bold gradient-text">Creator Meter</h1>
-          </Link>
+          {/* Optional Back Button (shows when not on home) */}
+          <div className="flex items-center gap-2">
+            {/* Back button will be rendered conditionally below */}
+            <BackButtonInline />
+
+            {/* Logo */}
+            <Link to="/" className="flex items-center gap-2">
+            <img src="/logo.svg" alt="Creator Meter Logo" className="w-10 h-10 md:w-14 md:h-14" />
+            <div className="flex flex-col leading-tight">
+              <h1 className="text-base md:text-xl font-bold text-foreground">CreatorMeter</h1>
+              <span className="text-[13px] mt-[3px] text-muted-foreground/100">Global Statistics & Live World Data</span>
+            </div>
+            </Link>
+          </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-4">
             <SiteSearch />
-            <Link to="/data-sources" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+            <Link to="/data-sources" className="text-sm text-muted-foreground hover:text-foreground transition-colors dark:text-white">
               Data Sources
             </Link>
-            <Link to="/compare" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+            <Link to="/compare" className="text-sm text-muted-foreground hover:text-foreground transition-colors dark:text-white">
               Compare
             </Link>
-            <Link to="/blog" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+            <Link to="/blog" className="text-sm text-muted-foreground hover:text-foreground transition-colors dark:text-white">
               Blog
             </Link>
             <DropdownMenu>
@@ -62,7 +71,7 @@ export const Navigation = () => {
                 <div className="grid grid-cols-2 gap-1 p-1">
                   {additionalPages.map((page) => (
                     <DropdownMenuItem key={page.path} asChild>
-                      <Link to={page.path} className="cursor-pointer">
+                      <Link to={page.path} className="cursor-pointer dark:text-white">
                         <div className="flex flex-col gap-1">
                           <div className="font-medium">{page.name}</div>
                           <div className="text-xs text-muted-foreground">{page.description}</div>
@@ -94,7 +103,7 @@ export const Navigation = () => {
                     <Link
                       key={page.path}
                       to={page.path}
-                      className="block rounded-md px-2 py-1.5 hover:bg-accent transition-colors"
+                      className="block rounded-md px-2 py-1.5 hover:bg-accent transition-colors dark:text-white"
                     >
                       <div className="text-xs font-medium">{page.name}</div>
                     </Link>
@@ -107,5 +116,33 @@ export const Navigation = () => {
         </div>
       </div>
     </header>
+  );
+};
+
+// Small inline back button component placed in header
+const BackButtonInline = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  // Don't show back button on home route
+  if (location.pathname === "/") return null;
+
+  const goBack = () => {
+    // Prefer router navigate, fallback to window.history
+    try {
+      navigate(-1);
+    } catch (e) {
+      window.history.back();
+    }
+  };
+
+  return (
+    <button
+      onClick={goBack}
+      aria-label="Go back"
+      className="inline-flex items-center justify-center w-8 h-8 rounded-md border border-border bg-card text-foreground hover:bg-opacity-90 transition-colors"
+    >
+      <ChevronLeft className="w-4 h-4" />
+    </button>
   );
 };

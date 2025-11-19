@@ -1,4 +1,5 @@
 import { Navigation } from "@/components/Navigation";
+import BackButton from "@/components/BackButton";
 import { Apple, Users, TrendingDown, AlertTriangle } from "lucide-react";
 import { useBackendData } from "@/hooks/useBackendData";
 import { StatCard } from "@/components/StatCard";
@@ -91,7 +92,10 @@ const FoodAgriculturePage = () => {
           <div className="p-4 rounded-xl bg-[hsl(var(--food))]/20">
             <Apple className="w-8 h-8 text-[hsl(var(--food))]" />
           </div>
-          <h1 className="text-4xl font-bold gradient-text">Food & Agriculture</h1>
+          <div className="flex items-center gap-3">
+            <BackButton />
+            <h1 className="text-4xl font-bold gradient-text">Food & Agriculture</h1>
+          </div>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 mb-8">

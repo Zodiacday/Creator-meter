@@ -17,7 +17,7 @@ const BlogPage = () => {
       category: "Population",
       date: "2025-01-15",
       readTime: "8 min read",
-      image: "/logo.png",
+      image: "/logo.svg",
     },
     {
       slug: "climate-data-explained",
@@ -26,7 +26,7 @@ const BlogPage = () => {
       category: "Environment",
       date: "2025-01-12",
       readTime: "10 min read",
-      image: "/logo.png",
+      image: "/logo.svg",
     },
     {
       slug: "understanding-gdp-growth",
@@ -35,7 +35,7 @@ const BlogPage = () => {
       category: "Economics",
       date: "2025-01-10",
       readTime: "9 min read",
-      image: "/logo.png",
+      image: "/logo.svg",
     },
   ];
 
@@ -89,53 +89,49 @@ const BlogPage = () => {
             ))}
           </div>
 
-          {/* Featured Post */}
+          {/* Featured Post (compact, no image) */}
           <Card className="mb-12 overflow-hidden">
-            <div className="grid md:grid-cols-2 gap-0">
-              <div className="aspect-video md:aspect-auto bg-muted" />
-              <CardContent className="p-6 md:p-8 flex flex-col justify-center">
-                <Badge className="w-fit mb-3">{blogPosts[0].category}</Badge>
-                <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3">
-                  {blogPosts[0].title}
-                </h2>
-                <p className="text-muted-foreground mb-4">
-                  {blogPosts[0].excerpt}
-                </p>
-                <div className="flex items-center gap-4 text-sm text-muted-foreground mb-4">
-                  <div className="flex items-center gap-1">
-                    <Calendar className="h-4 w-4" />
-                    <span>{blogPosts[0].date}</span>
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <Clock className="h-4 w-4" />
-                    <span>{blogPosts[0].readTime}</span>
-                  </div>
+            <CardContent className="p-6 md:p-8">
+              <Badge className="w-fit mb-3">{blogPosts[0].category}</Badge>
+              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3">
+                {blogPosts[0].title}
+              </h2>
+              <p className="text-muted-foreground mb-4">
+                {blogPosts[0].excerpt}
+              </p>
+              <div className="flex items-center gap-4 text-sm text-muted-foreground mb-4">
+                <div className="flex items-center gap-1">
+                  <Calendar className="h-4 w-4" />
+                  <span>{blogPosts[0].date}</span>
                 </div>
-                <Link
-                  to={`/blog/${blogPosts[0].slug}`}
-                  className="text-primary hover:underline font-medium inline-flex items-center gap-2 group"
-                >
-                  Read Article
-                  <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </CardContent>
-            </div>
+                <div className="flex items-center gap-1">
+                  <Clock className="h-4 w-4" />
+                  <span>{blogPosts[0].readTime}</span>
+                </div>
+              </div>
+              <Link
+                to={`/blog/${blogPosts[0].slug}`}
+                className="text-primary hover:underline font-medium inline-flex items-center gap-2 group"
+              >
+                Read Article
+                <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </CardContent>
           </Card>
 
           {/* Recent Posts */}
           <div>
             <h2 className="text-2xl font-bold text-foreground mb-6">Recent Articles</h2>
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="flex gap-4 overflow-x-auto pb-2">
               {blogPosts.slice(1).map((post) => (
-                <Card key={post.slug} className="overflow-hidden hover:shadow-lg transition-shadow">
-                  <div className="aspect-video bg-muted" />
-                  <CardHeader>
+                <Card key={post.slug} className="min-w-[18rem] max-w-xs p-4 hover:shadow-lg transition-shadow">
+                  <CardHeader className="p-0 mb-2">
                     <Badge className="w-fit mb-2">{post.category}</Badge>
                     <CardTitle className="text-lg">{post.title}</CardTitle>
                   </CardHeader>
-                  <CardContent>
+                  <CardContent className="p-0">
                     <p className="text-sm text-muted-foreground mb-4">
-                      {post.excerpt}
+                      {post.excerpt.length > 140 ? post.excerpt.slice(0, 137) + '...' : post.excerpt}
                     </p>
                     <div className="flex items-center gap-3 text-xs text-muted-foreground mb-3">
                       <div className="flex items-center gap-1">

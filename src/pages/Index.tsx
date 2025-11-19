@@ -197,7 +197,7 @@ const Index = () => {
 
         <div className="container mx-auto px-4 py-12">
           {/* Four-Column Grid Layout */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
             {/* Row 1 */}
             <MetricCard
               title="World Population Live"
@@ -232,8 +232,8 @@ const Index = () => {
               subtitle="Global online population"
               icon={Wifi}
               link="/internet-users"
-              gradientFrom="from-purple-500"
-              gradientTo="to-purple-400"
+              gradientFrom="from-blue-500"
+              gradientTo="to-blue-400"
             />
 
             {/* Row 2 */}
@@ -308,8 +308,8 @@ const Index = () => {
               subtitle="Births per woman"
               icon={UserPlus}
               link="/fertility-rate-by-country"
-              gradientFrom="from-indigo-500"
-              gradientTo="to-indigo-400"
+              gradientFrom="from-blue-500"
+              gradientTo="to-blue-400"
             />
 
             {/* Row 4 */}
@@ -319,8 +319,8 @@ const Index = () => {
               subtitle="Age group distribution"
               icon={PieChart}
               link="/population-by-age"
-              gradientFrom="from-violet-500"
-              gradientTo="to-violet-400"
+              gradientFrom="from-blue-500"
+              gradientTo="to-blue-400"
             />
             <MetricCard
               title="Median Age"
@@ -413,8 +413,8 @@ const Index = () => {
               subtitle="Country statistics"
               icon={Globe2}
               link="/countries"
-              gradientFrom="from-indigo-500"
-              gradientTo="to-indigo-400"
+              gradientFrom="from-blue-500"
+              gradientTo="to-blue-400"
             />
             <MetricCard
               title="Flags"
@@ -451,8 +451,8 @@ const Index = () => {
               subtitle="Books published this year"
               icon={BarChart3}
               link="/society"
-              gradientFrom="from-purple-500"
-              gradientTo="to-purple-400"
+              gradientFrom="from-blue-500"
+              gradientTo="to-blue-400"
             />
             <MetricCard
               title="Environment"
@@ -480,8 +480,8 @@ const Index = () => {
               subtitle="Embeddable widgets"
               icon={LayoutGrid}
               link="/widgets"
-              gradientFrom="from-violet-500"
-              gradientTo="to-violet-400"
+              gradientFrom="from-blue-500"
+              gradientTo="to-blue-400"
             />
             <MetricCard
               title="Water"

@@ -1,4 +1,5 @@
 import { Navigation } from "@/components/Navigation";
+import BackButton from "@/components/BackButton";
 import { Flag, Globe, Users, TrendingUp, Award } from "lucide-react";
 import { StatCard } from "@/components/StatCard";
 import { ChartCard } from "@/components/ChartCard";
@@ -100,7 +101,10 @@ const FlagsPage = () => {
             <Flag className="w-8 h-8 text-[hsl(var(--primary))]" />
           </div>
           <div>
-            <h1 className="text-4xl font-bold gradient-text">Countries & Flags</h1>
+            <div className="flex items-center gap-3">
+              <BackButton />
+              <h1 className="text-4xl font-bold gradient-text">Countries & Flags</h1>
+            </div>
             <p className="text-muted-foreground mt-2">Explore world nations, demographics, and key statistics</p>
           </div>
         </div>

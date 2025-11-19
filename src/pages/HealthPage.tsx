@@ -112,7 +112,7 @@ const HealthPage = () => {
             <p className="text-sm text-muted-foreground mb-2">Global Healthcare Spending This Year</p>
             <Counter value={healthSpending} className="text-5xl md:text-7xl font-bold text-foreground counter-glow" />
             <p className="text-sm text-muted-foreground mt-2">USD</p>
-            <div className="absolute -inset-4 bg-[hsl(var(--health))]/20 blur-3xl -z-10 animate-pulse-glow rounded-full" />
+            <div className="absolute -inset-4 bg-[hsl(var(--health))]/20 blur-3xl -z-10 animate-pulse-glow rounded-full pointer-events-none" aria-hidden="true" />
           </div>
 
           {/* Death Counters Grid */}

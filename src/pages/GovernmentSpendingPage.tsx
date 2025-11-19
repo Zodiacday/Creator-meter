@@ -1,4 +1,5 @@
 import { Navigation } from "@/components/Navigation";
+import BackButton from "@/components/BackButton";
 import { DollarSign, TrendingUp, Globe, Building } from "lucide-react";
 import { StatCard } from "@/components/StatCard";
 import { ChartCard } from "@/components/ChartCard";
@@ -61,7 +62,10 @@ const GovernmentSpendingPage = () => {
       <Navigation />
       <main className="container px-4 py-8 md:py-12">
         <div className="max-w-7xl mx-auto">
-          <h1 className="text-4xl font-bold gradient-text mb-8">Government Spending by Country 2025</h1>
+          <div className="flex items-center gap-3">
+            <BackButton />
+            <h1 className="text-4xl font-bold gradient-text mb-8">Government Spending by Country 2025</h1>
+          </div>
           <div className="grid md:grid-cols-3 gap-6 mb-12">
             <StatCard label="Global Average" value={38.7} icon={Globe} color="hsl(var(--government))" subtitle="% of GDP" />
             <StatCard label="US Total Spending" value={6270000000000} icon={DollarSign} color="hsl(var(--chart-1))" subtitle="USD annually" />

@@ -1,4 +1,5 @@
 import { Navigation } from "@/components/Navigation";
+import BackButton from "@/components/BackButton";
 import { Baby, Heart, TrendingDown, Globe } from "lucide-react";
 import { StatCard } from "@/components/StatCard";
 import { ChartCard } from "@/components/ChartCard";
@@ -74,7 +75,10 @@ const InfantMortalityRatePage = () => {
       <Navigation />
       <main className="container px-4 py-8 md:py-12">
         <div className="max-w-7xl mx-auto">
-          <h1 className="text-4xl font-bold gradient-text mb-8">Infant Mortality Rate by Country</h1>
+          <div className="flex items-center gap-3">
+            <BackButton />
+            <h1 className="text-4xl font-bold gradient-text mb-8">Infant Mortality Rate by Country</h1>
+          </div>
           <div className="text-center py-8 bg-gradient-to-br from-red-500/10 to-transparent rounded-3xl border border-border mb-12">
             <Baby className="w-8 h-8 mx-auto mb-2 text-red-500" />
             <p className="text-sm text-muted-foreground mb-2">Infant Deaths Today</p>

@@ -8,18 +8,20 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Light mode (defaults) */
+    --background: 0 0% 100%; /* #FFFFFF */
+    --foreground: 222.2 84% 4.9%; /* near-black (#111111) will be set below for counters/text */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 0 0% 98%; /* #F8F8F9 */
+    --card-foreground: 222.2 84% 4.9%; /* dark text for light mode */
 
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 263 70% 50%;
-    --primary-foreground: 210 40% 98%;
-    --primary-glow: 263 85% 65%;
+    /* Primary and accent colors are intentionally neutralized; icons keep their own colors */
+    --primary: 222 8% 7%; /* primary text in light mode (#111111) */
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 0 0% 0%;
 
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
@@ -27,15 +29,15 @@ All colors MUST be HSL.
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 172 66% 50%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 200 11% 96%;
+    --accent-foreground: 222.2 84% 4.9%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 263 70% 50%;
+    --border: 210 16% 92%; /* #E5E7EB */
+    --input: 210 16% 92%;
+    --ring: 222 8% 7%;
 
     --radius: 1rem;
 
@@ -51,34 +53,36 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 220 25% 8%;
-    --foreground: 210 40% 98%;
+    /* Dark mode variables (centralized) */
+    --background: 240 7% 6%; /* #0E0E10 */
+    --foreground: 0 0% 100%; /* primary text: white */
 
-    --card: 220 20% 12%;
-    --card-foreground: 210 40% 98%;
+    --card: 240 18% 8%; /* #141417 / #16161A */
+    --card-foreground: 0 0% 100%;
 
-    --popover: 220 20% 12%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 240 18% 8%;
+    --popover-foreground: 0 0% 100%;
 
-    --primary: 263 70% 50%;
-    --primary-foreground: 210 40% 98%;
-    --primary-glow: 263 85% 65%;
+    /* Neutral primary text for dark mode (we keep icons' original colors) */
+    --primary: 0 0% 100%;
+    --primary-foreground: 240 7% 6%;
+    --primary-glow: 0 0% 0%;
 
-    --secondary: 220 20% 18%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 0 0% 100%;
+    --secondary-foreground: 212 12% 83%; /* #D1D5DB */
 
-    --muted: 220 15% 20%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 210 12% 65%; /* meta text #9CA3AF approximated */
+    --muted-foreground: 210 12% 65%;
 
-    --accent: 172 66% 50%;
-    --accent-foreground: 220 25% 8%;
+    --accent: 240 8% 8%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 220 15% 20%;
-    --input: 220 15% 20%;
-    --ring: 263 70% 50%;
+    --border: 240 8% 13%; /* #1F1F24 / #222228 */
+    --input: 240 8% 13%;
+    --ring: 0 0% 100%;
   }
 }
 
@@ -95,16 +99,22 @@ All colors MUST be HSL.
 }
 
 @layer utilities {
+  /* Replace gradient text with monochrome text that follows theme */
   .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-primary-glow to-accent;
+    color: hsl(var(--foreground));
+    background: none !important;
+    -webkit-background-clip: unset;
+    background-clip: unset;
+    -webkit-text-fill-color: unset;
   }
-  
+
+  /* Remove heavy glows/shadows from the design system */
   .card-glow {
-    box-shadow: 0 0 20px -5px hsl(var(--primary) / 0.3);
+    box-shadow: none;
   }
   
   .counter-glow {
-    text-shadow: 0 0 30px hsl(var(--primary) / 0.5);
+    text-shadow: none;
   }
   
   /* Mobile-first responsive utilities */
@@ -155,5 +165,11 @@ All colors MUST be HSL.
   
   .animate-fade-in {
     animation: fade-in 0.5s ease-out;
+  }
+
+  /* Disable decorative gradients globally - use solid card backgrounds instead */
+  .bg-gradient-to-br {
+    background-image: none !important;
+    background-color: hsl(var(--card)) !important;
   }
 }

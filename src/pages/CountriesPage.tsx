@@ -1,4 +1,5 @@
 import { Navigation } from "@/components/Navigation";
+import BackButton from "@/components/BackButton";
 import { Globe, Users, TrendingUp } from "lucide-react";
 import { useBackendData } from "@/hooks/useBackendData";
 import { StatCard } from "@/components/StatCard";
@@ -94,7 +95,10 @@ const CountriesPage = () => {
             <Globe className="w-8 h-8 text-[hsl(var(--population))]" />
           </div>
           <div>
-            <h1 className="text-4xl font-bold gradient-text">Countries & Population</h1>
+            <div className="flex items-center gap-3">
+              <BackButton />
+              <h1 className="text-4xl font-bold gradient-text">Countries & Population</h1>
+            </div>
             <p className="text-muted-foreground mt-2">Population statistics and demographics by country and region</p>
           </div>
         </div>

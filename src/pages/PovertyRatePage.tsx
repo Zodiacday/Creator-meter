@@ -1,4 +1,5 @@
 import { Navigation } from "@/components/Navigation";
+import BackButton from "@/components/BackButton";
 import { TrendingDown, Users, Globe, Heart } from "lucide-react";
 import { StatCard } from "@/components/StatCard";
 import { ChartCard } from "@/components/ChartCard";
@@ -70,7 +71,10 @@ const PovertyRatePage = () => {
       <Navigation />
       <main className="container px-4 py-8 md:py-12">
         <div className="max-w-7xl mx-auto">
-          <h1 className="text-4xl font-bold gradient-text mb-8">Poverty Rate by Country 2025</h1>
+          <div className="flex items-center gap-3">
+            <BackButton />
+            <h1 className="text-4xl font-bold gradient-text mb-8">Poverty Rate by Country 2025</h1>
+          </div>
           <div className="grid md:grid-cols-3 gap-6 mb-12">
             <StatCard label="Global Poverty Rate" value={8.8} icon={Globe} color="hsl(var(--destructive))" subtitle="% below $2.15/day" />
             <StatCard label="People in Extreme Poverty" value={712000000} icon={Users} color="hsl(var(--chart-1))" subtitle="worldwide" />

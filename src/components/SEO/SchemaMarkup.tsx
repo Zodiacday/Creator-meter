@@ -90,7 +90,7 @@ export const SchemaMarkup = ({ type, data }: SchemaMarkupProps) => {
           "@type": "Organization",
           name: "CreatorMeter",
           url: window.location.origin,
-          logo: `${window.location.origin}/logo.png`,
+          logo: `${window.location.origin}/logo.svg`,
           description: "Live world statistics and real-time counters for population, GDP, CO2 emissions, energy, and global data. Accurate, verified data from UN, World Bank, and official sources.",
           sameAs: [
             // Add social media profiles when available

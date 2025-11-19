@@ -13,7 +13,7 @@ export const FloatingPopulationCounter = ({
   deathsPerSecond 
 }: FloatingPopulationCounterProps) => {
   return (
-    <div className="fixed top-20 left-4 z-40 bg-background/80 backdrop-blur-md border border-border rounded-xl p-3 shadow-lg hover:shadow-xl transition-all duration-300 max-w-[200px]">
+    <div className="fixed bottom-6 right-6 z-40 bg-background/80 backdrop-blur-md border border-border rounded-xl p-3 shadow-lg hover:shadow-xl transition-all duration-300 max-w-[220px] hidden sm:flex">
       <div className="flex items-center gap-2 mb-1">
         <Users className="w-4 h-4 text-primary" />
         <span className="text-xs font-medium text-muted-foreground">World Population</span>

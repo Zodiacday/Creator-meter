@@ -1,4 +1,5 @@
 import { Navigation } from "@/components/Navigation";
+import BackButton from "@/components/BackButton";
 import { Users2, BookOpen, Newspaper, Smartphone, Wifi, Mail, Tv, Gamepad2 } from "lucide-react";
 import { Counter } from "@/components/Counter";
 import { StatCard } from "@/components/StatCard";
@@ -102,7 +103,10 @@ const SocietyPage = () => {
               <Users2 className="w-8 h-8 text-[hsl(var(--society))]" />
             </div>
             <div>
-              <h1 className="text-4xl font-bold gradient-text">Society & Media</h1>
+              <div className="flex items-center gap-3">
+                <BackButton />
+                <h1 className="text-4xl font-bold gradient-text">Society & Media</h1>
+              </div>
               <p className="text-muted-foreground mt-2">Digital and traditional media consumption worldwide</p>
             </div>
           </div>
@@ -113,7 +117,7 @@ const SocietyPage = () => {
             <p className="text-sm text-muted-foreground mb-2">Internet Users Worldwide</p>
             <Counter value={internetUsers} className="text-5xl md:text-7xl font-bold text-foreground counter-glow" />
             <p className="text-sm text-muted-foreground mt-2">84% of world population</p>
-            <div className="absolute -inset-4 bg-[hsl(var(--society))]/20 blur-3xl -z-10 animate-pulse-glow rounded-full" />
+            <div className="absolute -inset-4 bg-[hsl(var(--society))]/20 blur-3xl -z-10 animate-pulse-glow rounded-full pointer-events-none" aria-hidden="true" />
           </div>
 
           {/* Real-time Counters Grid */}

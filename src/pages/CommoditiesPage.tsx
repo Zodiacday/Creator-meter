@@ -1,4 +1,5 @@
 import { Navigation } from "@/components/Navigation";
+import BackButton from "@/components/BackButton";
 import { TrendingUp, DollarSign, BarChart3, Coins } from "lucide-react";
 import { Footer } from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
@@ -82,7 +83,10 @@ const CommoditiesPage = () => {
             <BarChart3 className="w-8 h-8 text-[hsl(var(--government))]" />
           </div>
           <div>
-            <h1 className="text-4xl font-bold gradient-text">Commodities & Currencies</h1>
+            <div className="flex items-center gap-3">
+              <BackButton />
+              <h1 className="text-4xl font-bold gradient-text">Commodities & Currencies</h1>
+            </div>
             <p className="text-muted-foreground mt-2">Real-time tracking of global commodity prices and currency exchange rates</p>
           </div>
         </div>

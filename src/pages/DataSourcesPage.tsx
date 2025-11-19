@@ -1,4 +1,5 @@
 import { Navigation } from "@/components/Navigation";
+import BackButton from "@/components/BackButton";
 import { Footer } from "@/components/Footer";
 import { MetaTags } from "@/components/SEO/MetaTags";
 import { SchemaMarkup } from "@/components/SEO/SchemaMarkup";
@@ -74,7 +75,7 @@ const DataSourcesPage = () => {
   const reliabilityColors = {
     Official: "bg-green-500/10 text-green-500 border-green-500/20",
     Research: "bg-blue-500/10 text-blue-500 border-blue-500/20",
-    Academic: "bg-purple-500/10 text-purple-500 border-purple-500/20",
+    Academic: "bg-gray-100/10 text-muted-foreground border-border",
     Industry: "bg-orange-500/10 text-orange-500 border-orange-500/20",
   };
 
@@ -100,7 +101,10 @@ const DataSourcesPage = () => {
           <Breadcrumbs items={[{ label: "Data Sources" }]} />
           
           <div className="mb-8">
-            <h1 className="text-4xl font-bold gradient-text mb-4">Data Sources & Methodology</h1>
+            <div className="flex items-center gap-3">
+              <BackButton />
+              <h1 className="text-4xl font-bold gradient-text mb-4">Data Sources & Methodology</h1>
+            </div>
             <p className="text-lg text-muted-foreground max-w-3xl">
               CreatorMeter aggregates data from the world's most trusted organizations. All statistics are sourced from official databases, peer-reviewed research, and verified international agencies.
             </p>

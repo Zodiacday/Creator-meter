@@ -16,7 +16,7 @@ const PopulationTrends2025 = () => {
     "@type": "BlogPosting",
     headline: "2025 Population Trends: What the Numbers Tell Us",
     description: "Deep dive into global population trends in 2025, including aging demographics, urbanization, and regional shifts that will shape our future.",
-    image: "/logo.png",
+    image: "/logo.svg",
     datePublished: publishDate,
     dateModified: publishDate,
     author: {
@@ -28,7 +28,7 @@ const PopulationTrends2025 = () => {
       name: "CreatorMeter",
       logo: {
         "@type": "ImageObject",
-        url: `${window.location.origin}/logo.png`
+        url: `${window.location.origin}/logo.svg`
       }
     }
   };

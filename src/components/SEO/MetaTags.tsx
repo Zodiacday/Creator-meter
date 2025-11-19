@@ -18,7 +18,7 @@ export const MetaTags = ({
   keywords,
   canonical,
   ogType = 'website',
-  ogImage = '/logo.png',
+  ogImage = '/logo.svg',
   twitterCard = 'summary_large_image',
   noindex = false,
   structuredData

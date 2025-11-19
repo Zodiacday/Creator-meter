@@ -1,4 +1,5 @@
 import { Navigation } from "@/components/Navigation";
+import BackButton from "@/components/BackButton";
 import { Baby, TrendingUp, Globe, Users } from "lucide-react";
 import { Counter } from "@/components/Counter";
 import { StatCard } from "@/components/StatCard";
@@ -90,7 +91,10 @@ const BirthsPerDayPage = () => {
                 <Baby className="w-8 h-8 text-green-500" />
               </div>
               <div>
-                <h1 className="text-4xl font-bold gradient-text">Births Per Day Worldwide</h1>
+                <div className="flex items-center gap-3">
+                  <BackButton />
+                  <h1 className="text-4xl font-bold gradient-text">Births Per Day Worldwide</h1>
+                </div>
                 <p className="text-muted-foreground mt-2">Real-time global birth statistics and trends</p>
               </div>
             </div>

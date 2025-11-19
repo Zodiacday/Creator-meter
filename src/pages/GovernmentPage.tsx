@@ -1,4 +1,5 @@
 import { Navigation } from "@/components/Navigation";
+import BackButton from "@/components/BackButton";
 import { Landmark, DollarSign, Shield, GraduationCap, Car, Monitor, Bike, TrendingUp, Building2 } from "lucide-react";
 import { Counter } from "@/components/Counter";
 import { StatCard } from "@/components/StatCard";
@@ -102,7 +103,10 @@ const GovernmentPage = () => {
               <Landmark className="w-8 h-8 text-[hsl(var(--government))]" />
             </div>
             <div>
-              <h1 className="text-4xl font-bold gradient-text">Government & Economics</h1>
+              <div className="flex items-center gap-3">
+                <BackButton />
+                <h1 className="text-4xl font-bold gradient-text">Government & Economics</h1>
+              </div>
               <p className="text-muted-foreground mt-2">Global economic indicators, public spending, and production statistics</p>
             </div>
           </div>

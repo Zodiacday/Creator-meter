@@ -1,4 +1,5 @@
 import { Navigation } from "@/components/Navigation";
+import BackButton from "@/components/BackButton";
 import { Zap, TrendingUp, Leaf, Factory } from "lucide-react";
 import { useBackendData } from "@/hooks/useBackendData";
 import { Counter } from "@/components/Counter";
@@ -92,7 +93,10 @@ const EnergyPage = () => {
             <Zap className="w-8 h-8 text-[hsl(var(--energy))]" />
           </div>
           <div>
-            <h1 className="text-4xl font-bold gradient-text">Energy</h1>
+            <div className="flex items-center gap-3">
+              <BackButton />
+              <h1 className="text-4xl font-bold gradient-text">Energy</h1>
+            </div>
             <p className="text-muted-foreground mt-2">Global energy consumption and production</p>
           </div>
         </div>
@@ -102,7 +106,7 @@ const EnergyPage = () => {
           <p className="text-sm text-muted-foreground mb-2">Energy Consumed This Year</p>
           <Counter value={currentConsumption} className="text-5xl md:text-7xl font-bold text-foreground counter-glow" />
           <p className="text-sm text-muted-foreground mt-2">kWh</p>
-          <div className="absolute -inset-4 bg-[hsl(var(--energy))]/20 blur-3xl -z-10 animate-pulse-glow rounded-full" />
+          <div className="absolute -inset-4 bg-[hsl(var(--energy))]/20 blur-3xl -z-10 animate-pulse-glow rounded-full pointer-events-none" aria-hidden="true" />
         </div>
 
         {/* Stats Grid */}

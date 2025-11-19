@@ -16,7 +16,7 @@ const UnderstandingGDP = () => {
     "@type": "BlogPosting",
     headline: "Understanding GDP Growth Rates: What They Mean for Global Prosperity",
     description: "A comprehensive guide to GDP growth rates, economic indicators, and what they reveal about national prosperity and global economic health.",
-    image: "/logo.png",
+    image: "/logo.svg",
     datePublished: publishDate,
     dateModified: publishDate,
     author: {

@@ -1,4 +1,5 @@
 import { Navigation } from "@/components/Navigation";
+import BackButton from "@/components/BackButton";
 import { Map, Users, DollarSign, Heart, Zap, Droplet } from "lucide-react";
 import { Footer } from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
@@ -67,7 +68,10 @@ const WorldMapPage = () => {
             <Map className="w-8 h-8 text-[hsl(var(--primary))]" />
           </div>
           <div>
-            <h1 className="text-4xl font-bold gradient-text">Interactive World Map</h1>
+            <div className="flex items-center gap-3">
+              <BackButton />
+              <h1 className="text-4xl font-bold gradient-text">Interactive World Map</h1>
+            </div>
             <p className="text-muted-foreground mt-2">Visualize global statistics across different metrics</p>
           </div>
         </div>
@@ -113,7 +117,7 @@ const WorldMapPage = () => {
         <Card className="mb-8 border-border">
           <CardContent className="p-8">
             <div className="aspect-[2/1] bg-gradient-to-br from-primary/5 to-primary/10 rounded-lg flex items-center justify-center relative overflow-hidden">
-              <div className="absolute inset-0 opacity-10">
+              <div className="absolute inset-0 opacity-10 pointer-events-none" aria-hidden="true">
                 <svg viewBox="0 0 100 50" className="w-full h-full">
                   {/* Simplified world map SVG paths */}
                   <path d="M10,25 Q20,20 30,25 T50,25 T70,25 T90,25" stroke="currentColor" strokeWidth="0.5" fill="none" opacity="0.3"/>

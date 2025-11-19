@@ -1,4 +1,5 @@
 import { Navigation } from "@/components/Navigation";
+import BackButton from "@/components/BackButton";
 import { Users, TrendingUp } from "lucide-react";
 import { StatCard } from "@/components/StatCard";
 import { ChartCard } from "@/components/ChartCard";
@@ -34,7 +35,10 @@ const MostPopulatedCountriesPage = () => {
       <Navigation />
       <main className="container px-4 py-8 md:py-12">
         <div className="max-w-7xl mx-auto">
-          <h1 className="text-4xl font-bold gradient-text mb-8">Most Populated Countries 2025</h1>
+          <div className="flex items-center gap-3">
+            <BackButton />
+            <h1 className="text-4xl font-bold gradient-text mb-8">Most Populated Countries 2025</h1>
+          </div>
           <div className="grid md:grid-cols-2 gap-6 mb-12">
             <StatCard label="1st - India" value={1428000000} icon={Users} color="hsl(var(--population))" />
             <StatCard label="2nd - China" value={1425000000} icon={Users} color="hsl(var(--population))" />

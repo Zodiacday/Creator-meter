@@ -1,4 +1,5 @@
 import { Navigation } from "@/components/Navigation";
+import BackButton from "@/components/BackButton";
 import { TrendingUp, Globe, BarChart3 } from "lucide-react";
 import { StatCard } from "@/components/StatCard";
 import { ChartCard } from "@/components/ChartCard";
@@ -106,7 +107,10 @@ const PopulationGrowthRatePage = () => {
               <TrendingUp className="w-8 h-8 text-[hsl(var(--population))]" />
             </div>
             <div>
-              <h1 className="text-4xl font-bold gradient-text">Population Growth Rate by Country</h1>
+              <div className="flex items-center gap-3">
+                <BackButton />
+                <h1 className="text-4xl font-bold gradient-text">Population Growth Rate by Country</h1>
+              </div>
               <p className="text-muted-foreground mt-2">Global population growth trends and country comparisons</p>
             </div>
           </div>

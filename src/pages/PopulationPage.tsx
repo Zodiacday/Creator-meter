@@ -1,4 +1,5 @@
 import { Navigation } from "@/components/Navigation";
+import BackButton from "@/components/BackButton";
 import { Users, Baby, Skull, TrendingUp, Globe } from "lucide-react";
 import { Counter } from "@/components/Counter";
 import { StatCard } from "@/components/StatCard";
@@ -84,7 +85,10 @@ const PopulationPage = () => {
                 <Users className="w-8 h-8 text-[hsl(var(--population))]" />
               </div>
               <div>
-                <h1 className="text-4xl font-bold gradient-text">Population Statistics</h1>
+                <div className="flex items-center gap-3">
+                  <BackButton />
+                  <h1 className="text-4xl font-bold gradient-text">Population Statistics</h1>
+                </div>
                 <p className="text-muted-foreground mt-2">Real-time global population data and demographic trends</p>
               </div>
             </div>

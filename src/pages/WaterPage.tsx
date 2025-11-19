@@ -1,4 +1,5 @@
 import { Navigation } from "@/components/Navigation";
+import BackButton from "@/components/BackButton";
 import { Droplet, TrendingUp, AlertTriangle, Users } from "lucide-react";
 import { useBackendData } from "@/hooks/useBackendData";
 import { Counter } from "@/components/Counter";
@@ -116,7 +117,10 @@ const WaterPage = () => {
             <Droplet className="w-8 h-8 text-[hsl(var(--water))]" />
           </div>
           <div>
-            <h1 className="text-4xl font-bold gradient-text">Water</h1>
+            <div className="flex items-center gap-3">
+              <BackButton />
+              <h1 className="text-4xl font-bold gradient-text">Water</h1>
+            </div>
             <p className="text-muted-foreground mt-2">Global water consumption and access</p>
           </div>
         </div>
@@ -127,14 +131,14 @@ const WaterPage = () => {
             <p className="text-sm text-muted-foreground mb-2">Water Consumed This Year</p>
             <Counter value={currentConsumption} className="text-4xl md:text-6xl font-bold text-foreground counter-glow" />
             <p className="text-sm text-muted-foreground mt-2">cubic meters</p>
-            <div className="absolute -inset-4 bg-[hsl(var(--water))]/20 blur-3xl -z-10 animate-pulse-glow rounded-full" />
+            <div className="absolute -inset-4 bg-[hsl(var(--water))]/20 blur-3xl -z-10 animate-pulse-glow rounded-full pointer-events-none" aria-hidden="true" />
           </div>
 
           <div className="relative text-center py-12 bg-gradient-to-br from-red-500/10 to-transparent rounded-3xl border border-border animate-fade-in">
             <p className="text-sm text-muted-foreground mb-2">Water-Related Deaths This Year</p>
             <Counter value={currentDeaths} className="text-4xl md:text-6xl font-bold text-foreground counter-glow" />
             <p className="text-sm text-muted-foreground mt-2">people</p>
-            <div className="absolute -inset-4 bg-red-500/20 blur-3xl -z-10 animate-pulse-glow rounded-full" />
+            <div className="absolute -inset-4 bg-red-500/20 blur-3xl -z-10 animate-pulse-glow rounded-full pointer-events-none" aria-hidden="true" />
           </div>
         </div>
 
