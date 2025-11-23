@@ -40,7 +40,7 @@ export const Navigation = () => {
 
             {/* Logo */}
             <Link to="/" className="flex items-center gap-2">
-            <img src="/logo.svg" alt="Creator Meter Logo" className="w-10 h-10 md:w-14 md:h-14" />
+            <img src="/logo.png" alt="Creator Meter Logo" className="w-10 h-10 md:w-14 md:h-14" />
             <div className="flex flex-col leading-tight">
               <h1 className="text-base md:text-xl font-bold text-foreground">CreatorMeter</h1>
               <span className="text-[13px] mt-[3px] text-muted-foreground/100">Global Statistics & Live World Data</span>
