@@ -4,6 +4,7 @@ import { Footer } from "@/components/Footer";
 import { MetaTags } from "@/components/SEO/MetaTags";
 import { SchemaMarkup } from "@/components/SEO/SchemaMarkup";
 import { MetricCard } from "@/components/MetricCard";
+import { LogoCarousel } from "@/components/LogoCarousel";
 import { InsightsSection } from "@/components/InsightsSection";
 import { NewsletterCTA } from "@/components/NewsletterCTA";
 import { 
@@ -194,6 +195,8 @@ const Index = () => {
             </div>
           </div>
         </section>
+
+        <LogoCarousel />
 
         <div className="container mx-auto px-4 py-12">
           {/* Four-Column Grid Layout */}

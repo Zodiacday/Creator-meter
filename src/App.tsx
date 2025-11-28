@@ -64,6 +64,12 @@ import HealthSpendingWidget from "./pages/widgets/HealthSpendingWidget";
 import PopulationTrends2025 from "./pages/blog/PopulationTrends2025";
 import ClimateDataExplained from "./pages/blog/ClimateDataExplained";
 import UnderstandingGDP from "./pages/blog/UnderstandingGDP";
+import H5N1BirdFluPage from "./pages/H5N1BirdFluPage";
+import MarburgVirusPage from "./pages/MarburgVirusPage";
+import MpoxMonitorPage from "./pages/MpoxMonitorPage";
+import AIUsageStatsPage from "./pages/AIUsageStatsPage";
+import PriorityPathogensPage from "./pages/PriorityPathogensPage";
+import ClimateEmergencyPage from "./pages/ClimateEmergencyPage";
 
 const queryClient = new QueryClient();
 
@@ -136,6 +142,13 @@ const App = () => (
             <Route path="/blog/population-trends-2025" element={<PopulationTrends2025 />} />
             <Route path="/blog/climate-data-explained" element={<ClimateDataExplained />} />
             <Route path="/blog/understanding-gdp-growth" element={<UnderstandingGDP />} />
+            {/* New 2025 Data Pages */}
+            <Route path="/data/h5n1-bird-flu-2025" element={<H5N1BirdFluPage />} />
+            <Route path="/data/marburg-virus-ethiopia-2025" element={<MarburgVirusPage />} />
+            <Route path="/data/mpox-monitor-2025" element={<MpoxMonitorPage />} />
+            <Route path="/data/ai-usage-statistics-2025" element={<AIUsageStatsPage />} />
+            <Route path="/data/priority-pathogens-2025" element={<PriorityPathogensPage />} />
+            <Route path="/data/climate-emergency-2025" element={<ClimateEmergencyPage />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
