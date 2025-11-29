@@ -11,9 +11,9 @@ serve(async (req) => {
   }
 
   try {
-    // Real-time calculated CO2 emissions based on 2024 data
-    const baseYear = 2024;
-    const baseEmissions = 38520000000; // tons per year
+    // Real-time calculated CO2 emissions based on 2025 data
+    const baseYear = 2025;
+    const baseEmissions = 39100000000; // tons per year - 2025 GCP projection
     const emissionsPerSecond = baseEmissions / (365.25 * 24 * 60 * 60);
     
     const startOfYear = new Date(baseYear, 0, 1).getTime();

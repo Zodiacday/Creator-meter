@@ -17,7 +17,7 @@ const ClimateEmergencyPage = () => {
         title="Climate Emergency Data 2025 — Methane Levels, Progress Tracking & Global Targets"
         description="Track 2025 climate emergency metrics including methane emissions, environmental commitments, and global progress milestones."
         keywords="climate emergency, methane emissions, global warming, 2025, environmental data"
-        canonical={`${window.location.origin}/data/climate-emergency-2025`}
+        canonical={`${window.location.origin}/climate-emergency`}
       />
       <Navigation />
       <main className="min-h-screen bg-background py-8">
@@ -28,7 +28,7 @@ const ClimateEmergencyPage = () => {
             <Card><CardHeader><CardTitle>Methane Emissions This Year</CardTitle></CardHeader><CardContent><Counter value={data.methaneEmissions.thisYear} className="text-2xl font-bold" /></CardContent></Card>
           )}
           <ShareButtons title="Climate Emergency 2025" description="Track global climate metrics" />
-          <ExploreMoreStats currentPath="/data/climate-emergency-2025" />
+          <ExploreMoreStats currentPath="/climate-emergency" />
         </div>
       </main>
       <Footer />

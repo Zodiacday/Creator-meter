@@ -12,8 +12,8 @@ serve(async (req) => {
 
   try {
     const data = {
-      year: 2024,
-      globalGDP: 112000000000000, // 112 trillion USD
+      year: 2025,
+      globalGDP: 118000000000000, // 118 trillion USD - 2025 IMF projection
       topCountries: [
         {
           rank: 1,

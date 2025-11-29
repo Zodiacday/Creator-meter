@@ -17,7 +17,7 @@ const MpoxMonitorPage = () => {
         title="Mpox (Monkeypox) Global Tracker 2025 — Case Data & New Strains"
         description="Track global Mpox data in 2025, including case numbers, emerging strains, outbreak regions, and transmission patterns."
         keywords="mpox, monkeypox, outbreak tracker, 2025, global health"
-        canonical={`${window.location.origin}/data/mpox-monitor-2025`}
+        canonical={`${window.location.origin}/mpox-monitor`}
       />
       <Navigation />
       <main className="min-h-screen bg-background py-8">
@@ -30,7 +30,7 @@ const MpoxMonitorPage = () => {
             </div>
           )}
           <ShareButtons title="Mpox Monitor 2025" description="Track global Mpox data" />
-          <ExploreMoreStats currentPath="/data/mpox-monitor-2025" />
+          <ExploreMoreStats currentPath="/mpox-monitor" />
         </div>
       </main>
       <Footer />
