@@ -16,7 +16,7 @@ const PriorityPathogensPage = () => {
         title="Priority Pathogens List (2025) — Disease X & High-Risk Threats"
         description="Explore the updated 2025 Priority Pathogens List, including emerging threats, Disease X preparedness, and high-risk pathogens."
         keywords="priority pathogens, Disease X, WHO, pandemic preparedness, 2025"
-        canonical={`${window.location.origin}/data/priority-pathogens-2025`}
+        canonical={`${window.location.origin}/priority-pathogens`}
       />
       <Navigation />
       <main className="min-h-screen bg-background py-8">
@@ -27,7 +27,7 @@ const PriorityPathogensPage = () => {
             <Card><CardHeader><CardTitle>Total Pathogens Tracked</CardTitle></CardHeader><CardContent><p className="text-2xl font-bold">{data.totalPathogens}</p></CardContent></Card>
           )}
           <ShareButtons title="Priority Pathogens 2025" description="WHO priority pathogens list" />
-          <ExploreMoreStats currentPath="/data/priority-pathogens-2025" />
+          <ExploreMoreStats currentPath="/priority-pathogens" />
         </div>
       </main>
       <Footer />

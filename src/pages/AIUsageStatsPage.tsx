@@ -17,7 +17,7 @@ const AIUsageStatsPage = () => {
         title="AI Usage Statistics 2025 — Global Adoption Rates, Workforce Impact & Trends"
         description="See how AI adoption grew in 2025. Explore usage trends, workforce transformation data, and industry-wide adoption metrics."
         keywords="AI statistics, artificial intelligence, adoption rates, workforce impact, 2025"
-        canonical={`${window.location.origin}/data/ai-usage-statistics-2025`}
+        canonical={`${window.location.origin}/ai-usage-statistics`}
       />
       <Navigation />
       <main className="min-h-screen bg-background py-8">
@@ -28,7 +28,7 @@ const AIUsageStatsPage = () => {
             <Card><CardHeader><CardTitle>Total AI Users</CardTitle></CardHeader><CardContent><Counter value={data.globalAdoption.totalUsers} className="text-2xl font-bold" /></CardContent></Card>
           )}
           <ShareButtons title="AI Usage Statistics 2025" description="Global AI adoption data" />
-          <ExploreMoreStats currentPath="/data/ai-usage-statistics-2025" />
+          <ExploreMoreStats currentPath="/ai-usage-statistics" />
         </div>
       </main>
       <Footer />
