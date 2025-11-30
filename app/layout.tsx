@@ -12,10 +12,12 @@ import { Providers } from "./providers";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "CreatorMeter - Live World Statistics & Real-Time Global Data Counters",
+  title: "CreatorMeter - Global Statistics & Live World Data",
   description: "Real-time world statistics: population 8.18B, GDP $105T, CO2 emissions, COVID-19 data. Live counters, interactive charts, accurate verified data from UN, World Bank. Updated 2025.",
   icons: {
-    icon: "/favicon.png",
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
   },
 };
 
