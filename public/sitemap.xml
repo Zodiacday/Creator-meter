@@ -4,417 +4,398 @@
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
-<!-- Homepage - Highest Priority -->
+<!-- Homepage -->
 <url>
   <loc>https://www.creatormeter.com/</loc>
-  <lastmod>2025-01-15</lastmod>
+  <lastmod>2025-11-30</lastmod>
   <changefreq>daily</changefreq>
   <priority>1.0</priority>
 </url>
 
-<!-- Featured Live Counters - High Priority -->
+<!-- Live Counters -->
 <url>
   <loc>https://www.creatormeter.com/world-population-live</loc>
-  <lastmod>2025-01-15</lastmod>
-  <changefreq>hourly</changefreq>
-  <priority>1.0</priority>
+  <lastmod>2025-11-30</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.9</priority>
 </url>
 
 <url>
   <loc>https://www.creatormeter.com/coronavirus-live-counter</loc>
-  <lastmod>2025-01-15</lastmod>
-  <changefreq>hourly</changefreq>
+  <lastmod>2025-11-30</lastmod>
+  <changefreq>daily</changefreq>
   <priority>0.9</priority>
 </url>
 
 <url>
   <loc>https://www.creatormeter.com/world-gdp-live</loc>
-  <lastmod>2025-01-15</lastmod>
+  <lastmod>2025-11-30</lastmod>
   <changefreq>daily</changefreq>
   <priority>0.9</priority>
 </url>
 
 <url>
   <loc>https://www.creatormeter.com/us-national-debt-clock</loc>
-  <lastmod>2025-01-15</lastmod>
-  <changefreq>hourly</changefreq>
+  <lastmod>2025-11-30</lastmod>
+  <changefreq>daily</changefreq>
   <priority>0.9</priority>
 </url>
 
+<url>
+  <loc>https://www.creatormeter.com/world-population-by-continent-counter</loc>
+  <lastmod>2025-11-30</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.9</priority>
+</url>
+
+<!-- Tools & Features -->
 <url>
   <loc>https://www.creatormeter.com/life-expectancy-calculator</loc>
-  <lastmod>2025-01-15</lastmod>
-  <changefreq>weekly</changefreq>
+  <lastmod>2025-11-30</lastmod>
+  <changefreq>daily</changefreq>
   <priority>0.9</priority>
 </url>
 
-<!-- Tools & Features - High Priority -->
 <url>
   <loc>https://www.creatormeter.com/compare</loc>
-  <lastmod>2025-01-15</lastmod>
-  <changefreq>weekly</changefreq>
+  <lastmod>2025-11-30</lastmod>
+  <changefreq>daily</changefreq>
   <priority>0.9</priority>
 </url>
 
 <url>
   <loc>https://www.creatormeter.com/data-methodology</loc>
-  <lastmod>2025-01-15</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-</url>
-
-<url>
-  <loc>https://www.creatormeter.com/data-sources</loc>
-  <lastmod>2025-01-15</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-11-30</lastmod>
+  <changefreq>daily</changefreq>
   <priority>0.9</priority>
 </url>
 
 <url>
-  <loc>https://www.creatormeter.com/blog</loc>
-  <lastmod>2025-01-15</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
+  <loc>https://www.creatormeter.com/data-sources</loc>
+  <lastmod>2025-11-30</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.9</priority>
 </url>
 
-<!-- Blog Posts - Fresh Content -->
-<url>
-  <loc>https://www.creatormeter.com/blog/population-trends-2025</loc>
-  <lastmod>2025-01-15</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-</url>
-
-<url>
-  <loc>https://www.creatormeter.com/blog/climate-data-explained</loc>
-  <lastmod>2025-01-12</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-</url>
-
-<url>
-  <loc>https://www.creatormeter.com/blog/understanding-gdp-growth</loc>
-  <lastmod>2025-01-10</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-</url>
-
-<!-- Category Pages - High Priority -->
+<!-- Category Pages -->
 <url>
   <loc>https://www.creatormeter.com/population</loc>
-  <lastmod>2025-01-15</lastmod>
+  <lastmod>2025-11-30</lastmod>
   <changefreq>daily</changefreq>
   <priority>0.9</priority>
 </url>
 
 <url>
   <loc>https://www.creatormeter.com/environment</loc>
-  <lastmod>2025-01-15</lastmod>
+  <lastmod>2025-11-30</lastmod>
   <changefreq>daily</changefreq>
   <priority>0.9</priority>
 </url>
 
 <url>
   <loc>https://www.creatormeter.com/health</loc>
-  <lastmod>2025-01-15</lastmod>
+  <lastmod>2025-11-30</lastmod>
   <changefreq>daily</changefreq>
   <priority>0.9</priority>
 </url>
 
 <url>
   <loc>https://www.creatormeter.com/energy</loc>
-  <lastmod>2025-01-15</lastmod>
+  <lastmod>2025-11-30</lastmod>
   <changefreq>daily</changefreq>
   <priority>0.9</priority>
 </url>
 
 <url>
   <loc>https://www.creatormeter.com/government</loc>
-  <lastmod>2025-01-15</lastmod>
+  <lastmod>2025-11-30</lastmod>
   <changefreq>daily</changefreq>
-  <priority>0.8</priority>
+  <priority>0.9</priority>
 </url>
 
 <url>
   <loc>https://www.creatormeter.com/society</loc>
-  <lastmod>2025-01-15</lastmod>
+  <lastmod>2025-11-30</lastmod>
   <changefreq>daily</changefreq>
-  <priority>0.8</priority>
+  <priority>0.9</priority>
 </url>
 
 <url>
   <loc>https://www.creatormeter.com/food</loc>
-  <lastmod>2025-01-15</lastmod>
+  <lastmod>2025-11-30</lastmod>
   <changefreq>daily</changefreq>
-  <priority>0.8</priority>
+  <priority>0.9</priority>
 </url>
 
 <url>
   <loc>https://www.creatormeter.com/water</loc>
-  <lastmod>2025-01-15</lastmod>
+  <lastmod>2025-11-30</lastmod>
   <changefreq>daily</changefreq>
-  <priority>0.8</priority>
+  <priority>0.9</priority>
 </url>
 
-<!-- CO2 & Environment Statistics -->
+<!-- Population Statistics -->
+<url>
+  <loc>https://www.creatormeter.com/births-per-day-worldwide</loc>
+  <lastmod>2025-11-30</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.9</priority>
+</url>
+
+<url>
+  <loc>https://www.creatormeter.com/deaths-per-day-worldwide</loc>
+  <lastmod>2025-11-30</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.9</priority>
+</url>
+
+<url>
+  <loc>https://www.creatormeter.com/world-population-by-age</loc>
+  <lastmod>2025-11-30</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.9</priority>
+</url>
+
+<url>
+  <loc>https://www.creatormeter.com/population-growth-rate-by-country</loc>
+  <lastmod>2025-11-30</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.9</priority>
+</url>
+
+<url>
+  <loc>https://www.creatormeter.com/most-populated-countries-2025</loc>
+  <lastmod>2025-11-30</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.9</priority>
+</url>
+
+<url>
+  <loc>https://www.creatormeter.com/least-populated-countries</loc>
+  <lastmod>2025-11-30</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.9</priority>
+</url>
+
+<url>
+  <loc>https://www.creatormeter.com/median-age-by-country</loc>
+  <lastmod>2025-11-30</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.9</priority>
+</url>
+
+<url>
+  <loc>https://www.creatormeter.com/fertility-rate-by-country</loc>
+  <lastmod>2025-11-30</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.9</priority>
+</url>
+
+<url>
+  <loc>https://www.creatormeter.com/infant-mortality-rate</loc>
+  <lastmod>2025-11-30</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.9</priority>
+</url>
+
+<!-- Environment & Climate -->
 <url>
   <loc>https://www.creatormeter.com/co2-emissions</loc>
-  <lastmod>2025-01-15</lastmod>
+  <lastmod>2025-11-30</lastmod>
   <changefreq>daily</changefreq>
   <priority>0.9</priority>
 </url>
 
 <url>
   <loc>https://www.creatormeter.com/co2-emissions-per-capita</loc>
-  <lastmod>2025-01-15</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
+  <lastmod>2025-11-30</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.9</priority>
 </url>
 
 <url>
   <loc>https://www.creatormeter.com/renewable-energy-by-country</loc>
-  <lastmod>2025-01-15</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
-
-<!-- Population Statistics - High SEO Value -->
-<url>
-  <loc>https://www.creatormeter.com/births-per-day-worldwide</loc>
-  <lastmod>2025-01-15</lastmod>
+  <lastmod>2025-11-30</lastmod>
   <changefreq>daily</changefreq>
-  <priority>0.8</priority>
-</url>
-
-<url>
-  <loc>https://www.creatormeter.com/deaths-per-day-worldwide</loc>
-  <lastmod>2025-01-15</lastmod>
-  <changefreq>daily</changefreq>
-  <priority>0.8</priority>
-</url>
-
-<url>
-  <loc>https://www.creatormeter.com/world-population-by-age</loc>
-  <lastmod>2025-01-15</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
-
-<url>
-  <loc>https://www.creatormeter.com/population-growth-rate-by-country</loc>
-  <lastmod>2025-01-15</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
-
-<url>
-  <loc>https://www.creatormeter.com/most-populated-countries-2025</loc>
-  <lastmod>2025-01-15</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-</url>
-
-<url>
-  <loc>https://www.creatormeter.com/least-populated-countries</loc>
-  <lastmod>2025-01-15</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.7</priority>
-</url>
-
-<url>
-  <loc>https://www.creatormeter.com/median-age-by-country</loc>
-  <lastmod>2025-01-15</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.7</priority>
-</url>
-
-<url>
-  <loc>https://www.creatormeter.com/fertility-rate-by-country</loc>
-  <lastmod>2025-01-15</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.7</priority>
-</url>
-
-<url>
-  <loc>https://www.creatormeter.com/infant-mortality-rate</loc>
-  <lastmod>2025-01-15</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.7</priority>
+  <priority>0.9</priority>
 </url>
 
 <!-- Health Statistics -->
 <url>
   <loc>https://www.creatormeter.com/coronavirus</loc>
-  <lastmod>2025-01-15</lastmod>
+  <lastmod>2025-11-30</lastmod>
   <changefreq>daily</changefreq>
-  <priority>0.8</priority>
+  <priority>0.9</priority>
 </url>
 
 <url>
   <loc>https://www.creatormeter.com/how-many-people-die-from-hunger-per-day</loc>
-  <lastmod>2025-01-15</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>0.7</priority>
+  <lastmod>2025-11-30</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.9</priority>
 </url>
 
 <!-- Economic Statistics -->
 <url>
   <loc>https://www.creatormeter.com/gdp</loc>
-  <lastmod>2025-01-15</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
+  <lastmod>2025-11-30</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.9</priority>
 </url>
 
 <url>
   <loc>https://www.creatormeter.com/global-gdp-by-country</loc>
-  <lastmod>2025-01-15</lastmod>
+  <lastmod>2025-11-30</lastmod>
   <changefreq>daily</changefreq>
   <priority>0.9</priority>
 </url>
 
 <url>
   <loc>https://www.creatormeter.com/government-spending-by-country</loc>
-  <lastmod>2025-01-15</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.7</priority>
+  <lastmod>2025-11-30</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.9</priority>
 </url>
 
 <url>
   <loc>https://www.creatormeter.com/poverty-rate-by-country</loc>
-  <lastmod>2025-01-15</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.7</priority>
+  <lastmod>2025-11-30</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.9</priority>
 </url>
 
 <url>
   <loc>https://www.creatormeter.com/commodities</loc>
-  <lastmod>2025-01-15</lastmod>
+  <lastmod>2025-11-30</lastmod>
   <changefreq>daily</changefreq>
-  <priority>0.7</priority>
+  <priority>0.9</priority>
 </url>
 
-<!-- Country & Geography -->
+<!-- Geography & Country Data -->
 <url>
   <loc>https://www.creatormeter.com/countries</loc>
-  <lastmod>2025-01-15</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
+  <lastmod>2025-11-30</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.9</priority>
 </url>
 
 <url>
   <loc>https://www.creatormeter.com/flags</loc>
-  <lastmod>2025-01-15</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.6</priority>
+  <lastmod>2025-11-30</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.9</priority>
 </url>
 
 <url>
   <loc>https://www.creatormeter.com/world-map</loc>
-  <lastmod>2025-01-15</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.6</priority>
-</url>
-
-<url>
-  <loc>https://www.creatormeter.com/world-population-by-continent-counter</loc>
-  <lastmod>2025-01-15</lastmod>
-  <changefreq>hourly</changefreq>
-  <priority>1.0</priority>
-</url>
-
-<!-- Embeddable Widgets -->
-<url>
-  <loc>https://www.creatormeter.com/widgets</loc>
-  <lastmod>2025-01-15</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.7</priority>
-</url>
-
-<url>
-  <loc>https://www.creatormeter.com/widget/world-population</loc>
-  <lastmod>2025-01-15</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-
-<url>
-  <loc>https://www.creatormeter.com/widget/world-gdp</loc>
-  <lastmod>2025-01-15</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-
-<url>
-  <loc>https://www.creatormeter.com/widget/co2-emissions</loc>
-  <lastmod>2025-01-15</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-
-<url>
-  <loc>https://www.creatormeter.com/widget/coronavirus</loc>
-  <lastmod>2025-01-15</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-
-<url>
-  <loc>https://www.creatormeter.com/widget/births</loc>
-  <lastmod>2025-01-15</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-
-<url>
-  <loc>https://www.creatormeter.com/widget/deaths</loc>
-  <lastmod>2025-01-15</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-
-<url>
-  <loc>https://www.creatormeter.com/widget/health-spending</loc>
-  <lastmod>2025-01-15</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
+  <lastmod>2025-11-30</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.9</priority>
 </url>
 
 <!-- Technology & Society -->
 <url>
   <loc>https://www.creatormeter.com/internet-users-worldwide</loc>
-  <lastmod>2025-01-15</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>0.7</priority>
+  <lastmod>2025-11-30</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.9</priority>
 </url>
 
 <!-- Food & Agriculture -->
 <url>
   <loc>https://www.creatormeter.com/food-agriculture</loc>
-  <lastmod>2025-01-15</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>0.7</priority>
+  <lastmod>2025-11-30</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.9</priority>
+</url>
+
+<!-- Blog -->
+<url>
+  <loc>https://www.creatormeter.com/blog</loc>
+  <lastmod>2025-11-30</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.9</priority>
+</url>
+
+<!-- Widgets -->
+<url>
+  <loc>https://www.creatormeter.com/widgets</loc>
+  <lastmod>2025-11-30</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.9</priority>
+</url>
+
+<url>
+  <loc>https://www.creatormeter.com/widget/world-population</loc>
+  <lastmod>2025-11-30</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.9</priority>
+</url>
+
+<url>
+  <loc>https://www.creatormeter.com/widget/world-gdp</loc>
+  <lastmod>2025-11-30</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.9</priority>
+</url>
+
+<url>
+  <loc>https://www.creatormeter.com/widget/co2-emissions</loc>
+  <lastmod>2025-11-30</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.9</priority>
+</url>
+
+<url>
+  <loc>https://www.creatormeter.com/widget/coronavirus</loc>
+  <lastmod>2025-11-30</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.9</priority>
+</url>
+
+<url>
+  <loc>https://www.creatormeter.com/widget/births</loc>
+  <lastmod>2025-11-30</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.9</priority>
+</url>
+
+<url>
+  <loc>https://www.creatormeter.com/widget/deaths</loc>
+  <lastmod>2025-11-30</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.9</priority>
+</url>
+
+<url>
+  <loc>https://www.creatormeter.com/widget/health-spending</loc>
+  <lastmod>2025-11-30</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.9</priority>
 </url>
 
 <!-- Information Pages -->
 <url>
   <loc>https://www.creatormeter.com/about</loc>
-  <lastmod>2025-01-15</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.4</priority>
+  <lastmod>2025-11-30</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.9</priority>
 </url>
 
 <url>
   <loc>https://www.creatormeter.com/privacy</loc>
-  <lastmod>2025-01-15</lastmod>
-  <changefreq>yearly</changefreq>
-  <priority>0.3</priority>
+  <lastmod>2025-11-30</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.9</priority>
 </url>
 
 <url>
   <loc>https://www.creatormeter.com/contact</loc>
-  <lastmod>2025-01-15</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.4</priority>
+  <lastmod>2025-11-30</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.9</priority>
 </url>
+
+</urlset>
 
 </urlset>
