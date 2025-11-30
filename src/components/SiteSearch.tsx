@@ -1,6 +1,7 @@
+"use client";
 import { useState, useEffect } from "react";
 import { Search, X } from "lucide-react";
-import { Link, useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -59,7 +60,7 @@ export const SiteSearch = () => {
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<SearchResult[]>([]);
-  const navigate = useNavigate();
+  const router = useRouter();
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -90,7 +91,7 @@ export const SiteSearch = () => {
   const handleSelect = (path: string) => {
     setOpen(false);
     setQuery("");
-    navigate(path);
+    router.push(path);
   };
 
   return (

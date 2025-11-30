@@ -1,6 +1,7 @@
+"use client";
 import { Menu, ChevronDown, ChevronLeft } from "lucide-react";
-import { Link } from "react-router-dom";
-import { useLocation, useNavigate } from "react-router-dom";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -39,7 +40,7 @@ export const Navigation = () => {
             <BackButtonInline />
 
             {/* Logo */}
-            <Link to="/" className="flex items-center gap-2">
+            <Link href="/" className="flex items-center gap-2">
             <img src="/logo.png" alt="Creator Meter Logo" className="w-14 h-14 md:w-20 md:h-20" />
             <div className="flex flex-col leading-tight">
               <h1 className="text-base md:text-xl font-bold text-foreground">CreatorMeter</h1>
@@ -51,13 +52,13 @@ export const Navigation = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-4">
             <SiteSearch />
-            <Link to="/data-sources" className="text-sm text-muted-foreground hover:text-foreground transition-colors dark:text-white">
+            <Link href="/data-sources" className="text-sm text-muted-foreground hover:text-foreground transition-colors dark:text-white">
               Data Sources
             </Link>
-            <Link to="/compare" className="text-sm text-muted-foreground hover:text-foreground transition-colors dark:text-white">
+            <Link href="/compare" className="text-sm text-muted-foreground hover:text-foreground transition-colors dark:text-white">
               Compare
             </Link>
-            <Link to="/blog" className="text-sm text-muted-foreground hover:text-foreground transition-colors dark:text-white">
+            <Link href="/blog" className="text-sm text-muted-foreground hover:text-foreground transition-colors dark:text-white">
               Blog
             </Link>
             <DropdownMenu>
@@ -71,7 +72,7 @@ export const Navigation = () => {
                 <div className="grid grid-cols-2 gap-1 p-1">
                   {additionalPages.map((page) => (
                     <DropdownMenuItem key={page.path} asChild>
-                      <Link to={page.path} className="cursor-pointer dark:text-white">
+                      <Link href={page.path} className="cursor-pointer dark:text-white">
                         <div className="flex flex-col gap-1">
                           <div className="font-medium">{page.name}</div>
                           <div className="text-xs text-muted-foreground">{page.description}</div>
@@ -100,9 +101,9 @@ export const Navigation = () => {
                   <div className="flex flex-col gap-1">
                     <h3 className="font-semibold text-sm mb-2 px-2">More Statistics</h3>
                   {additionalPages.map((page) => (
-                    <Link
+                      <Link
                       key={page.path}
-                      to={page.path}
+                        href={page.path}
                       className="block rounded-md px-2 py-1.5 hover:bg-accent transition-colors dark:text-white"
                     >
                       <div className="text-xs font-medium">{page.name}</div>
@@ -120,20 +121,15 @@ export const Navigation = () => {
 };
 
 // Small inline back button component placed in header
-const BackButtonInline = () => {
-  const navigate = useNavigate();
-  const location = useLocation();
+  const BackButtonInline = () => {
+  const pathname = usePathname();
 
   // Don't show back button on home route
-  if (location.pathname === "/") return null;
+  if (pathname === "/") return null;
 
   const goBack = () => {
     // Prefer router navigate, fallback to window.history
-    try {
-      navigate(-1);
-    } catch (e) {
-      window.history.back();
-    }
+    window.history.back();
   };
 
   return (

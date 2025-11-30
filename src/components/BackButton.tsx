@@ -1,14 +1,14 @@
+"use client";
 import { ChevronLeft } from "lucide-react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { usePathname } from "next/navigation";
 
 export const BackButton = ({ className = "" }: { className?: string }) => {
-  const navigate = useNavigate();
-  const location = useLocation();
+  const pathname = usePathname();
 
-  if (location.pathname === "/") return null;
+  if (pathname === "/") return null;
 
   const goBack = () => {
-    navigate(-1);
+    window.history.back();
   };
 
   return (

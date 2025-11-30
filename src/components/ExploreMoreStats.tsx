@@ -1,6 +1,7 @@
-import { Link } from "react-router-dom";
+"use client";
 import { ArrowRight, TrendingUp } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import Link from "next/link";
 
 interface RelatedStat {
   title: string;
@@ -37,7 +38,7 @@ export const ExploreMoreStats = ({ currentPath, relatedStats }: ExploreMoreStats
       
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
         {filteredStats.map((stat) => (
-          <Link key={stat.path} to={stat.path} className="group">
+          <Link key={stat.path} href={stat.path} className="group">
             <Card className="h-full hover:shadow-lg hover:scale-[1.02] transition-all duration-300 border-border hover:border-primary/50">
               <CardHeader className="pb-3">
                 <div className="flex items-start justify-between gap-2">
@@ -62,8 +63,8 @@ export const ExploreMoreStats = ({ currentPath, relatedStats }: ExploreMoreStats
       </div>
 
       <div className="text-center">
-        <Link 
-          to="/" 
+        <Link
+          href="/" 
           className="inline-flex items-center gap-2 text-primary hover:text-primary-glow transition-colors font-medium"
         >
           View All Statistics

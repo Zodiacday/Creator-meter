@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+"use client";
+import Link from "next/link";
 import { Counter } from "./Counter";
 import { LucideIcon } from "lucide-react";
 import { ArrowRight } from "lucide-react";
@@ -29,7 +30,7 @@ export const MetricCard = ({
 
   return (
     <Link
-      to={link}
+      href={link}
       className="group relative block p-6 rounded-xl bg-card border border-border hover:brightness-105 transition-all duration-300 hover:scale-[1.02]"
     >
       <div className="flex flex-col gap-4">

@@ -1,4 +1,5 @@
 import { TrendingUp } from "lucide-react";
+import Link from "next/link";
 import { Card, CardContent } from "./ui/card";
 
 interface InsightCard {
@@ -36,9 +37,9 @@ export const InsightsSection = () => {
       
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {insights.map((insight, idx) => (
-          <a 
+          <Link 
             key={idx} 
-            href={insight.link}
+            href={insight.link || "#"}
             className="group"
           >
             <Card className="overflow-hidden hover:shadow-lg transition-all duration-300">
@@ -51,7 +52,7 @@ export const InsightsSection = () => {
                 </h3>
               </CardContent>
             </Card>
-          </a>
+          </Link>
         ))}
       </div>
     </section>

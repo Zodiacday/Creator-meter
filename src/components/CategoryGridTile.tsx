@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 import { LucideIcon, ChevronDown } from "lucide-react";
 import { Counter } from "./Counter";

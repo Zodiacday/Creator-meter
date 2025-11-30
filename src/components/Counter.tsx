@@ -1,3 +1,4 @@
+"use client";
 import { useEffect, useState, useRef } from "react";
 
 interface CounterProps {
@@ -9,10 +10,15 @@ interface CounterProps {
 export const Counter = ({ value, duration = 2000, className = "" }: CounterProps) => {
   const [displayValue, setDisplayValue] = useState(value);
   const [isAnimating, setIsAnimating] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const prevValueRef = useRef(value);
 
   useEffect(() => {
-    if (prevValueRef.current === value) return;
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!mounted || prevValueRef.current === value) return;
     
     setIsAnimating(true);
     const startValue = prevValueRef.current;
@@ -45,7 +51,7 @@ export const Counter = ({ value, duration = 2000, className = "" }: CounterProps
   };
 
   return (
-    <span className={`${className} ${isAnimating ? 'animate-counter-pop' : ''}`}>
+    <span className={`${className} ${isAnimating ? 'animate-counter-pop' : ''}`} suppressHydrationWarning>
       {formatNumber(displayValue)}
     </span>
   );

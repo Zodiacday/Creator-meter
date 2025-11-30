@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+"use client";
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 interface RelatedPage {
@@ -19,7 +20,7 @@ export const RelatedPages = ({ pages }: RelatedPagesProps) => {
         {pages.map((page) => (
           <Link
             key={page.path}
-            to={page.path}
+            href={page.path}
             className="group p-4 rounded-lg border border-border bg-card hover:bg-accent transition-colors"
           >
             <div className="flex items-start justify-between gap-2">

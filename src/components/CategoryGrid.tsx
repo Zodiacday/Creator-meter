@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 import { 
   Users, 
@@ -11,7 +12,7 @@ import {
   Wrench
 } from "lucide-react";
 import { CategoryGridTile } from "./CategoryGridTile";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { Button } from "./ui/button";
 
 interface CategoryGridProps {
@@ -308,17 +309,17 @@ export const CategoryGrid = ({
               </div>
               <h3 className="text-xl font-bold">{tile.title}</h3>
               <div className="space-y-2 w-full">
-                <Link to="/compare">
+                  <Link href="/compare">
                   <Button variant="default" className="w-full">
                     🧭 Compare Countries
                   </Button>
                 </Link>
-                <Link to="/widgets">
+                  <Link href="/widgets">
                   <Button variant="outline" className="w-full">
                     📊 Embeddable Widgets
                   </Button>
                 </Link>
-                <Link to="/data-methodology">
+                  <Link href="/data-methodology">
                   <Button variant="outline" className="w-full">
                     📚 Data Methodology
                   </Button>

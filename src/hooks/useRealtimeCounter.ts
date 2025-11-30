@@ -1,3 +1,4 @@
+"use client";
 import { useState, useEffect, useRef } from 'react';
 
 interface UseRealtimeCounterOptions {
@@ -12,19 +13,24 @@ export const useRealtimeCounter = ({
   enabled = true 
 }: UseRealtimeCounterOptions) => {
   const [value, setValue] = useState(initialValue);
+  const [mounted, setMounted] = useState(false);
   const startTimeRef = useRef(Date.now());
   const startValueRef = useRef(initialValue);
 
   useEffect(() => {
-    if (!enabled) return;
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!enabled || !mounted) return;
 
     startTimeRef.current = Date.now();
     startValueRef.current = initialValue;
     setValue(initialValue);
-  }, [initialValue, enabled]);
+  }, [initialValue, enabled, mounted]);
 
   useEffect(() => {
-    if (!enabled) return;
+    if (!enabled || !mounted) return;
 
     const interval = setInterval(() => {
       const elapsedSeconds = (Date.now() - startTimeRef.current) / 1000;
@@ -33,7 +39,7 @@ export const useRealtimeCounter = ({
     }, 100); // Update every 100ms for smooth animation
 
     return () => clearInterval(interval);
-  }, [incrementPerSecond, enabled]);
+  }, [incrementPerSecond, enabled, mounted]);
 
   return value;
 };
