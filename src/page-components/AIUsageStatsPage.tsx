@@ -19,7 +19,7 @@ const AIUsageStatsPage = () => {
         title="AI Usage Statistics 2025 — Global Adoption Rates, Workforce Impact & Trends"
         description="See how AI adoption grew in 2025. Explore usage trends, workforce transformation data, and industry-wide adoption metrics."
         keywords="AI statistics, artificial intelligence, adoption rates, workforce impact, 2025"
-        canonical={`${typeof window !== 'undefined' ? window.location.origin : ''}/ai-usage-statistics`}
+        canonical={`${'https://www.creatormeter.com'}/ai-usage-statistics`}
       />
       <Navigation />
       <main className="min-h-screen bg-background py-8">

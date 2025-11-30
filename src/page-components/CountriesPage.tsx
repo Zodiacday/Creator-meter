@@ -70,14 +70,14 @@ const CountriesPage = () => {
         title="Countries & Population Statistics"
         description="Live world population statistics by country and region. Explore population data, demographics, growth rates, and historical trends for all countries worldwide."
         keywords="world population, country statistics, population by country, demographics, population data, regional population"
-        canonical={`${typeof window !== 'undefined' ? window.location.origin : ''}/countries`}
+        canonical={`${'https://www.creatormeter.com'}/countries`}
       />
       <SchemaMarkup
         type="Dataset"
         data={{
           name: "World Population by Country",
           description: "Real-time population statistics for all countries and regions worldwide",
-          url: `${typeof window !== 'undefined' ? window.location.origin : ''}/countries`,
+          url: `${'https://www.creatormeter.com'}/countries`,
           keywords: ["population", "demographics", "countries", "world statistics"],
           temporalCoverage: "2024/..",
           spatialCoverage: "Global"
@@ -86,8 +86,8 @@ const CountriesPage = () => {
       <SchemaMarkup
         type="BreadcrumbList"
         data={[
-          { name: "Home", url: window.location.origin },
-          { name: "Countries & Population", url: `${typeof window !== 'undefined' ? window.location.origin : ''}/countries` }
+          { name: "Home", url: 'https://www.creatormeter.com' },
+          { name: "Countries & Population", url: `${'https://www.creatormeter.com'}/countries` }
         ]}
       />
       <Navigation />

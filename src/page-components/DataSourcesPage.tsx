@@ -87,14 +87,14 @@ const DataSourcesPage = () => {
         title="Data Sources & Methodology"
         description="Transparent data sourcing from UN, WHO, World Bank, IMF, and other trusted organizations. Learn about our methodology, update intervals, and data validation process."
         keywords="data sources, methodology, UN data, WHO statistics, World Bank, data transparency, verified data"
-        canonical={`${typeof window !== 'undefined' ? window.location.origin : ''}/data-sources`}
+        canonical={`${'https://www.creatormeter.com'}/data-sources`}
       />
       <SchemaMarkup 
         type="WebPage" 
         data={{
           name: "Data Sources & Methodology",
           description: "Complete list of data sources and methodology used by CreatorMeter",
-          url: `${typeof window !== 'undefined' ? window.location.origin : ''}/data-sources`
+          url: `${'https://www.creatormeter.com'}/data-sources`
         }} 
       />
       <Navigation />

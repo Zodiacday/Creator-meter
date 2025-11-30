@@ -30,7 +30,7 @@ const PopulationTrends2025 = () => {
       name: "CreatorMeter",
       logo: {
         "@type": "ImageObject",
-        url: `${typeof window !== 'undefined' ? window.location.origin : ''}/logo.svg`
+        url: `${'https://www.creatormeter.com'}/logo.svg`
       }
     }
   };

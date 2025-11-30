@@ -15,7 +15,7 @@ const WidgetsPage = () => {
   const { toast } = useToast();
   const [copiedWidget, setCopiedWidget] = useState<string | null>(null);
 
-  const baseUrl = window.location.origin;
+  const baseUrl = 'https://www.creatormeter.com';
 
   const widgets = [
     {

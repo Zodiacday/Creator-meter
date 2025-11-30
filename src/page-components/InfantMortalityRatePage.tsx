@@ -62,14 +62,14 @@ const InfantMortalityRatePage = () => {
         title="Infant Mortality Rate by Country 2025 - Global Child Health Statistics"
         description="15,000 infants die daily worldwide. Track infant mortality rates by country. Afghanistan highest at 103.1 per 1,000 births. Current IMR data and trends."
         keywords="infant mortality rate, child mortality, infant deaths, IMR by country, under-5 mortality, neonatal mortality"
-        canonical={`${typeof window !== 'undefined' ? window.location.origin : ''}/infant-mortality-rate`}
+        canonical={`${'https://www.creatormeter.com'}/infant-mortality-rate`}
       />
       <SchemaMarkup
         type="Dataset"
         data={{
           name: "Infant Mortality Rate by Country",
           description: "Infant mortality statistics for countries worldwide",
-          url: `${typeof window !== 'undefined' ? window.location.origin : ''}/infant-mortality-rate`,
+          url: `${'https://www.creatormeter.com'}/infant-mortality-rate`,
           keywords: ["infant mortality", "child health", "healthcare", "demographics"]
         }}
       />

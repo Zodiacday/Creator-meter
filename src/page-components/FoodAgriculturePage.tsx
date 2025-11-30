@@ -68,14 +68,14 @@ const FoodAgriculturePage = () => {
         title="Food & Agriculture Statistics - Global Crop Production"
         description="World food and agriculture statistics including crop production, hunger data, malnutrition rates, and agricultural trends by region with real-time updates."
         keywords="food agriculture, crop production, world hunger, agricultural statistics, farming data, food security"
-        canonical={`${typeof window !== 'undefined' ? window.location.origin : ''}/food-agriculture`}
+        canonical={`${'https://www.creatormeter.com'}/food-agriculture`}
       />
       <SchemaMarkup
         type="Dataset"
         data={{
           name: "Global Food & Agriculture Statistics",
           description: "Comprehensive agricultural production and food security data worldwide",
-          url: `${typeof window !== 'undefined' ? window.location.origin : ''}/food-agriculture`,
+          url: `${'https://www.creatormeter.com'}/food-agriculture`,
           keywords: ["agriculture", "food production", "crops", "hunger", "farming"],
           temporalCoverage: "2024/..",
           spatialCoverage: "Global"
@@ -84,8 +84,8 @@ const FoodAgriculturePage = () => {
       <SchemaMarkup
         type="BreadcrumbList"
         data={[
-          { name: "Home", url: window.location.origin },
-          { name: "Food & Agriculture", url: `${typeof window !== 'undefined' ? window.location.origin : ''}/food-agriculture` }
+          { name: "Home", url: 'https://www.creatormeter.com' },
+          { name: "Food & Agriculture", url: `${'https://www.creatormeter.com'}/food-agriculture` }
         ]}
       />
       <Navigation />

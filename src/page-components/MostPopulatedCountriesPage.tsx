@@ -31,9 +31,9 @@ const MostPopulatedCountriesPage = () => {
         title="Most Populated Countries 2025 - Top 10 by Population"
         description="India leads with 1.43B people. Complete ranking of the most populated countries in 2025. Real-time population data and growth trends."
         keywords="most populated countries, largest countries by population, population ranking, India population, China population"
-        canonical={`${typeof window !== 'undefined' ? window.location.origin : ''}/most-populated-countries-2025`}
+        canonical={`${'https://www.creatormeter.com'}/most-populated-countries-2025`}
       />
-      <SchemaMarkup type="Dataset" data={{ name: "Most Populated Countries", description: "Population rankings by country", url: `${typeof window !== 'undefined' ? window.location.origin : ''}/most-populated-countries-2025`, keywords: ["population", "countries", "demographics"] }} />
+      <SchemaMarkup type="Dataset" data={{ name: "Most Populated Countries", description: "Population rankings by country", url: `${'https://www.creatormeter.com'}/most-populated-countries-2025`, keywords: ["population", "countries", "demographics"] }} />
       <Navigation />
       <main className="container px-4 py-8 md:py-12">
         <div className="max-w-7xl mx-auto">

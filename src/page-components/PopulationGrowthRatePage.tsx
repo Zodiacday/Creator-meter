@@ -79,14 +79,14 @@ const PopulationGrowthRatePage = () => {
         title="Population Growth Rate by Country - Global Population Trends"
         description="Compare population growth rates worldwide. Global rate: 0.88%. Niger leads at 3.66% while Bulgaria declines at -1.85%. Updated 2024 data with historical trends."
         keywords="population growth rate, population growth by country, fastest growing countries, population decline, demographic trends"
-        canonical={`${typeof window !== 'undefined' ? window.location.origin : ''}/population-growth-rate-by-country`}
+        canonical={`${'https://www.creatormeter.com'}/population-growth-rate-by-country`}
       />
       <SchemaMarkup
         type="Dataset"
         data={{
           name: "Population Growth Rate by Country",
           description: "Population growth rates for all countries and regions",
-          url: `${typeof window !== 'undefined' ? window.location.origin : ''}/population-growth-rate-by-country`,
+          url: `${'https://www.creatormeter.com'}/population-growth-rate-by-country`,
           keywords: ["population growth", "demographics", "fertility", "mortality"],
           temporalCoverage: "1960/..",
           spatialCoverage: "Global"
@@ -96,8 +96,8 @@ const PopulationGrowthRatePage = () => {
       <SchemaMarkup
         type="BreadcrumbList"
         data={[
-          { name: "Home", url: window.location.origin },
-          { name: "Population Growth Rate", url: `${typeof window !== 'undefined' ? window.location.origin : ''}/population-growth-rate-by-country` }
+          { name: "Home", url: 'https://www.creatormeter.com' },
+          { name: "Population Growth Rate", url: `${'https://www.creatormeter.com'}/population-growth-rate-by-country` }
         ]}
       />
       <Navigation />

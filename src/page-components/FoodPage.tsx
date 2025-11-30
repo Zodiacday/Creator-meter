@@ -59,14 +59,14 @@ const FoodPage = () => {
         title="World Food & Nutrition Statistics"
         description="Real-time global food security and nutrition statistics. Track hunger, malnutrition, obesity, and food waste data worldwide with live counters."
         keywords="food statistics, world hunger, malnutrition, obesity, food security, nutrition data, food waste"
-        canonical={`${typeof window !== 'undefined' ? window.location.origin : ''}/food`}
+        canonical={`${'https://www.creatormeter.com'}/food`}
       />
       <SchemaMarkup
         type="Dataset"
         data={{
           name: "Global Food & Nutrition Statistics",
           description: "Real-time data on world hunger, malnutrition, food security, and dietary patterns",
-          url: `${typeof window !== 'undefined' ? window.location.origin : ''}/food`,
+          url: `${'https://www.creatormeter.com'}/food`,
           keywords: ["food", "nutrition", "hunger", "malnutrition", "food security"],
           temporalCoverage: "2010/..",
           spatialCoverage: "Global"
@@ -75,8 +75,8 @@ const FoodPage = () => {
       <SchemaMarkup
         type="BreadcrumbList"
         data={[
-          { name: "Home", url: window.location.origin },
-          { name: "Food & Nutrition", url: `${typeof window !== 'undefined' ? window.location.origin : ''}/food` }
+          { name: "Home", url: 'https://www.creatormeter.com' },
+          { name: "Food & Nutrition", url: `${'https://www.creatormeter.com'}/food` }
         ]}
       />
       <Navigation />

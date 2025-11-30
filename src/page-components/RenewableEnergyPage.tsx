@@ -48,14 +48,14 @@ const RenewableEnergyPage = () => {
         title="Renewable Energy by Country 2025 - Global Clean Energy Statistics"
         description="Iceland and Paraguay run on 100% renewable energy. Compare renewable energy usage and capacity by country. Current data on solar, wind, hydro, and geothermal power."
         keywords="renewable energy by country, clean energy statistics, solar power, wind energy, hydroelectric, sustainable energy"
-        canonical={`${typeof window !== 'undefined' ? window.location.origin : ''}/renewable-energy-by-country`}
+        canonical={`${'https://www.creatormeter.com'}/renewable-energy-by-country`}
       />
       <SchemaMarkup
         type="Dataset"
         data={{
           name: "Renewable Energy by Country",
           description: "Renewable energy statistics and capacity by country",
-          url: `${typeof window !== 'undefined' ? window.location.origin : ''}/renewable-energy-by-country`,
+          url: `${'https://www.creatormeter.com'}/renewable-energy-by-country`,
           keywords: ["renewable energy", "clean energy", "solar power", "wind energy", "sustainability"]
         }}
       />

@@ -49,14 +49,14 @@ const GovernmentSpendingPage = () => {
         title="Government Spending by Country 2025 - Public Expenditure Data"
         description="Compare government spending as % of GDP by country. US spends $6.3 trillion annually. Data on public expenditure, fiscal policy, and government budgets."
         keywords="government spending by country, public expenditure, government budget, fiscal policy, spending as percentage of GDP"
-        canonical={`${typeof window !== 'undefined' ? window.location.origin : ''}/government-spending-by-country`}
+        canonical={`${'https://www.creatormeter.com'}/government-spending-by-country`}
       />
       <SchemaMarkup
         type="Dataset"
         data={{
           name: "Government Spending by Country",
           description: "Government expenditure data by country",
-          url: `${typeof window !== 'undefined' ? window.location.origin : ''}/government-spending-by-country`,
+          url: `${'https://www.creatormeter.com'}/government-spending-by-country`,
           keywords: ["government spending", "public expenditure", "fiscal policy", "GDP"]
         }}
       />

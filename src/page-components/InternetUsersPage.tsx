@@ -60,14 +60,14 @@ const InternetUsersPage = () => {
         title="Internet Users Worldwide 2025 - Global Internet Statistics"
         description="5.4 billion people use the internet (67.4% of world population). Track real-time internet users, regional breakdowns, and penetration rates by country."
         keywords="internet users worldwide, global internet statistics, internet penetration, online population, digital divide"
-        canonical={`${typeof window !== 'undefined' ? window.location.origin : ''}/internet-users-worldwide`}
+        canonical={`${'https://www.creatormeter.com'}/internet-users-worldwide`}
       />
       <SchemaMarkup
         type="Dataset"
         data={{
           name: "Global Internet Users Statistics",
           description: "Real-time data on internet users worldwide",
-          url: `${typeof window !== 'undefined' ? window.location.origin : ''}/internet-users-worldwide`,
+          url: `${'https://www.creatormeter.com'}/internet-users-worldwide`,
           keywords: ["internet users", "digital connectivity", "internet penetration", "online population"]
         }}
       />

@@ -58,14 +58,14 @@ const CommoditiesPage = () => {
         title="Commodities & Currency Prices - Live Market Data"
         description="Real-time commodity prices and currency exchange rates. Track gold, oil, silver, currencies, and global market trends with live updates."
         keywords="commodity prices, currency exchange, gold price, oil price, forex rates, market data, commodities trading"
-        canonical={`${typeof window !== 'undefined' ? window.location.origin : ''}/commodities`}
+        canonical={`${'https://www.creatormeter.com'}/commodities`}
       />
       <SchemaMarkup
         type="Dataset"
         data={{
           name: "Global Commodities & Currency Statistics",
           description: "Real-time commodity prices and currency exchange rates for major global markets",
-          url: `${typeof window !== 'undefined' ? window.location.origin : ''}/commodities`,
+          url: `${'https://www.creatormeter.com'}/commodities`,
           keywords: ["commodities", "currencies", "gold", "oil", "forex", "market prices"],
           temporalCoverage: "2024/..",
           spatialCoverage: "Global"
@@ -74,8 +74,8 @@ const CommoditiesPage = () => {
       <SchemaMarkup
         type="BreadcrumbList"
         data={[
-          { name: "Home", url: window.location.origin },
-          { name: "Commodities & Currencies", url: `${typeof window !== 'undefined' ? window.location.origin : ''}/commodities` }
+          { name: "Home", url: typeof window !== 'undefined' ? 'https://www.creatormeter.com' : 'https://www.creatormeter.com' },
+          { name: "Commodities & Currencies", url: `${typeof window !== 'undefined' ? 'https://www.creatormeter.com' : 'https://www.creatormeter.com'}/commodities` }
         ]}
       />
       <Navigation />

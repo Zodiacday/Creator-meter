@@ -63,14 +63,14 @@ const PopulationByAgePage = () => {
         title="World Population by Age - Global Age Distribution Statistics"
         description="Explore world population by age groups. 25.4% children (0-14), 65.3% working age (15-64), 9.3% elderly (65+). Interactive charts and demographic trends."
         keywords="world population by age, age distribution, demographic pyramid, population age groups, median age, aging population"
-        canonical={`${typeof window !== 'undefined' ? window.location.origin : ''}/world-population-by-age`}
+        canonical={`${'https://www.creatormeter.com'}/world-population-by-age`}
       />
       <SchemaMarkup
         type="Dataset"
         data={{
           name: "World Population Age Distribution",
           description: "Demographic data on global population by age groups",
-          url: `${typeof window !== 'undefined' ? window.location.origin : ''}/world-population-by-age`,
+          url: `${'https://www.creatormeter.com'}/world-population-by-age`,
           keywords: ["demographics", "age distribution", "population pyramid", "median age"],
           temporalCoverage: "2024/..",
           spatialCoverage: "Global"
@@ -80,8 +80,8 @@ const PopulationByAgePage = () => {
       <SchemaMarkup
         type="BreadcrumbList"
         data={[
-          { name: "Home", url: window.location.origin },
-          { name: "Population by Age", url: `${typeof window !== 'undefined' ? window.location.origin : ''}/world-population-by-age` }
+          { name: "Home", url: 'https://www.creatormeter.com' },
+          { name: "Population by Age", url: `${'https://www.creatormeter.com'}/world-population-by-age` }
         ]}
       />
       <Navigation />

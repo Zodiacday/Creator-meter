@@ -149,7 +149,7 @@ const Index = () => {
         title="Live World Statistics 2025 - Real-Time Global Data Counter"
         description="Watch the world change in real-time. Live counters for population (8.25B+), CO₂ emissions, GDP, births/deaths, and 50+ global metrics. Verified data from UN, WHO, World Bank."
         keywords="world statistics, global data, population counter, live data, world population clock, real-time statistics, global metrics, world data"
-        canonical={`${typeof window !== 'undefined' ? window.location.origin : ''}/`}
+        canonical={`${'https://www.creatormeter.com'}/`}
       />
       <SchemaMarkup 
         type="Organization" 
@@ -159,12 +159,12 @@ const Index = () => {
         type="WebSite" 
         data={{
           name: "CreatorMeter",
-          url: window.location.origin,
+          url: 'https://www.creatormeter.com',
           potentialAction: {
             "@type": "SearchAction",
             target: {
               "@type": "EntryPoint",
-              urlTemplate: `${typeof window !== 'undefined' ? window.location.origin : ''}/search?q={search_term_string}`
+              urlTemplate: `${'https://www.creatormeter.com'}/search?q={search_term_string}`
             },
             "query-input": "required name=search_term_string"
           }

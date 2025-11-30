@@ -45,14 +45,14 @@ const LeastPopulatedCountriesPage = () => {
         title="Least Populated Countries 2025 - Smallest Nations by Population"
         description="Vatican City has only 825 people. Complete ranking of the world's least populated countries. Current data on smallest nations and micro-states."
         keywords="least populated countries, smallest countries, Vatican City population, micro-states, lowest population countries"
-        canonical={`${typeof window !== 'undefined' ? window.location.origin : ''}/least-populated-countries`}
+        canonical={`${'https://www.creatormeter.com'}/least-populated-countries`}
       />
       <SchemaMarkup
         type="Dataset"
         data={{
           name: "Least Populated Countries",
           description: "Population rankings of the world's smallest countries",
-          url: `${typeof window !== 'undefined' ? window.location.origin : ''}/least-populated-countries`,
+          url: `${'https://www.creatormeter.com'}/least-populated-countries`,
           keywords: ["population", "countries", "micro-states", "demographics"]
         }}
       />

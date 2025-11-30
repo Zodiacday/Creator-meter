@@ -76,14 +76,14 @@ const GovernmentPage = () => {
         title="Government Spending & Economics - Global Public Finance"
         description="Track global government spending on healthcare, education, military, and infrastructure. Real-time economic statistics and public finance data worldwide."
         keywords="government spending, public finance, military spending, education spending, healthcare spending, economic statistics"
-        canonical={`${typeof window !== 'undefined' ? window.location.origin : ''}/government`}
+        canonical={`${'https://www.creatormeter.com'}/government`}
       />
       <SchemaMarkup
         type="Dataset"
         data={{
           name: "Global Government & Economics Statistics",
           description: "Real-time data on government spending, public finance, and economic indicators worldwide",
-          url: `${typeof window !== 'undefined' ? window.location.origin : ''}/government`,
+          url: `${'https://www.creatormeter.com'}/government`,
           keywords: ["government", "economics", "public spending", "finance", "military budget"],
           temporalCoverage: "2000/..",
           spatialCoverage: "Global"
@@ -92,8 +92,8 @@ const GovernmentPage = () => {
       <SchemaMarkup
         type="BreadcrumbList"
         data={[
-          { name: "Home", url: window.location.origin },
-          { name: "Government & Economics", url: `${typeof window !== 'undefined' ? window.location.origin : ''}/government` }
+          { name: "Home", url: 'https://www.creatormeter.com' },
+          { name: "Government & Economics", url: `${'https://www.creatormeter.com'}/government` }
         ]}
       />
       <Navigation />

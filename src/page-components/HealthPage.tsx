@@ -66,14 +66,14 @@ const HealthPage = () => {
         title="World Health Statistics - Global Healthcare Data"
         description="Real-time global health statistics including mortality rates, disease data, healthcare spending, and life expectancy. Track health indicators and medical statistics worldwide."
         keywords="health statistics, global health, mortality data, healthcare spending, life expectancy, disease statistics, world health"
-        canonical={`${typeof window !== 'undefined' ? window.location.origin : ''}/health`}
+        canonical={`${'https://www.creatormeter.com'}/health`}
       />
       <SchemaMarkup
         type="Dataset"
         data={{
           name: "Global Health Statistics",
           description: "Comprehensive world health data including disease mortality, healthcare spending, and life expectancy",
-          url: `${typeof window !== 'undefined' ? window.location.origin : ''}/health`,
+          url: `${'https://www.creatormeter.com'}/health`,
           keywords: ["health", "mortality", "healthcare", "life expectancy", "disease statistics"],
           temporalCoverage: "2024/..",
           spatialCoverage: "Global"
@@ -82,8 +82,8 @@ const HealthPage = () => {
       <SchemaMarkup
         type="BreadcrumbList"
         data={[
-          { name: "Home", url: window.location.origin },
-          { name: "Health Statistics", url: `${typeof window !== 'undefined' ? window.location.origin : ''}/health` }
+          { name: "Home", url: 'https://www.creatormeter.com' },
+          { name: "Health Statistics", url: `${'https://www.creatormeter.com'}/health` }
         ]}
       />
       <Navigation />

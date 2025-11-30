@@ -76,14 +76,14 @@ const SocietyPage = () => {
         title="Society & Media Statistics - Digital & Traditional Media"
         description="Real-time global media consumption and digital connectivity statistics. Track internet users, social media, emails sent, and traditional media worldwide."
         keywords="media statistics, internet users, social media stats, digital consumption, email statistics, global connectivity"
-        canonical={`${typeof window !== 'undefined' ? window.location.origin : ''}/society`}
+        canonical={`${'https://www.creatormeter.com'}/society`}
       />
       <SchemaMarkup
         type="Dataset"
         data={{
           name: "Global Society & Media Statistics",
           description: "Real-time data on digital and traditional media consumption, internet usage, and social connectivity",
-          url: `${typeof window !== 'undefined' ? window.location.origin : ''}/society`,
+          url: `${'https://www.creatormeter.com'}/society`,
           keywords: ["society", "media", "internet", "social media", "digital consumption"],
           temporalCoverage: "2010/..",
           spatialCoverage: "Global"
@@ -92,8 +92,8 @@ const SocietyPage = () => {
       <SchemaMarkup
         type="BreadcrumbList"
         data={[
-          { name: "Home", url: window.location.origin },
-          { name: "Society & Media", url: `${typeof window !== 'undefined' ? window.location.origin : ''}/society` }
+          { name: "Home", url: 'https://www.creatormeter.com' },
+          { name: "Society & Media", url: `${'https://www.creatormeter.com'}/society` }
         ]}
       />
       <Navigation />

@@ -57,14 +57,14 @@ const PopulationPage = () => {
         title="World Population Live Counter"
         description="Real-time world population counter showing live births, deaths, and population growth. Track global population statistics, demographics, and trends with accurate data."
         keywords="world population, live counter, population growth, birth rate, death rate, demographics, global population statistics"
-        canonical={`${typeof window !== 'undefined' ? window.location.origin : ''}/population`}
+        canonical={`${'https://www.creatormeter.com'}/population`}
       />
       <SchemaMarkup
         type="Dataset"
         data={{
           name: "World Population Statistics",
           description: "Real-time world population data including births, deaths, and growth rates",
-          url: `${typeof window !== 'undefined' ? window.location.origin : ''}/population`,
+          url: `${'https://www.creatormeter.com'}/population`,
           keywords: ["population", "demographics", "birth rate", "death rate", "world statistics"],
           temporalCoverage: "1950/..",
           spatialCoverage: "Global"
@@ -73,8 +73,8 @@ const PopulationPage = () => {
       <SchemaMarkup
         type="BreadcrumbList"
         data={[
-          { name: "Home", url: window.location.origin },
-          { name: "Population Statistics", url: `${typeof window !== 'undefined' ? window.location.origin : ''}/population` }
+          { name: "Home", url: 'https://www.creatormeter.com' },
+          { name: "Population Statistics", url: `${'https://www.creatormeter.com'}/population` }
         ]}
       />
       <Navigation />

@@ -91,14 +91,14 @@ const WaterPage = () => {
         title="World Water Statistics - Global Consumption & Access"
         description="Real-time global water consumption and access statistics. Track water usage, scarcity, sanitation access, and water-related health data worldwide."
         keywords="water statistics, global water consumption, water scarcity, water access, sanitation, world water data"
-        canonical={`${typeof window !== 'undefined' ? window.location.origin : ''}/water`}
+        canonical={`${'https://www.creatormeter.com'}/water`}
       />
       <SchemaMarkup
         type="Dataset"
         data={{
           name: "Global Water Statistics",
           description: "Real-time world water consumption, access, and health impact data",
-          url: `${typeof window !== 'undefined' ? window.location.origin : ''}/water`,
+          url: `${'https://www.creatormeter.com'}/water`,
           keywords: ["water", "consumption", "access", "sanitation", "world statistics"],
           temporalCoverage: "2024/..",
           spatialCoverage: "Global"
@@ -107,8 +107,8 @@ const WaterPage = () => {
       <SchemaMarkup
         type="BreadcrumbList"
         data={[
-          { name: "Home", url: window.location.origin },
-          { name: "Water Statistics", url: `${typeof window !== 'undefined' ? window.location.origin : ''}/water` }
+          { name: "Home", url: 'https://www.creatormeter.com' },
+          { name: "Water Statistics", url: `${'https://www.creatormeter.com'}/water` }
         ]}
       />
       <Navigation />

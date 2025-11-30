@@ -67,14 +67,14 @@ const EnergyPage = () => {
         title="World Energy Statistics - Global Consumption & Sources"
         description="Real-time global energy consumption statistics. Track energy use by source including oil, coal, natural gas, nuclear, and renewables with live data."
         keywords="energy statistics, global energy consumption, renewable energy, energy sources, oil consumption, world energy data"
-        canonical={`${typeof window !== 'undefined' ? window.location.origin : ''}/energy`}
+        canonical={`${'https://www.creatormeter.com'}/energy`}
       />
       <SchemaMarkup
         type="Dataset"
         data={{
           name: "Global Energy Consumption Statistics",
           description: "Real-time world energy consumption data by source and country",
-          url: `${typeof window !== 'undefined' ? window.location.origin : ''}/energy`,
+          url: `${'https://www.creatormeter.com'}/energy`,
           keywords: ["energy", "consumption", "renewable energy", "fossil fuels", "world statistics"],
           temporalCoverage: "2024/..",
           spatialCoverage: "Global"
@@ -83,8 +83,8 @@ const EnergyPage = () => {
       <SchemaMarkup
         type="BreadcrumbList"
         data={[
-          { name: "Home", url: window.location.origin },
-          { name: "Energy Statistics", url: `${typeof window !== 'undefined' ? window.location.origin : ''}/energy` }
+          { name: "Home", url: 'https://www.creatormeter.com' },
+          { name: "Energy Statistics", url: `${'https://www.creatormeter.com'}/energy` }
         ]}
       />
       <Navigation />

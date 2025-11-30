@@ -19,7 +19,7 @@ const ClimateEmergencyPage = () => {
         title="Climate Emergency Data 2025 — Methane Levels, Progress Tracking & Global Targets"
         description="Track 2025 climate emergency metrics including methane emissions, environmental commitments, and global progress milestones."
         keywords="climate emergency, methane emissions, global warming, 2025, environmental data"
-        canonical={`${typeof window !== 'undefined' ? window.location.origin : ''}/climate-emergency`}
+        canonical={`${'https://www.creatormeter.com'}/climate-emergency`}
       />
       <Navigation />
       <main className="min-h-screen bg-background py-8">

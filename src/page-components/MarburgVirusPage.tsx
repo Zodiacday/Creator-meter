@@ -50,14 +50,14 @@ const MarburgVirusPage = () => {
         title="Marburg Virus Outbreak Ethiopia (2025) — Live Emergency Updates"
         description="Monitor the 2025 Marburg virus outbreak with live updates, case counts, outbreak intensity levels, and regional breakdowns."
         keywords="Marburg virus, Ethiopia outbreak, hemorrhagic fever, viral disease, 2025, emergency response"
-        canonical={`${typeof window !== 'undefined' ? window.location.origin : ''}/data/marburg-virus-ethiopia-2025`}
+        canonical={`${'https://www.creatormeter.com'}/data/marburg-virus-ethiopia-2025`}
       />
       <SchemaMarkup
         type="Dataset"
         data={{
           name: "Marburg Virus Outbreak Ethiopia 2025",
           description: "Real-time tracking of Marburg virus outbreak in Ethiopia with case counts and regional data",
-          url: `${typeof window !== 'undefined' ? window.location.origin : ''}/data/marburg-virus-ethiopia-2025`,
+          url: `${'https://www.creatormeter.com'}/data/marburg-virus-ethiopia-2025`,
         }}
       />
       <SchemaMarkup

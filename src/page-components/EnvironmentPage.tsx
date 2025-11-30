@@ -71,14 +71,14 @@ const EnvironmentPage = () => {
         title="Environment Statistics - Climate Change & Sustainability"
         description="Real-time environmental statistics including CO2 emissions, deforestation, climate change data, and biodiversity indicators. Track global environmental impact live."
         keywords="environment statistics, climate change, co2 emissions, deforestation, global warming, sustainability, environmental data"
-        canonical={`${typeof window !== 'undefined' ? window.location.origin : ''}/environment`}
+        canonical={`${'https://www.creatormeter.com'}/environment`}
       />
       <SchemaMarkup
         type="Dataset"
         data={{
           name: "Global Environmental Statistics",
           description: "Real-time data on climate change, deforestation, emissions, and environmental indicators worldwide",
-          url: `${typeof window !== 'undefined' ? window.location.origin : ''}/environment`,
+          url: `${'https://www.creatormeter.com'}/environment`,
           keywords: ["environment", "climate change", "emissions", "deforestation", "sustainability"],
           temporalCoverage: "1880/..",
           spatialCoverage: "Global"
@@ -87,8 +87,8 @@ const EnvironmentPage = () => {
       <SchemaMarkup
         type="BreadcrumbList"
         data={[
-          { name: "Home", url: window.location.origin },
-          { name: "Environment Statistics", url: `${typeof window !== 'undefined' ? window.location.origin : ''}/environment` }
+          { name: "Home", url: 'https://www.creatormeter.com' },
+          { name: "Environment Statistics", url: `${'https://www.creatormeter.com'}/environment` }
         ]}
       />
       <Navigation />

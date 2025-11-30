@@ -66,14 +66,14 @@ const GdpPage = () => {
         title="GDP by Country - World Economic Statistics"
         description="Real-time GDP rankings by country. Explore gross domestic product data, economic growth rates, per capita GDP, and global economic indicators with live updates."
         keywords="gdp by country, world gdp, economic statistics, gross domestic product, gdp per capita, global economy, economic growth"
-        canonical={`${typeof window !== 'undefined' ? window.location.origin : ''}/gdp`}
+        canonical={`${'https://www.creatormeter.com'}/gdp`}
       />
       <SchemaMarkup
         type="Dataset"
         data={{
           name: "Global GDP Statistics by Country",
           description: "Comprehensive GDP data for all countries including rankings, per capita income, and growth rates",
-          url: `${typeof window !== 'undefined' ? window.location.origin : ''}/gdp`,
+          url: `${'https://www.creatormeter.com'}/gdp`,
           keywords: ["gdp", "economy", "economic growth", "world statistics"],
           temporalCoverage: "2024/..",
           spatialCoverage: "Global"
@@ -82,8 +82,8 @@ const GdpPage = () => {
       <SchemaMarkup
         type="BreadcrumbList"
         data={[
-          { name: "Home", url: window.location.origin },
-          { name: "GDP by Country", url: `${typeof window !== 'undefined' ? window.location.origin : ''}/gdp` }
+          { name: "Home", url: 'https://www.creatormeter.com' },
+          { name: "GDP by Country", url: `${'https://www.creatormeter.com'}/gdp` }
         ]}
       />
       <Navigation />

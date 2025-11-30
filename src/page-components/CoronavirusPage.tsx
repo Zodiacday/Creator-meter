@@ -76,14 +76,14 @@ const CoronavirusPage = () => {
         title="COVID-19 Live Statistics & Tracker"
         description="Real-time coronavirus statistics including total cases, deaths, recoveries, and active cases. Track COVID-19 pandemic data by country with live updates."
         keywords="coronavirus, covid-19, pandemic statistics, covid tracker, coronavirus cases, covid deaths, coronavirus live data"
-        canonical={`${typeof window !== 'undefined' ? window.location.origin : ''}/coronavirus`}
+        canonical={`${'https://www.creatormeter.com'}/coronavirus`}
       />
       <SchemaMarkup
         type="Dataset"
         data={{
           name: "COVID-19 Global Statistics",
           description: "Real-time coronavirus pandemic statistics including cases, deaths, and recoveries worldwide",
-          url: `${typeof window !== 'undefined' ? window.location.origin : ''}/coronavirus`,
+          url: `${'https://www.creatormeter.com'}/coronavirus`,
           keywords: ["covid-19", "coronavirus", "pandemic", "health statistics"],
           temporalCoverage: "2020/..",
           spatialCoverage: "Global"
@@ -92,8 +92,8 @@ const CoronavirusPage = () => {
       <SchemaMarkup
         type="BreadcrumbList"
         data={[
-          { name: "Home", url: window.location.origin },
-          { name: "COVID-19 Statistics", url: `${typeof window !== 'undefined' ? window.location.origin : ''}/coronavirus` }
+          { name: "Home", url: 'https://www.creatormeter.com' },
+          { name: "COVID-19 Statistics", url: `${'https://www.creatormeter.com'}/coronavirus` }
         ]}
       />
       <Navigation />

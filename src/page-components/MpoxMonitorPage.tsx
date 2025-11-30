@@ -19,7 +19,7 @@ const MpoxMonitorPage = () => {
         title="Mpox (Monkeypox) Global Tracker 2025 — Case Data & New Strains"
         description="Track global Mpox data in 2025, including case numbers, emerging strains, outbreak regions, and transmission patterns."
         keywords="mpox, monkeypox, outbreak tracker, 2025, global health"
-        canonical={`${typeof window !== 'undefined' ? window.location.origin : ''}/mpox-monitor`}
+        canonical={`${'https://www.creatormeter.com'}/mpox-monitor`}
       />
       <Navigation />
       <main className="min-h-screen bg-background py-8">

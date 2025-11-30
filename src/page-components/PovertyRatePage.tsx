@@ -58,14 +58,14 @@ const PovertyRatePage = () => {
         title="Poverty Rate by Country 2025 - Global Poverty Statistics"
         description="712 million people live in extreme poverty ($2.15/day). Track poverty rates by country and region. Current data on global poverty, income inequality, and economic development."
         keywords="poverty rate by country, extreme poverty, global poverty statistics, poverty line, income inequality, economic development"
-        canonical={`${typeof window !== 'undefined' ? window.location.origin : ''}/poverty-rate-by-country`}
+        canonical={`${'https://www.creatormeter.com'}/poverty-rate-by-country`}
       />
       <SchemaMarkup
         type="Dataset"
         data={{
           name: "Poverty Rate by Country",
           description: "Global poverty statistics and rates by country",
-          url: `${typeof window !== 'undefined' ? window.location.origin : ''}/poverty-rate-by-country`,
+          url: `${'https://www.creatormeter.com'}/poverty-rate-by-country`,
           keywords: ["poverty", "extreme poverty", "income inequality", "economic development"]
         }}
       />

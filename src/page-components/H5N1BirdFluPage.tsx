@@ -48,14 +48,14 @@ const H5N1BirdFluPage = () => {
         title="H5N1 Bird Flu Outbreak Tracker (2025) — Global Human Cases & Spread"
         description="Track real-time H5N1 bird flu data for 2025, including human cases, regional outbreaks, and global activity updates."
         keywords="H5N1, bird flu, avian influenza, human cases, outbreak tracker, 2025, pandemic monitoring"
-        canonical={`${typeof window !== 'undefined' ? window.location.origin : ''}/data/h5n1-bird-flu-2025`}
+        canonical={`${'https://www.creatormeter.com'}/data/h5n1-bird-flu-2025`}
       />
       <SchemaMarkup
         type="Dataset"
         data={{
           name: "H5N1 Bird Flu Outbreak Tracker 2025",
           description: "Real-time tracking of H5N1 avian influenza human cases and global spread",
-          url: `${typeof window !== 'undefined' ? window.location.origin : ''}/data/h5n1-bird-flu-2025`,
+          url: `${'https://www.creatormeter.com'}/data/h5n1-bird-flu-2025`,
         }}
       />
       <SchemaMarkup

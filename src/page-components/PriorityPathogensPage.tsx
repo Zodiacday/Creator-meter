@@ -18,7 +18,7 @@ const PriorityPathogensPage = () => {
         title="Priority Pathogens List (2025) — Disease X & High-Risk Threats"
         description="Explore the updated 2025 Priority Pathogens List, including emerging threats, Disease X preparedness, and high-risk pathogens."
         keywords="priority pathogens, Disease X, WHO, pandemic preparedness, 2025"
-        canonical={`${typeof window !== 'undefined' ? window.location.origin : ''}/priority-pathogens`}
+        canonical={`${'https://www.creatormeter.com'}/priority-pathogens`}
       />
       <Navigation />
       <main className="min-h-screen bg-background py-8">

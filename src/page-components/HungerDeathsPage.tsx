@@ -54,14 +54,14 @@ const HungerDeathsPage = () => {
         title="How Many People Die from Hunger Per Day? Global Hunger Statistics"
         description="24,000 people die from hunger every day. Track real-time hunger deaths worldwide, regional breakdowns, and historical trends. Data from UN FAO and World Food Programme."
         keywords="hunger deaths per day, people die from hunger, world hunger statistics, malnutrition deaths, food insecurity, global hunger crisis"
-        canonical={`${typeof window !== 'undefined' ? window.location.origin : ''}/how-many-people-die-from-hunger-per-day`}
+        canonical={`${'https://www.creatormeter.com'}/how-many-people-die-from-hunger-per-day`}
       />
       <SchemaMarkup
         type="Dataset"
         data={{
           name: "Global Hunger Deaths Statistics",
           description: "Real-time data on hunger-related deaths worldwide",
-          url: `${typeof window !== 'undefined' ? window.location.origin : ''}/how-many-people-die-from-hunger-per-day`,
+          url: `${'https://www.creatormeter.com'}/how-many-people-die-from-hunger-per-day`,
           keywords: ["hunger", "malnutrition", "food security", "starvation deaths"],
           temporalCoverage: "2000/..",
           spatialCoverage: "Global"
@@ -71,8 +71,8 @@ const HungerDeathsPage = () => {
       <SchemaMarkup
         type="BreadcrumbList"
         data={[
-          { name: "Home", url: window.location.origin },
-          { name: "Hunger Deaths Statistics", url: `${typeof window !== 'undefined' ? window.location.origin : ''}/how-many-people-die-from-hunger-per-day` }
+          { name: "Home", url: 'https://www.creatormeter.com' },
+          { name: "Hunger Deaths Statistics", url: `${'https://www.creatormeter.com'}/how-many-people-die-from-hunger-per-day` }
         ]}
       />
       <Navigation />

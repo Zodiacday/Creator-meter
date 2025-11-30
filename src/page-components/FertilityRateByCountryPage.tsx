@@ -48,14 +48,14 @@ const FertilityRateByCountryPage = () => {
         title="Fertility Rate by Country 2025 - Birth Rates Worldwide"
         description="Niger leads with 6.73 children per woman. Compare fertility rates globally. South Korea has lowest at 0.72. Current TFR data and demographic trends."
         keywords="fertility rate by country, total fertility rate, birth rate, children per woman, population growth, TFR"
-        canonical={`${typeof window !== 'undefined' ? window.location.origin : ''}/fertility-rate-by-country`}
+        canonical={`${'https://www.creatormeter.com'}/fertility-rate-by-country`}
       />
       <SchemaMarkup
         type="Dataset"
         data={{
           name: "Fertility Rate by Country",
           description: "Total fertility rates for countries worldwide",
-          url: `${typeof window !== 'undefined' ? window.location.origin : ''}/fertility-rate-by-country`,
+          url: `${'https://www.creatormeter.com'}/fertility-rate-by-country`,
           keywords: ["fertility rate", "birth rate", "demographics", "population"]
         }}
       />

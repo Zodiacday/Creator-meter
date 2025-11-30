@@ -51,14 +51,14 @@ const MedianAgeByCountryPage = () => {
         title="Median Age by Country 2025 - Global Age Demographics"
         description="Monaco leads with median age of 55.4 years. Compare median ages across countries. Data shows aging populations in developed nations and youth bulges in Africa."
         keywords="median age by country, population age, demographics, aging population, youngest countries, oldest countries"
-        canonical={`${typeof window !== 'undefined' ? window.location.origin : ''}/median-age-by-country`}
+        canonical={`${'https://www.creatormeter.com'}/median-age-by-country`}
       />
       <SchemaMarkup
         type="Dataset"
         data={{
           name: "Median Age by Country",
           description: "Median age statistics for countries worldwide",
-          url: `${typeof window !== 'undefined' ? window.location.origin : ''}/median-age-by-country`,
+          url: `${'https://www.creatormeter.com'}/median-age-by-country`,
           keywords: ["median age", "demographics", "population", "aging"]
         }}
       />
