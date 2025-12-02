@@ -7,7 +7,7 @@ interface CounterProps {
   className?: string;
 }
 
-export const Counter = ({ value, duration = 2000, className = "" }: CounterProps) => {
+export const Counter = ({ value, duration = 2000, className = "text-2xl md:text-3xl font-bold" }: CounterProps) => {
   const [displayValue, setDisplayValue] = useState(value);
   const [isAnimating, setIsAnimating] = useState(false);
   const [mounted, setMounted] = useState(false);

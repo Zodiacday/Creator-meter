@@ -2421,7 +2421,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 "use client";
 ;
 ;
-const Counter = ({ value, duration = 2000, className = "" })=>{
+const Counter = ({ value, duration = 2000, className = "text-2xl md:text-3xl font-bold" })=>{
     const [displayValue, setDisplayValue] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(value);
     const [isAnimating, setIsAnimating] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const [mounted, setMounted] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
@@ -3149,7 +3149,7 @@ function Home() {
                 title: "Live World Statistics 2025 - Real-Time Global Data Counter",
                 description: "Watch the world change in real-time. Live counters for population (8.25B+), CO₂ emissions, GDP, births/deaths, and 50+ global metrics. Verified data from UN, WHO, World Bank.",
                 keywords: "world statistics, global data, population counter, live data, world population clock, real-time statistics, global metrics, world data",
-                canonical: `${("TURBOPACK compile-time falsy", 0) ? "TURBOPACK unreachable" : ''}/`
+                canonical: `${'https://www.creatormeter.com'}/`
             }, void 0, false, {
                 fileName: "[project]/app/page.tsx",
                 lineNumber: 148,
@@ -3167,12 +3167,12 @@ function Home() {
                 type: "WebSite",
                 data: {
                     name: "CreatorMeter",
-                    url: ("TURBOPACK compile-time falsy", 0) ? "TURBOPACK unreachable" : '',
+                    url: 'https://www.creatormeter.com',
                     potentialAction: {
                         "@type": "SearchAction",
                         target: {
                             "@type": "EntryPoint",
-                            urlTemplate: `${("TURBOPACK compile-time falsy", 0) ? "TURBOPACK unreachable" : ''}/search?q={search_term_string}`
+                            urlTemplate: `${'https://www.creatormeter.com'}/search?q={search_term_string}`
                         },
                         "query-input": "required name=search_term_string"
                     }
@@ -3222,14 +3222,14 @@ function Home() {
                 className: "min-h-screen bg-background",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
-                        className: "py-8 px-4",
+                        className: "py-4 px-2",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "container mx-auto",
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "text-center max-w-4xl mx-auto mb-8",
+                                className: "text-center max-w-3xl mx-auto mb-4",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                                        className: "text-2xl md:text-3xl font-bold gradient-text",
+                                        className: "text-xl md:text-2xl font-bold gradient-text",
                                         children: "CreatorMeter — Live Global Data for a Changing World"
                                     }, void 0, false, {
                                         fileName: "[project]/app/page.tsx",
@@ -3237,7 +3237,7 @@ function Home() {
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        className: "text-sm md:text-base text-muted-foreground mt-2",
+                                        className: "text-xs md:text-sm text-muted-foreground mt-1",
                                         children: "We turn verified global data into live, interactive insights."
                                     }, void 0, false, {
                                         fileName: "[project]/app/page.tsx",

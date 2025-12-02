@@ -185,13 +185,13 @@ export default function Home() {
       </noscript>
 
       <main className="min-h-screen bg-background">
-        <section className="py-8 px-4">
+        <section className="py-4 px-2">
           <div className="container mx-auto">
-            <div className="text-center max-w-4xl mx-auto mb-8">
-              <h1 className="text-2xl md:text-3xl font-bold gradient-text">
+            <div className="text-center max-w-3xl mx-auto mb-4">
+              <h1 className="text-xl md:text-2xl font-bold gradient-text">
                 CreatorMeter — Live Global Data for a Changing World
               </h1>
-              <p className="text-sm md:text-base text-muted-foreground mt-2">
+              <p className="text-xs md:text-sm text-muted-foreground mt-1">
                 We turn verified global data into live, interactive insights.
               </p>
             </div>

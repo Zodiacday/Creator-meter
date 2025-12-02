@@ -643,6 +643,11 @@ body {
   margin-right: .875rem;
 }
 
+.mx-6 {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -661,11 +666,6 @@ body {
 .my-8 {
   margin-top: 2rem;
   margin-bottom: 2rem;
-}
-
-.mx-6 {
-  margin-left: 1.5rem;
-  margin-right: 1.5rem;
 }
 
 .-ml-4 {
@@ -1142,10 +1142,6 @@ body {
 
 .max-w-4xl {
   max-width: 56rem;
-}
-
-.max-w-5xl {
-  max-width: 64rem;
 }
 
 .max-w-6xl {
@@ -1768,10 +1764,6 @@ body {
   background-color: hsl(var(--background));
 }
 
-.bg-background\/50 {
-  background-color: hsl(var(--background) / .5);
-}
-
 .bg-background\/80 {
   background-color: hsl(var(--background) / .8);
 }
@@ -1822,10 +1814,6 @@ body {
 
 .bg-muted {
   background-color: hsl(var(--muted));
-}
-
-.bg-muted\/10 {
-  background-color: hsl(var(--muted) / .1);
 }
 
 .bg-muted\/30 {
@@ -2613,10 +2601,6 @@ body {
 
 .opacity-90 {
   opacity: .9;
-}
-
-.mix-blend-normal {
-  mix-blend-mode: normal;
 }
 
 .shadow-\[0_0_0_1px_hsl\(var\(--sidebar-border\)\)\] {
@@ -3981,10 +3965,6 @@ html {
 
   .md\:flex-row {
     flex-direction: row;
-  }
-
-  .md\:gap-12 {
-    gap: 3rem;
   }
 
   .md\:gap-6 {
